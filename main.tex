@@ -1,0 +1,111 @@
+\documentclass[12pt,english]{report}
+\usepackage[subpreambles=true]{standalone}
+\usepackage[a4paper, left=1.5in, right=1.5in, top=1.2in, bottom=1.2in,]{geometry}
+\geometry{twoside=true}
+\renewcommand{\baselinestretch}{1.5} 
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{mcode}
+\usepackage{import}
+\usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package
+\addbibresource{refs.bib} %Import the bibliography file
+
+\begin{document} 
+
+\begin{titlepage}
+   \begin{center}
+ 
+       \textbf{\huge{Implementation and Improvement of $^2$H MRI/MRS}}
+ 
+       \vspace{1cm}
+ 
+       \huge{\textbf{Author: Daniel Cocking} \\}
+       
+       \vspace{1.5cm}
+       \includegraphics[width=1\textwidth]{"Figures/Beacon".png}
+       \vspace{1.5cm}
+       
+       \Large{\emph{Thesis submitted to the University of Nottingham for the degree of Doctor of Philosophy}} 
+ 
+ \vspace{2cm}
+ 
+       Sir Peter Mansfield Imaging Centre \\
+       School of Physics and Astronomy\\
+       University of Nottingham\\
+       Date (month year)
+ 
+   \end{center}
+\end{titlepage}
+
+\mbox{}
+\thispagestyle{empty}
+\pagenumbering{roman}
+%\vspace*{\fill}
+\begin{abstract}
+    \thispagestyle{plain}
+    \setcounter{page}{1}
+    \blindtext
+\end{abstract}
+%\vspace*{\fill}
+\newpage
+\mbox{}
+
+%\vspace*{\fill}
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+    \thispagestyle{plain}
+    \setcounter{page}{2}
+    \blindtext
+\end{abstract}
+%\vspace*{\fill}
+\newpage
+\mbox{}
+
+\setcounter{page}{3}
+\tableofcontents
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1 pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{gray}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[LO,RE]{\color{gray} Page \thepage}
+\fancyhead[RO,LE]{\color{gray} CONTENTS}
+
+\newpage
+\mbox{}
+
+\chapter{Introduction}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\fancyhead[RO]{\color{gray} \nouppercase{\rightmark}}
+\fancyhead[LE]{\color{gray} \nouppercase{\leftmark}}
+\fancyfoot[LO,RE]{\color{gray} Daniel Cocking}
+\fancyfoot[LE,RO]{\color{gray} University of Nottingham}
+
+\import{Sections/}{Introduction}
+
+\chapter{Theory}
+\import{Sections/}{Theory}
+
+\chapter{Scanning post Heavy Water Loading}
+\import{Sections/}{ChapterD2O}
+
+\chapter{Comparing D$_2$-glucose and D$_7$-glucose in DMI}
+\import{Sections/}{ChapterGlu}
+
+\chapter{Lipid Turnover using Heavy Water}
+\import{Sections/}{ChapterLipid}
+
+\chapter{Quadrupolar Effects using Heavy Water}
+\import{Sections/}{ChapterQuad}
+
+\chapter{Conclusion}
+\import{Sections/}{Conclusion}
+
+%\bibliographystyle{unsrt}
+\newpage
+% \printbibliography[heading=bibintoc, title={Bibliography}]
+\printbibliography
+
+\end{document}

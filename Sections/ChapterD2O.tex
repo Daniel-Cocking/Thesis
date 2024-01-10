@@ -1,0 +1,184 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\renewcommand{\baselinestretch}{1.5} 
+\usepackage{wrapfig}
+% \usepackage{subcaption}
+% \usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage{import}
+% \usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package, Comment out main doc
+% \addbibresource{refs.bib} %Import the bibliography file, Comment out main doc
+
+\begin{document} 
+\label{section:D2O}
+
+\section{Introduction}
+
+\subsection{Heavy Water Uses}
+
+When most people think of heavy water (D$_{2}$O) they usually think of the the production of nuclear energy and atomic weaponry. However, a very popular use of heavy water now is as a isotopic tracer in studies of biochemical processes, such as the assessment of body composition\cite{INTERNATIONALATOMICENERGYAGENCY2011IntroductionSpectrometry} and is now often being used to study triglyceride\cite{Strawford2004AdiposeO} and lipid turnover\cite{Wilkinson2017StableFuture}. Studies of lipogenesis in the liver are performed now to understand characteristics of liver disease\cite{Turner2003MeasurementMIDA}. This often involves giving patients/participants heavy water for a long period of time and then taking a tissue sample biopsy and analysing it \textit{in vitro} using mass spectrometry. The need for biopsy limits how many measurements can be taken and where they can be taken, as well as involving patient discomfort. Deuterium magnetic resonance could offer a chance to characterise and investigate liver disease non-invasively. 
+
+After drinking heavy water (D$_2$O) rapid exchange occurs between covalent bonded hydrogen atoms and deuterium atoms. This causes semi-heavy water (HDO) signals that occur at natural abundance to increase, this exchange also occurs with covalent bonded hydrogens that exist in the methylene group (-CH$_2$) of fatty acids which causes the naturally abundant deuterated fat (CHD) signal to increase. Therefore by using chemical shift imaging (CSI) over the liver whilst a participant/patient is loaded with heavy water and then tracking the change in concentration of fat/lipid signals over time, lipogenesis can in theory be studied. This has been performed in healthy and diabetic mice in the 1980's\cite{Brereton1986PreliminarySpectroscopy,Brereton1989TheMice}.
+
+\subsection{Relaxation Times}
+
+Deuterium metabolic imaging (DMI) has been shown to be able to provide spatially resolved measurements of metabolite concentrations and pathway fluxes\cite{Kreis2020MeasuringMRI,Lu2017QuantitativeSpectroscopy}. This makes DMI of high clinical importance as the metabolite concentrations could potentially be used as bio-markers to assess a tumor/metabolic disease's growth or tumour aggressiveness, on a patient-to-patient basis. Simply you can calculate molecular abundance by comparing the magnetic resonance (MR) signal of a known abundance to the MR signal of an unknown enrichment, however calculating absolute concentration is more complicated. 
+
+In DMI this is performed by comparing the naturally abundant MR signal of HDO to the MR signal of other metabolites, along with an attenuation factor which is based on the scan used along with the deuterium labels in the metabolite. An estimate of the concentration of HDO at natural abundance (0.0156\%) is 12.6 mM. This is calculated by multiplying the number of moles in one litre of heavy water (D$_{2}$O) (55.4 Mol) by the water fraction of the brain ~73\% along with the natural abundance of deuterium, remembering to take into account the two deuterium labels.
+
+The attenuation factor specifically depends on the repetition time (TR), flip angle ($\alpha$) and the longitudinal relaxation time (T$_1$) of the metabolite in question. Which is why it is of great importance to have an understanding of how T$_1$ changes in different tissues. Previous measurements of HDO relaxation times in human participants have used non-localised signals\cite{DeFeyter2018DeuteriumVivo,DeFeyter2021DeuteriumFuture,Ruhm2021DeuteriumResolution} which do not account for the variation of relaxation times across these tissues.
+
+Proton relaxation times in other tissues have already been reported in the literature at multiple field strengths for different localised tissues in the brain\cite{Wright2008WaterOptimization}, which can be used for proton metabolite quantification. Previous measurements of HDO relaxation times in human participants used non-localised data\cite{DeFeyter2018DeuteriumVivo, Ruhm2022Dynamic9.4T, Gursan2022ResidualMuscle} which means the variation of relaxation times across specific tissue compartments is not known. Which would make tissue-specific metabolic concentration calculations difficult and unreliable.  
+
+\subsection{Aims}
+
+Deuterium MRI at 7T was used to characterise the HDO signals from the human brain in four healthy participants who increased their deuterated water content to ~1.5\% over a six-week period by drinking D$_2$O. The heavy water loading was carried out as part of a parallel study into immune cell proteomics. $^2$H MRI and MRS measurements were made on all four participants. This included multi-echo gradient echo (MEGE) images acquired at a range of TR values, from which T$_1$ and T$_2^*$ relaxation maps were calculated. Co-registration to higher resolution $^1$H images allowed T$_1$ and T$_2^*$ relaxation times of deuterium in HDO in CSF GM, and WM to be reported. For two of the participants, $^2$H MRI/MRS data was also acquired during the initial ~eight-hour loading period to track the time-course of $^2$H enrichment within the brain\cite{Cocking2023DeuteriumDosing}. 
+
+%When creating an MRS/MRI scan it is important to be aware of the transverse relaxation time (T$_{2}^{*}$) of the tissue and metabolite you are investigating as this gives excellent insight on to how the signal is decaying and allows you to choose appropriate TR's and $\alpha$'s for the scan.
+
+\section{Method}
+
+Six healthy participants took part in this $^2$H-imaging sub-study which was approved by the local institutional ethics committee and the volunteers gave informed consent. Two of the participants were scanned during a set-up phase in which we established the feasibility of $^2$H imaging and identified favourable imaging parameters. Here, we report data from four participants (A - D) who were subsequently scanned using the optimised imaging protocols. All scanning was performed on a 7T Philips Achieva scanner (Philips Healthcare, Amsterdam, The Netherlands), operating at 45.8 MHz for $^2$H and 298 MHz for $^1$H. A 26.4 cm inner diameter, dual-tuned $^1$H/$^2$H birdcage coil (Rapid Biomedical) was used for deuterium measurements, while the standard 32-channel Rx/2-channel Tx head coil (Nova Medical) was used for acquiring anatomical $^1$H images.  
+
+The proteomics study required an initial loading regime in which the targeted enrichment was built up in around 8 hours. This was achieved by participants drinking between 12 and 16 ~50 ml doses of 70\% D$_2$O/30\% H2O every ~30 minutes, with the total amount of D$_2$O consumed adjusted according to the participant’s body weight, so that an enrichment of around 1.5\% was produced. The participants subsequently drank ~50 ml of D$_2$O each morning over the six-week study period to maintain a ~ 1.5\% enrichment. Similar enrichment levels and duration's have been used in recent studies\cite{Robinson2011Long-termSupplementation, Burger2017LeukemiaIbrutinib, Loomba2019DiscoveryLabeling} with no adverse events reported, however some participants experienced a brief period of dizziness during the initial loading phase due to the rapid rise in body water enrichment\cite{Robinson2011Long-termSupplementation}. Saliva samples were collected from participants at regular intervals during the study and analyzed using gas chromatography–mass spectrometry (GCMS)\cite{Yang1998AssaySpectrometry}.  
+
+\subsection{Initial Loading}
+
+Two of the participants (A and B) were scanned during the initial 8-hour loading period to monitor the time-course of changes in the concentration of deuterium in the brain. A scanning protocol of ~15 minutes’ duration was performed before dosing and then again after 30, 90, 150, 210, 270, 360, 420, 540 minutes. The protocol comprised, a $^1$H scout scan for planning, followed by acquisition of $^2$H pulse-acquire spectra from the whole head and from a 2-cm-thick axial slice positioned over the lateral ventricles. Both used the following scan parameters: flip angle $\alpha$ = 90$^\circ$, 2048 samples, bandwidth (BW) = 3000 Hz, repetition time TR = 1 s and 64 averages (acquisition time T$_\text{scan}$ = 64 s). We then acquired axial, multi-echo, gradient echo (MEGE) $^2$H images (20 averages, T$_\text{scan}$ = 453s, FOV = 288x288x80 mm$^3$, 6x6x10 mm$^3$ voxels, $\alpha$ = 33$^\circ$, TR = 62 ms, five echoes, TE = 8.9 ms and $\Delta$TE = 8.4 ms. Axial $^1$H GE images (TACQ = 232 s, 32 slices, FOV = 288x288x80 mm$^3$, 3x3x2.5 mm$^3$ voxels, TE = 5.9 ms, TR = 39 ms) were also acquired. The scanning protocol was repeated 17 days after the initial loading to obtain comparative data at steady-state enrichment. The spectroscopy measurements made before loading pro-vided an estimate of the signal from naturally abundant deuterium in water: scaling subsequent measurements then allowed the absolute HDO concentration to be estimated at each time-point. The HDO concentration in the body was also estimated from the ratio of the total imbibed D$_2$O volume to an estimate of total body water\cite{Watson1980TotalMeasurements}.
+
+The temporal variation of HOD concentration in the brain was monitored by plotting the amplitude of the single peak in each non-selective and selective spectrum against time since the first heavy water dose. The peak amplitude was obtained by fitting the complex data to a Lorentzian line shape in the frequency domain using non-linear least squares fitting. The measurement made before loading provided an estimate of the signal from naturally abundant deuterium: scaling subsequent measurements using this value allowed estimation of the absolute deuterium concentration at each time-point. The concentration of heavy water in the body was also estimated from the ratio of the total imbibed D$_2$O volume in litres to an estimate of total body water using a participant’s height, weight, age and gender\cite{Watson1980TotalMeasurements}.
+
+We used the image data to track the changes in $^2$H signal from different tissue compartments. The $^2$H images acquired at each time-point were summed over the five echoes to form a single image data set. Then using both the $^2$H and $^1$H images, regions of interests (ROI) were formed for a background region, general brain tissue, the lateral ventricles and for a region of high signal intensity thought to arise from blood vessels and CSF in the superior cistern. The signal intensity in each region was plotted against time since the first heavy water dose. The SNR in images acquired before loading was too low to make good estimates of natural abundance signals,so values were normalized to the signal measured in the superior cistern ROI at the last time point of the initial loading period. All analysis was performed using MATLAB (Release 2020b, The MathWorks, Inc., Natick, MA, United States).
+
+\subsection{Relaxation Time Measurements}
+
+$^2$H relaxation times for water in CSF, GM, and WM were calculated from data acquired during the six-week loading period using the dual-tuned $^2$H/$^1$H coils. In each session, $^2$H 3D sagittal MEGE images were acquired (voxels = 6x6x10 mm$^3$, FOV = 288x288x240 mm$^3$, slices = 24) at a range of TR values, along with $^1$H 3D MEGE images (voxels = 3x3x5 mm$^3$, FOV = 288x288x240 mm$^3$, slices = 48, 15 echo times with TE$_1$ = 2.5 ms, $\Delta$TE = 2.34 ms, and TR = 41 ms). 
+
+$^2$H MEGE data from Participants A and B were acquired with five echoes (TE = 4.3 ms, $\Delta$TE = 8.4 ms), $\alpha$ = 60° and TR = 68, 136, 272, 544 ms, with 8, 4, 2 and 1 averages so that T$_\text{scan}$ = 487 s for each image. $^2$H MEGE data from participants C and D was acquired with six echoes (TE = 4.3 ms; $\Delta$TE = 8.4 ms) and one additional TR value (TR = 816 ms; T$_\text{scan}$ = 730 s; 1 average). 
+The number of TE and TR values were increased to improve fitting quality. The $^2$H scanning sessions were performed twice on Participants C and D.
+
+In a separate scanning session using the Nova coil $^1$H  MPRAGE images (0.7 mm resolution) and $^1$H 3D MEGE images (3x3x5 mm$^3$ voxels, 15 echo times, TE$_1$ = 2.5 ms, $\Delta$TE = 2.57 ms, and TR = 41 ms) were acquired from each participant. These images were used for image segmentation and estimation of the $^1$H T$_2^*$ values. 
+
+For calculation of $^2$H relaxation time maps, we first estimated the variation of flip angle ($\alpha$) over the image volume by summing the images across TEs, at each TR, and then fitting the resulting image data voxel-wise to a saturation recovery curve (i.e., fitting signal variation with TR for $\alpha$, R$_1$, and signal amplitude). The resulting flip-angle maps were smoothed by averaging over 5x5x5 voxel neighbourhood and the $\alpha$-values used as fixed variable in dual-fitting the variation in signal intensity S$_{i,j}$ across TR$_i$ and TE$_j$  values. 
+\begin{equation}
+     \sum_{i=1}^{n_{\text{TR}}}\sum_{j=1}^{n_{\text{TE}}}\left|\frac{A\sin{\alpha}(1-\exp(-R_1 \text{TR}_i)}{1-\cos{\alpha}\exp(-R_1 \text{TR}_i)}*\exp(-R_2^*\text{TE}_j) - S_{i,j}\right|^2
+     \label{eqn.min}
+\end{equation}
+This involved minimisation of equation \ref{eqn.min} using the Matlab fmincon command, $^1$H R$_2^*$ maps were obtained by similar fitting to the exponential signal decay with TE in the $^1$H MEGE data acquired using the Nova coil.
+
+To evaluate the relaxation times in different compartments, we segmented the $^1$H MPRAGE data (FSL FAST\cite{Zhang2001SegmentationAlgorithm}) and transformed the resulting GM, WM and CSF masks to the space of the $^2$H relaxation time maps. Following brain extraction (FSL BET\cite{Smith2002FastExtraction}) and bias field correction, an affine matrix was obtained from image co-registration (FSL FLIRT\cite{Jenkinson2001AImages,Jenkinson2002ImprovedImages})that transformed the $^1$H MEGE data acquired using the Rapid Biomedical coil to the $^1$H MEGE Nova Medical coil data, along with an affine matrix for the $^1$H MEGE to MPRAGE transformation. Image co-registration was linear, with six degrees of freedom and used the correlation ratio cost function. The MEGE data were summed across echoes and repetition times before co-registration.
+
+The brain extracted MPRAGE image was segmented to create binary masks for GM, WM and CSF using FSL FAST\cite{Zhang2001SegmentationAlgorithm}. These masks were then transformed to the $^2$H space using the previously obtained affine matrices and the outer regions of the CSF mask were manually removed so that the majority of the mask comes from the lateral ventricles. The new masks were binarized at a value of 0.6 for each tissue to ensure that each mask contains at least 25 voxels for averaging. The binarized masks were applied to the relaxation maps for calculation of mean relaxation times for CSF, GM and WM.
+
+\section{Results}
+\subsection{Loading}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/D2O/Sag_Full.png}
+    \caption{3D MEGE $^2$H image data from Participant C. Images produced by summing over six TE values and five TR values. Voxel size=6 × 6 × 10 mm3, FOV=288 × 288 mm$^2$.}
+    \label{fig:D2O:Sag_Full}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.8\textwidth]{Figures/D2O/TR_TE.png}
+    \caption{3D MEGE $^2$H image from one slice from Participant D. Images are displayed with TE value varying horizontally and TR-value varying vertically. Voxel size=6 × 6 × 10 mm$^3$, FOV=288 × 288 mm$^2$.}
+    \label{fig:D2O:TR_TE}
+\end{figure}
+
+Figure \ref{fig:D2O:Sag_Full} shows example $^2$H 3D sagittal images obtained by summing the $^2$H MEGE data for a single (fully loaded) subject over TE and TR values, during the steady-state loading period. The resulting images, which predominantly show T$_2^*$ contrast, clearly depict the brain anatomy and have a similar appearance to T$_2^*$-weighted, $^1$H images. The CSF in the ventricles and at the cortical surface appears hyperintense, while regions where there is little partial-voluming with CSF such as the white matter in the corpus callosum appears hypointense. Figure \ref{fig:D2O:TR_TE} shows the variation of image intensity with TE and TR in a central sagittal slice. The slower T$_2^*$ decay of the CSF signal compared with that of the GM and WM signals is evident, along with the signal saturation at reduced TR, and the reduction of contrast at low TE and TR values. In Figure \ref{fig:D2O:Load} example $^2$H images acquired from participants A and B at different dosage times during the loading process are shown. As dosage increases so does the overall signal-to-noise ratio (SNR) along with the contrast between tissues. The ROI’s that were used to analyse the loading in different brain tissues are outlined in Figure \ref{fig:D2O:ROI} (for participant A). Since the background MEGE image is obtained after the final dose for Subject A the tissues being segmented are easily discerned in the $^2$H space, however for the lower dosage images this is not the case which is why the ROI’s are defined on the more anatomical $^1$H image. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/D2O/Loading.png}
+    \caption{$^2$H images acquired from two participants at different times during the initial, 8-hr heavy water loading period. The time since the first dose is indicated above each image and the cumulative dose of heavy water is indicated below. A single axial slice spanning the lateral ventricles is shown. The images shown are formed from the average over five echoes (TE$_1$ =8.9 ms, $\Delta$TE=8.4 ms). The images shown have a reduced FOV of 204 × 204 mm$^2$.}
+    \label{fig:D2O:Load}
+\end{figure}
+
+The qualitative increase in signal during the loading period in Figure \ref{fig:D2O:Load} is shown more quantitatively in Figure \ref{fig:D2O:Bulk} as the $^2$H concentration time course obtained from the spectroscopy data is shown, along with the steady-state values measured after 17 days of loading. Figure \ref{fig:D2O:ROI_Graph} outlines the more specific changes in the different brain tissues as the average signal from each ROI during loading is shown scaled to the signal measured in the SC in the last time point, along with the steady-state values measured after 17 days of loading. Figures \ref{fig:D2O:Bulk} and \ref{fig:D2O:ROI_Graph} also show the $^2$H concentration estimated from the cumulative D$_2$O dose and estimated total body water volume, for comparison. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/D2O/ROI.png}
+    \caption{Regions of interest used for following the time-course of signal change during D$_2$O loading. Black = superior cistern; Red = lateral ventricle; Blue = brain (GM, WM and CSF); Green = background noise.}
+    \label{fig:D2O:ROI}
+\end{figure}
+
+
+
+\subsection{Relaxation Times}
+
+Figure \ref{fig:D2O:R1_R2} shows sagittal and axial relaxation rate maps from two participants, with the dominant feature in the $^2$H maps being the reduced R$_2^*$ and R$_1$ relaxation rates in the ventricles. The elevated R$_2^*$ seen in deep grey matter structures in the $^1$H maps is not evident in the $^2$H maps. Table \ref{fig:D2O:R_times} reports the average and standard deviation of the $^2$H T$_1$ and T$_2^*$ values, along with $^1$H T$_2^*$ values measured measured in GM, WM and CSF in the four participants by applying the binarised segmentation masks to the relaxation maps.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/D2O/Bulk_Graph.png}
+    \caption{Time course of the concentration of deuterium in the brain estimated from the $^2$H spectroscopy measurements (red=from 2 cm slice at level of lateral ventricles; blue= whole head). Percentage estimated by scaling by the signal measured at natural abundance (assumed to be 0.015\%). The orange blocks indicate the concentration estimated from the cumulative D$_2$O dose and body weight. The measurements made at steady state (after 17 days of loading) are shown in the box at the far right.}
+    \label{fig:D2O:Bulk}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/D2O/ROI_Graph.png}
+    \caption{Time course of average signal change in image ROIs (red=lateral ventricle; blue=brain tissue; black=superior cistern; green=background noise) in two participants. Signals from all compartments are scaled by the superior cistern signal at the final measurement time-point. Scaled signals measured at steady state (after 17-days loading) are shown in the box at the far right.}
+    \label{fig:D2O:ROI_Graph}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/D2O/R1_R2.png}
+    \caption{$^2$H R$_2^*$ and R$_1$ maps are shown along with $^1$H R$_2^*$ maps in sagittal (a) and axial (b) format. Maps show five central slices from Participants C and D. Relaxation maps were calculated from MEGE data equivalent to that displayed in Figure (\ref{fig:D2O:Sag_Full}). The elevated R$_2^*$ in iron-rich deep GM structures is evident in the lower slices of the $^1$H maps (red arrows), but is not seen in the $^2$H maps. The images shown have a reduced FOV of 204 × 204 mm$^2$.}
+    \label{fig:D2O:R1_R2}
+\end{figure}
+
+% Attempt to create overleaf table, data is too big for fontsize
+% \noindent
+% \begin{tabular}[H]{ |p{1cm}|p{0.5cm}||p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|  }
+%     \hline
+%     \multicolumn{2}{|c|}{} & \multicolumn{6}{|c|}{$^2$H relaxation times [ms]} & \multicolumn{3}{|c|}{$^1$H relaxation times [ms]} \\
+%     \hline
+%     \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{CSF} & \multicolumn{2}{|c|}{GM} & \multicolumn{2}{|c|}{WM} & CSF & GM & WM \\
+%     \hline
+%     Subject & Visit & T$_1$ & T$_2^*$ & T$_1$ & T$_2^*$ & T$_1$ & T$_2^*$ & T$_2^*$ & T$_2^*$ & T$_2^*$ \\
+%     \hline
+%     A & 1 & 450 $\pm$ 200 & 110 $\pm$ 90 & 280 $\pm$ 100 & 32 $\pm$ 8 & 260 $\pm$ 100 & 30 $\pm$ 10 & 106 $\pm$ 90 & 26 $\pm$ 20 & 27 $\pm$ 20 \\
+%     \hline
+% \end{tabular}
+
+\begin{table}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/D2O/R_Times.png}
+    \caption{Average and SD of $^2$H (T$_2^*$ and T$_1$) and $^1$H (T$_2^*$) relaxation times in CSF, GM, and WM for different participants and visits. These values were produced by averaging over segmented relaxation time maps, similar to those shown in Figure (\ref{fig:D2O:R1_R2}). Average values and standard deviations across participants are also shown.}
+    \label{fig:D2O:R_times}
+\end{table}
+ 
+\section{Discussion}
+
+The results shown in Figures \ref{fig:D2O:Sag_Full} and \ref{fig:D2O:Load} indicate that $^2$H images of 6 x 6 x 10 mm$^3$ voxel size with a useful SNR can be acquired in ~7.5 minutes at 7T with a head-sized bird-cage coil, when participants have been deuterium-enriched to ~1.5\% concentration (~100 times natural abundance). After summing over echo times these images (Figure \ref{fig:D2O:Load}) showed SNR ~16 in brain tissue in the steady-state condition (after 17 days of loading), the contrast in these images is dominated by T$_2^*$-weighting with the CSF appearing hyperintense relative to grey and white matter.
+
+The measured relaxation times were reasonably consistent across the six measurements (Table \ref{fig:D2O:R_times}), with CSF having significantly higher T$_1$ and T$_2^*$ values than GM or WM (p < 0.007 for two-sample t-test). The measured T$_1$ and T$_2^*$ values were consistently higher in GM than in WM, but the differences did not reach statistical significance (T$_1$: p = 0.21; T$_2^*$: p = 0.08). The relatively coarse resolution of the $^2$H images made it difficult to avoid the effects of partial volume, particularly of CSF and GM, and the limited range of TE and TR values reduced the accuracy of measurement of the long T$_1$ and T$_2^*$ values in CSF. The average values of the relaxation times are consistent with values reported from non-localised measurements of HDO signals in human\cite{DeFeyter2018DeuteriumVivo,DeFeyter2021DeuteriumFuture,Ruhm2021DeuteriumResolution}, cat\cite{Ewy1988DeuteriumSitu} and rat \cite{DeFeyter2018DeuteriumVivo,Lu2017QuantitativeSpectroscopy} brain.
+
+Focusing on human brain measurements, De Feyter et al.\cite{DeFeyter2018DeuteriumVivo} reported HDO T$_1$ of 346 $\pm$ 5 ms at 4T, while Ruhm et al.\cite{Ruhm2021DeuteriumResolution} measured 362 $\pm$ 6 ms at 9.4T – values which lie between the values for CSF (508 ms) and GM/WM (318/285 ms) measured here at 7T. As expected, the measured $^2$H T$_1$-values are significantly shorter than the corresponding $^1$H values at 7T\cite{Peters2007T27T}, due to the quadrupolar relaxation of $^2$H. The long T$_1$ of HDO in CSF relative to GM/WM will lead to greater saturation in the CSF signal in short CSI measurements used for DMI (for example Ruhm et al. used TR = 155 ms\cite{Ruhm2021DeuteriumResolution}) which needs to be considered when quantifying signals from other $^2$H-labelled metabolites using natural abundance HDO signals. Bi-exponential T$_2$ decay was previously identified at 4T\cite{DeFeyter2018DeuteriumVivo} and 7T\cite{Roig2022Deuterium7T} using non-localised spin echo measurements: at 7T  large (small) pools were found to have relaxation times of 29 $\pm$ 1 (412 $\pm$ 40) ms, respectively\cite{Roig2022Deuterium7T}, consistent with our identification of short and long T$_2^*$ values in GM/WM (32/30 ms) and CSF (90 ms). 
+
+The TE-summed MEGE images in Figures \ref{fig:D2O:Sag_Full} and \ref{fig:D2O:Load} show contrast that is dominated by T$_2^*$-weighting, with the CSF appearing hyperintense relative to grey and white matter, as is the case in T$_2^*$-weighted $^1$H images. A notable difference between the $^1$H and $^2$H R$_2^*$ maps (Figure \ref{fig:D2O:R1_R2}) is that deep GM structures which appear with elevated R$_2^*$ in $^1$H maps due to their high iron content\cite{Peters2007T27T} do not appear hyperintense in the $^2$H maps. This is a consequence of the dominance of quadrupolar, rather than dipolar, relaxation in the case of $^2$H. The $^1$H R$_2^*$ maps also show larger regions of hyperintensity near the frontal sinuses due to the greater field-inhomogeneity-related intra-voxel dephasing resulting from the higher $\gamma$ of $^1$H. Signals from structures outside the brain (apart from the eyeball) are only evident in the $^2$H images acquired with the shortest TE value (Figure \ref{fig:D2O:TR_TE}) most likely because of the very short T$_2^*$ of HDO in muscle\cite{Gursan2022ResidualMuscle,Damion2021NaturalT}.
+
+Both the imaging and spectroscopy results in Figures \ref{fig:D2O:Bulk} and \ref{fig:D2O:ROI_Graph} show that changes in HDO concentration on the order 0.1\% can be readily monitored and tracked, with spectroscopy data being obtained in one minute. At an estimated concentration of 0.5\% $^2$H, the ratio of signal to background noise varied from ~2.7 (brain) to ~3.1 (subarachnoid cistern) and these values increased approximately linearly with concentration as expected (Figure \ref{fig:D2O:ROI_Graph}) to ~steady state levels over the 8-hour loading. The concentrations estimated from the $^2$H spectra are in reasonably good agreement with the values calculated from the cumulative D$_2$O dose and body mass (Figure \ref{fig:D2O:Bulk}). 
+
+In addition, the signal amplitudes measured from ROIs in the brain have similar time-courses maintaining relatively constant ratios, dictated mainly by differences in T$_2^*$-weighting and water fraction in the different brain regions (Figure \ref{fig:D2O:ROI_Graph}). It is also important to note that as subject C stops loading the reduction in the rate of increase in $^2$H concentration is evident in both Figures \ref{fig:D2O:Bulk} and \ref{fig:D2O:ROI_Graph}, on the scale of minutes. This implies that the $^2$H MR measurements are robust and that the dispersal kinetics of deuterium following oral ingestion of D$_2$O are rapid throughout the body on the timescale of the measurements. This is consistent with previous measurements based on blood sampling which indicate that the half-life of absorption into blood is ~12 min, with similar time constants for dispersal into other body water compartments\cite{Davies2001RapidWater,Peronnet2012PharmacokineticHumans}. 
+
+In our experiments the participants came out of the magnet bore between measurements, leading to the potential for changes in signal intensity due to variation of the slice position. Nevertheless the $^2$H signals tracked the monotonically increasing dose and the values measured at maximum dose were similar to those measured 17 days later during the steady state loading period. Although both participants had approximately the same weight and target D$_2$O dose, Participant B was only able to ingest 600 ml during the initial loading. The deuterium concentration measured from Participant A was consequently higher at the end of the loading period. The rest of participant B’s loading was completed over the following four days, along with the daily 50 ml top-up and similar concentrations were measured from the two participants in the steady state (Figure \ref{fig:D2O:Bulk}). The GCMS measurements of deuterium concentrations in the saliva samples from Participant A and B were 1.51\% $\pm$ 0.09\%, and 1.53\% $\pm$ 0.17\%, respectively. 
+
+Rapid increases in body water enrichment can lead to feelings of dizziness and nausea. These symptoms can occur at relatively low enrichment's while equilibrium has not yet been achieved, and are thought to result from temporary effects on the vestibular system due to density changes in the semi-circular canals of the inner ear\cite{Money1974HeavyAlcohol}. This meant that some of the subjects were unable to finish the rapid loading in the first day. This can be seen in Figures \ref{fig:D2O:Load}, \ref{fig:D2O:ROI_Graph} and \ref{fig:D2O:Bulk} which is why Participant B was only able to ingest 600 ml out of the 800 ml, despite having approximately the same weight as Participant A, and why the rate of D$_2$O loading was slowed. This effect has caused previous participants to withdraw, no female participant was able to complete the initial loading in the first day. This could be explained by reports of women having a higher motion sickness susceptibility\cite{Flanagan2005SexSickness.}, this difference has also been made aware during spaceflight as female crew-members report post-flight vestibular instability symptoms more frequently than men\cite{Reschke2014EffectsSystems}. One possible explanation is the sexual dimorphism in the size of structures in the vestibular system, as many structures have been found to be larger in men\cite{Sato2016Computer-AidedApparatus}. However, no firm explanation on the cause of this apparent motion sickness has been made, it is unknown whether it is affecting this study. The rapid loading was required for the parallel study, but a more gradual increase in heavy water uptake could be used for future MR-loading experiments to minimise these effects. 
+
+\section{Conclusion}
+
+Deuterium MR measurements at 7T have been successfully used to track the increase in concentration of $^2$H in brain during heavy water loading to 100 times natural abundance, in four human participants. Gradient echo images with an SNR of 16 and a voxel volume of 0.36 ml could be acquired in 7.5 minutes. $^2$H T$_1$ and T$_2^*$ relaxation times from water in GM, WM and CSF have also been measured at 7T. These relaxation times can be applied in research protocols using the natural abundance $^2$H signal from water for calibration and concentration calculations. In future work we aim to track uptake from a single D$_2$O dose on a shorter time scale, using faster, interleaved acquisition of $^2$H images and spectra.
+
+% \printbibliography % Comment out main doc
+
+\end{document}
