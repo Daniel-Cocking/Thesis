@@ -10,17 +10,26 @@
 \usepackage{amsmath}
 \usepackage{blindtext}
 \usepackage{import}
-% \usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package, Comment out main doc
-% \addbibresource{refs.bib} %Import the bibliography file, Comment out main doc
+\usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package, Comment out main doc
+\addbibresource{refs.bib} %Import the bibliography file, Comment out main doc
 
 \begin{document} 
 \label{section:Quad}
 
 \section{Introduction}
 
+Because of deuterium's ($^2$H) nuclear spin (I=1) being larger than 1/2 it possesses an electric quadrupolar magnetic moment (Q$_{\text{deuteron}}=$ 0.286 fm$^2$) \cite{Stone2015NuclearData}. This not only shortens the the relaxation times of $^2$H, it also introduces a frequency doublet which is similar to J-coupling or dipolar interactions. The frequency magnitude of the separation is dependent on the effect of ordering on the time-averaged direction of the local electric field gradient with respect to the magnetic field\cite{Seelig1977DeuteriumMembranes, Eliav2016MultipleMRS}. When performing MRSI each voxel will contain information from multiple different tissue/water compartments which can therefore complicate spectral appearance due to the superposition of ordered (anisotropic) and disordered (isotropic), and therefore the superposition is different frequency separations. The low available MR signal due to the low $^2$H natural abundance (0.015\%) means that quite often studies looking into this quantum effect are performed at high field \cite{Gursan2022ResidualMuscle} and\cite{Ooms2015DoubleTissue}/or\cite{Damion2022DoubleLoading} increasing $^2$H abundances using D$_2$0. In order to keep the spectral behaviour simple and negate the effects from isotropic compartments double quantum filtering (DQF) can be used\cite{Sharf1995DetectionNMR-Spectroscopy, Perea20072HDisc}, however this greatly reduces the available SNR. 
+
+The combinations of spin operators ($I_x, I_y$ and $I_z$) can be represented as spherical operator tensors ($T_{l,p}$), where $l$ is the rank and $p$ is the coherence of the tensor, noting that $|p| \le l$. Since $^2$H is $I=1$ no rank greater than two can be reached, which means the only multiple quantum (MQ) that can be achieved is the double quantum coherences represented by the $T_{2,\pm2}$ tensors, this only arises from anisotropic medium. DQF suppresses the single quantum coherences ($T_{1,\pm1}$) leaving only signal from the anisotropic regions from the $T_{2,\pm2}$. By using DQF to measure measure the anisotropy of tissues and fluids in the body such as intervertebral disc tissue \cite{Ooms2015DoubleTissue}, brain water\cite{Assaf1997InSpectroscopy} and elastin\cite{Sun2010InvestigationNMR} reveals a lot about the presence of diseases such as degenerative disc disease\cite{Ooms2015DoubleTissue}.
+
+\subsection{Aims}
+
+During the loading measurements were obtained that were used to measure the dependency of the quadrupolar splitting on the angle orientation of skeletal muscle to the magnetic field, along with implementing double quantum filtered on skeletal muscle at 3T.
+
+\section{Theory}
 \subsection{Quadrupolar Splitting}
 
-Because of deuterium's ($^2$H) nuclear spin (I=1) being larger than 1/2 it possesses an electric quadrupolar magnetic moment (Q$_{\text{deuteron}}=$ 0.286 fm$^2$) \cite{Stone2015NuclearData}. This quadrupolar moment interacts with the local electric field gradients (EFG) which can be represented as a combination of up to six electric potential tensor elements, these aree then simplified to three principal axis elements (V$_{xx}$, V$_{yy}$ and V$_{zz}$). By definition the sum of these elements is 0, as the EFG is a traceless tensor. V$_{zz}$ is defined as the largest element and is usually specified as the EFG at the quadrupolar nucleus (V$_{zz} = e\cdot q$)\cite{Elliott2021WhatMedia}. The ratio of the difference between V$_{xx}$ and V$_{yy}$ to V$_{zz}$ is referred to as the asymmetry parameter ($\eta$).
+The quadrupolar moment interacts with the local electric field gradients (EFG) which can be represented as a combination of up to six electric potential tensor elements, these are then simplified to three principal axis elements ($V_{xx}, V_{yy}$ and $V_{zz}$). By definition the sum of these elements is 0, as the EFG is a traceless tensor. $V_{zz}$ is defined as the largest element and is usually specified as the EFG at the quadrupolar nucleus ($V_{zz} = e\cdot q$)\cite{Elliott2021WhatMedia}. The ratio of the difference between $V_{xx}$ and $V_{yy}$ to $V_{zz}$ is referred to as the asymmetry parameter ($\eta$).
 \begin{equation}
     \eta = \frac{V_{xx}-V_{yy}}{V_{zz}}
 \end{equation}
@@ -28,7 +37,7 @@ By considering the time-independent Hamiltonian ($H_Q$) of this interaction it i
 \begin{equation}
     H_Q = \frac{eQ}{4I(2I-1)}[V_0(3I^2_z-\boldsymbol{I}^2) + V_{\pm1}(I_{\mp}I_z+I_zI_\mp)+V_{\pm2}I^2_\mp]
 \end{equation}
-V$_0$, V$_{\pm1}$ and V$_{\pm2}$ are the three principal axis elements combined to create new elements, which are complex, that better represent the total EFG. When considering the rotational transformation from the molecule's fixed reference frame to the laboratory fixed reference frame\cite{Seelig1977DeuteriumMembranes}, along with an assumed value of $\eta$=0 (uniaxiality), the total Hamiltonian simplifies for deuterium ($I$ = 1) \cite{Sharf1995DetectionNMR-Spectroscopy}. The form of this equation, now using its simplified principal axis elements is:
+$V_0$, $V_{\pm1}$ and $V_{\pm2}$ are the three principal axis elements combined to create new elements, which are complex, that better represent the total EFG. When considering the rotational transformation from the molecule's fixed reference frame to the laboratory fixed reference frame\cite{Seelig1977DeuteriumMembranes}, along with an assumed value of $\eta$=0 (uniaxiality), the total Hamiltonian simplifies for deuterium ($I$ = 1) \cite{Sharf1995DetectionNMR-Spectroscopy}. The form of this equation, now using its simplified principal axis elements is:
 \begin{equation}
     H = -g\beta_N\boldsymbol{I}\cdot\boldsymbol{H_0} + \frac{eQ(3\cos^2(\theta)-1)}{8}V_{zz}(3I_z^2-\boldsymbol{I}^2)
 \end{equation}
@@ -45,13 +54,32 @@ where the RQC in this case is given in the first part of the above equation.
 
 The above derivation shows that as a result of the quadrupolar magnetic moment interacting with the EFG a splitting is observed that is caused by perturbed energy levels. The frequency magnitude of this splitting effect is quantifiable and depends only on the orientation of the deuterated sample to the applied magnetic field (equation \ref{eqn.Angle}. In an isotropic structure such as the brain this splitting effect is not visible due to averaging resulting from molecular motion. In an anisotropic media such as the skeletal muscle fibres in the calf, the quadrupolar splitting is at a maximum and equal to the RQC value when the deuterated sample is orientated with the magnetic field ($\theta = 0^\circ$). The splitting effect can also be nulled ($\nu_Q = 0$) if the sample is orientated to the magnetic field at the magic angle $\theta = 54.74^\circ$ ($\cos^2\theta=1/3$).
 
-Using an NMR technique known as double quantum filtering (DQF) signals resulting from single and zero quantum coherences are suppressed, leaving only the effect of double quantum coherences. The resulting signal is always a single quantum coherence, therefore the DQF converts the double quantum coherences into single coherence. Any signal detected using a DQF sequence hence proves the existence of double quantum coherences.
+This detected signal from the DQF signal is related to a second rank tensor arising from the EFG, which can only be formed in anisotropic media/phases. Therefore it is possible to measure the RSC constant from these NMR spectra which provides information on the anisotropy of the media investigated. This technique is applied by manipulating the pulse sequence with alternating $\pi/2$ and $\pi$ RF pulses. 
 
-This detected signal is related to a second rank tensor arising from the EFG, which can only be formed in anisotropic media/phases. Therefore it is possible to measure the RSC constant from these NMR spectra which provides information on the anisotropy of the media investigated. This technique is applied by manipulating the pulse sequence with alternating $\pi/2$ and $\pi$ RF pulses. By measuring the anisotropy of tissues and fluids in the body such as intervertebral disc tissue \cite{Ooms2015DoubleTissue}, brain water\cite{Assaf1997InSpectroscopy} and elastin\cite{Sun2010InvestigationNMR} reveals a lot about the presence of diseases such as degenerative disc disease\cite{Ooms2015DoubleTissue}.
+\subsection{Quantum Filtering}
 
-\subsection{Aims}
+A pulse sequence that can be used to suppress the single quantum coherence and the obtain the double quantum coherence is shown below\cite{Sharf1995DetectionNMR-Spectroscopy}, where the pulse angles and the wait times are shown below. It is important that the correct phase cycling is used\cite{Bodenhausen1984SelectionExperiments}, the following transmit phase cycling is used here 0$^\circ$, 90$^\circ$, 180$^\circ$ and 270$^\circ$ and the following receive phase 0$^\circ$, 270$^\circ$, 180$^\circ$ and 90$^\circ$. 
 
-During the loading measurements were obtained that were used to measure the dependency of the quadrupolar splitting on the angle orientation of skeletal muscle to the magnetic field, along with implementing double quantum filtered on skeletal muscle at 3T.
+\begin{equation}
+    \pi/2-\tau/2-\pi-\tau/2-\pi/2-t_1-\pi/2-t_2 \textrm{ (Acquisition)}
+    \label{eqn:Quad:Pulse}
+\end{equation}
+
+The $t_1$ period suppresses the single coherence's and the last pulse refocuses the double coherence's together so that the signal is detectable. The obtained FID appears as two anti-phase Lorentzian lineshapes with a separation frequency, if the separation is small this behaviour can be difficult to identify as the curves overlap. The amplitude of the DQF FID follows a damped sinusoid.
+
+\begin{equation}
+    A\sin(2\pi\nu_q\tau)\exp(-2\tau/T_2)
+    \label{eqn:Quad:Amplitude}
+\end{equation}
+
+Where $T_2$ is a transverse relaxation, $A$ is an amplitude coefficient, $\nu_q$ is the splitting frequency and $\tau$ is known as the creation time and is the time between the first two $\pi/2$ pulses. This assumes perfect flip angles and that the signal is on-resonance. The coherence transfer pathway with the changing tensors can be seen in Figure \ref{fig:Quad:Coherence}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/Quad/DQF_Coherence.png}
+    \caption{The coherence pathway and the RF pulse sequence during a DQF acquisition. Noting that the tensor $T_{l,p}$ includes information on the rank ($l$) and on the coherence ($p$), which is indicated on the right side.}
+    \label{fig:Quad:Coherence}
+\end{figure}
 
 \section{Methods}
 
@@ -69,21 +97,21 @@ The 3D CSI spectra for the forearm was analysed using MATLAB and started with ze
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Figures/D2O/Calf_A.png}
+    \includegraphics[width=1\textwidth]{Figures/Quad/Calf_A.png}
     \caption{Left: CSI spectra (red) overlayed onto a $^1$H GE image from participant A's left calf of a single slice, with fits of two Lorentzian peaks (green) and three Lorentzian peaks (blue). Right: Interpolated map of quadrupolar frequency splitting's overlayed onto the same $^1$H GE image from participant A's left calf. }
     \label{fig:D2O:Calf_A}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Figures/D2O/Arm_A.png}
+    \includegraphics[width=1\textwidth]{Figures/Quad/Arm_A.png}
     \caption{Left: CSI spectra (red) overlayed onto a $^1$H GE image from participant A's left arm at an angle of 0 ${\circ}$ to the B0 field of a single slice, with fits of two Lorentzian peaks (green) and three Lorentzian peaks (blue). Right: Interpolated map of quadrupolar frequency splitting's overlayed onto the same $^1$H GE image from participant A's left arm. }
     \label{fig:D2O:Arm_A}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{Figures/D2O/Split_Angle.png}
+    \includegraphics[width=1\textwidth]{Figures/Quad/Split_Angle_1.png}
     \caption{Graph Showing the variation of averaged quadrupolar frequency splittings of the arm against the angle to the B0 field they were positioned at, for partcipant A (blue) and B (red). Along with the fit (dotted black) of both participant's data to equation \ref{eqn.Angle}, the splitting magnitude of this fit is 38 $\pm$ 2 Hz.}
     \label{fig:D2O:Split_Angle}
 \end{figure}
@@ -92,6 +120,6 @@ The 3D CSI spectra for the forearm was analysed using MATLAB and started with ze
 
 \section{Conclusion}
 
-% \printbibliography % Comment out main doc
+\printbibliography % Comment out main doc
 
 \end{document}
