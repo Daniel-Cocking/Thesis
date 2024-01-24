@@ -10,11 +10,11 @@
 \usepackage{amsmath}
 \usepackage{blindtext}
 \usepackage{import}
-% \usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package, Comment out main doc
-% \addbibresource{refs.bib} %Import the bibliography file, Comment out main doc
+\usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package, Comment out main doc
+\addbibresource{refs.bib} %Import the bibliography file, Comment out main doc
 
 \begin{document} 
-\label{section:Quad}
+\label{chap:Quad}
 
 \section{Introduction}
 
@@ -85,21 +85,22 @@ Where $T_2$ is a transverse relaxation, $A$ is an amplitude coefficient, $\nu_q$
 
 \section{Scanning}
 
-Measurements for this work was obtained in two separate investigations that both used the ingestion of D$_2$O and H$_2$O solution to increase $^2$H. Different loading routines were implemented in each investigation and both took place at different times. Each part of the first investigation had a different number of participants, while the second investigation had three participants for each part (two of which also took part in the previous investigation). Due to the different loading routines being different the overall $^2$H abundances will be different, the exact SNR is not important to either investigation as long as it was possible to obtain data in a reasonable time frame. The loading routine for the first investigation was the same that was used in chapter \ref{section:D2O}, and the loading routine for the second investigation was the same as in chapter \ref{section:Lipid}.
+Measurements for this work was obtained in two separate investigations that both used the ingestion of D$_2$O and H$_2$O solution to increase $^2$H. Different loading routines were implemented in each investigation and both took place at different times. Each part of the first investigation had a different number of participants, while the second investigation had three participants for each part (two of which also took part in the previous investigation). Due to the different loading routines being different the overall $^2$H abundances will be different, the exact SNR is not important to either investigation as long as it was possible to obtain data in a reasonable time frame. The loading routine for the first investigation was the same that was used in chapter \ref{chap:D2O}, and the loading routine for the second investigation was the same as in chapter \ref{chap:Lipid}.
 
-All data was obtained using a Philips 3T Achieva scanner, all $^1$H anatomical scans were performed using the built-in body coil using a 3D GE scan. $^2$H data was obtained using in-house built coils details of which can be found in chapter \ref{section:Theory:Coils}. 
+All data was obtained using a Philips 3T Achieva scanner, all $^1$H anatomical scans were performed using the built-in body coil using a 3D GE scan. $^2$H data was obtained using in-house built coils details of which can be found in chapter \ref{chap:Theory:Coils}. 
 
 \subsection{Study One}
 \subsubsection{Quadrupolar Splitting}
 \label{Chap:Quad:1:Split}
 
-After the initial D$_2$O loading period was completed and the participants $^2$H enrichment had reached a steady state level. The left calves of two participants (A and B) were scanned using the in-house built $^2$H saddle coil. 3D chemical shift images were obtained with 10 mm isotropic voxels, NSA = 2, samples = 256, TE = 6.2 ms, TR = 500 ms, BW = 750 Hz, FOV = 120x120x60 mm$^3$, the CSI was originally obtained to look at the overall spread of $^2$H enrichment in skeletal muscle (see Chapter \ref{section:D2O}). However quadrupolar splitting was observed across the calf (most notably in the tibialis anterior muscle). This was used as motivation to investigate the effect of quadrupolar splitting in skeletal muscle.
+After the initial D$_2$O loading period was completed and the participants $^2$H enrichment had reached a steady state level. The left calves of two participants (A and B) were scanned using the in-house built $^2$H saddle coil. 3D chemical shift images were obtained with 10 mm isotropic voxels, NSA = 2, samples = 256, TE = 6.2 ms, TR = 500 ms, BW = 750 Hz, FOV = 120x120x60 mm$^3$, the CSI was originally obtained to look at the overall spread of $^2$H enrichment in skeletal muscle (see Chapter \ref{chap:D2O}). However quadrupolar splitting was observed across the calf (most notably in the tibialis anterior muscle). This was used as motivation to investigate the effect of quadrupolar splitting in skeletal muscle.
 
 The participants were therefore scanned again using the in-house built Helmholtz coil designed to scan the forearm. The left forearms of A and B were scanned as this allowed us to easily bend the arm in the coil at different angles with respect to the B$_0$ field of the magnet, which allows us to change $\theta$ in equation \ref{eqn:Quad:Angle}. A $^2$H 3D CSI with 10x10x15 mm$^3$ voxels, NSA = 2, 256 samples, TE = 6.4 ms, TR = 363 ms, BW = 750 Hz and FOV = 120x120x60 mm$^3$ is acquired for a range of different arm angles was acquired. During scanning, for each angle, participants were lay in a prone position with their left arm above their head. A 'straight' arm represented  0$^{\circ}$ angle respect to the B0 field, participant A was then scanned with angles of 0, 10, 20, 30 and 40$^{\circ}$ in one visit and 50, 60, 70, 80 and 90$^{\circ}$ in a second visit. Participant B was scanned with angles 0, 85, 30, 15, 45, 60, 75 and -10$^{\circ}$ in a single visit. 
 
 The 3D CSI spectra for the forearm was analysed using MATLAB and started with zero-order phase correction and masked based on the maximum value from the spectra of a specific voxel being larger than 20\% of the maximum value of all spectra. Each voxel within the mask was then fit to two complex Lorentzian curves with equal amplitudes, phases and linewidths where the frequency splitting between the two peaks is determined from fitting. The spectra is also fit to three complex Lorentzian curves where the two 'outer' peaks have equal equal amplitudes, phases and linewidths similar to before except now there is a third central peak with different amplitude, phase and linewidth to the other peaks the frequency splitting is now the frequency difference between the 'outer' two peaks only. The fitting is performed by minimising the sum of the squared difference between the proposed fit and the phase-corrected signal, this was done using in-built MATLAB function fmincon. The best fit is determined by comparing the final minimised value returned from fitting, whichever combination of Lorentzian curves gave the lowest value is kept and outputted for that voxel. The frequency splittings are then averaged over the masked region to give a single frequency splitting. This process was repeated for each angle, with the angle values being obtained from the angulation of the imaging/spectroscpy FOV. All the splitting's were then fit to equation \ref{eqn:Quad:Angle}, where the total RQC is determined. This was repeated for participants A and B.
 
 \subsubsection{Double Quantum Filtering}
+\label{Chap:Quad:1:DQF}
 
 Deuterium spectroscopy and chemical shift imaging (CSI) were performed on lower legs and forearms in four healthy human participants (A,B,C and D). $^2$H spectra were acquired from a 2 cm axial slice of the calf or forearm, by using hard pulses in combination with outer-volume saturation. DQF spectra were created by using the sequence in Figure \ref{fig:Quad:Coherence}, which produces an anti-phase spectrum whereby the quadrupolar doublet peaks acquire a relative phase of 180° (see Figure \ref{}). This relative phase means that the signal vanishes for any components if their splitting frequency is small. DQF spectra are phased to produce a symmetric line-shape (labelled as dispersion spectra in anti-phase in Figure \ref{}).  
 
@@ -114,17 +115,15 @@ $^2$H 3D CSI data were acquired with 10x10x10 mm$^3$ voxels, FOV = 120x120x50 mm
 
 In order to ensure that the forearm was always in the centre of the field, that a large enough range of angles were covered and that each participant was as comfortable as they could be. Each participant was removed from the scanner in between each angle, which is why commonly scanning ran over two days. The protocol for each angle included $^1$H scout scan and GE anatomical, two bulk spectra and finally a 3D CSI. For angles larger than 45$^\circ$ the data had to be acquired sagittally as oppose to transverse.
 
-Whilst the study is similar to what was done previously in chapter \ref{Chap:Quad:1:Split}, one of the major differences is in the analysis routine. % Angle Calculation
+Whilst the study is similar to what was done previously in chapter \ref{Chap:Quad:1:Split}, one of the major differences is in the analysis routine. As the arm is a large muscle it can be difficult to estimate the angle relative to the magnetic field. A paper compass is attached to the top of the coil which helps orient the arm in the scanner, but the actual angle came down to the imaging box. Now the angle of the arm is calculated by measuring the angle of the ulna bone using the Mango software, which was found to be quite different from the positioned angle.
 
 A zero-order phase correction was applied to all spectra, as well as de-noising through a Tucker decomposition\cite{Bader2007EfficientTensors} with a compression core matrix of [64,6,6,3] (spectral, followed by three spatial dimensions). A binarised mask with the same spatial resolution as the CSI is then constructed, following thresholding of 35\% of the maximum spectral signal (the mask was then filled using imfill). The OXSA-AMARES toolbox in Matlab was then used to fit three Lorentzian peaks to each masked voxel, centre peak with an outside doublet due to quadrupolar splitting (each peak in the doublet has the same linewidth and amplitude, all peaks are fit with the same phase). The initial estimate of the seperation of the doublet varied depending on the angle of the arm in the scanner. The separation of the doublet was converted from ppm to Hz and then the values, along with the arm angle, was fit to equation \ref{eqn:Quad:Angle}.
 
 \subsubsection{Double Quantum Filtering}
 
-%Re-Write
+DQF $^2$H spectra were acquired from a 2-cm axial slice of the lower leg or forearm, using hard pulses in combination with outer-volume saturation in three healthy human participants (A,B and E). Spectra were obtained via an anti-phase DQF sequence\cite{Sharf1995DetectionNMR-Spectroscopy} whereby the quadrupole-doublet peaks acquire a relative phase of 180$\circ$. DQF spectra were acquired for a range of values of the creation time, $1\leq\tau\leq36$ ms (larger range and more values compared to chapter \ref{Chap:Quad:1:DQF}), with TR = 1000 ms, TE = 0.58 ms, bandwidth = 3000 Hz, samples = 1024 and NSA = 56.
 
-DQF spectra were acquired for various values of the creation time, $\tau$, (see Figure \ref{fig:Quad:Coherence}) and TR/TE=1000/0.58 ms, sampling bandwidth 3000 Hz, 1024 samples. The number of averages varied, depending on available signal, between 28 and 128. FIDs were processed using Matlab scripts and spectra were fitted to a maximum of three independent Lorentzian line shapes.
-
-Deuterium CSI data were also acquired from a single 2 cm axial slice, again using outer-volume suppression. CSI data were acquired for the usual pulse-acquire sequence, and using the anti-phase DQF sequence with $\tau$=6.5 ms. The in-plane resolution was 10x10 mm2,  TR/TE=378/3.9 ms, 256 samples were acquired at a bandwidth of 750 Hz. For the DQF CSI, 16 averages were acquired, whereas only 4 were needed for the pulse-acquire CSI.
+$^2$H 2D CSI data were also acquired from a single 2-cm axial slice, using outer-volume suppression and using the anti-phase DQF sequence (DQF-CSI) with $\tau$ = 5 ms. Each voxel for the CSI was 10x10 mm$^2$, TR = 1000 ms, TE = 2 ms, samples = 256, bandwidth = 750 Hz, NSA = 8.
 
 % Talk about fitting and OXSA
 
@@ -132,12 +131,14 @@ Deuterium CSI data were also acquired from a single 2 cm axial slice, again usin
 
 \subsection{Quadrupolar Splitting}
 
+\begin{minipage}{\textwidth}
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Figures/Quad/Calf_A.png}
     \caption{Left: CSI spectra (red) overlayed onto a $^1$H GE image from participant A's left calf of a single slice, with fits of two Lorentzian peaks (green) and three Lorentzian peaks (blue). Right: Interpolated map of quadrupolar frequency splitting's overlayed onto the same $^1$H GE image from participant A's left calf. }
     \label{fig:D2O:Calf_A}
 \end{figure}
+\end{minipage}
 
 \begin{figure}
     \centering
@@ -159,6 +160,6 @@ Deuterium CSI data were also acquired from a single 2 cm axial slice, again usin
 
 \section{Conclusion}
 
-% \printbibliography % Comment out main doc
+\printbibliography % Comment out main doc
 
 \end{document}
