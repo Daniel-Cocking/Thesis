@@ -1,14 +1,28 @@
 \documentclass[12pt,english]{report}
-\usepackage[subpreambles=true]{standalone}
+\usepackage{standalone}
 \usepackage[a4paper, left=1.5in, right=1.5in, top=1.2in, bottom=1.2in,]{geometry}
 \geometry{twoside=true}
 \renewcommand{\baselinestretch}{1.5} 
-\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\renewcommand{\baselinestretch}{1.5} 
+\usepackage{wrapfig}
+\usepackage{subcaption}
 \usepackage{caption}
-\usepackage{mcode}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{blindtext}
 \usepackage{import}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage[super]{nth}
+\usepackage[printonlyused]{acronym}
 \usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package
 \addbibresource{refs.bib} %Import the bibliography file
+
+% Include only certain chapters for drafts 
+% \includeonly{Abbreviations, Chapters/ChapterLipid} 
 
 \begin{document} 
 
@@ -42,69 +56,67 @@
 \mbox{}
 \thispagestyle{empty}
 \pagenumbering{roman}
-%\vspace*{\fill}
+\vspace*{\fill}
 \begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
     \thispagestyle{plain}
     \setcounter{page}{1}
     \blindtext
 \end{abstract}
-%\vspace*{\fill}
+\vspace*{\fill}
 \newpage
-\mbox{}
 
-%\vspace*{\fill}
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
+    \addcontentsline{toc}{chapter}{Acknowledgements}
     \thispagestyle{plain}
-    \setcounter{page}{2}
+    \setcounter{page}{3}
     \blindtext
 \end{abstract}
-%\vspace*{\fill}
+\vspace*{\fill}
 \newpage
-\mbox{}
 
-\setcounter{page}{3}
-\tableofcontents
-
+%\setcounter{page}{3}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{1 pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{gray}\leaders\hrule height \headrulewidth\hfill}}
-\fancyhead[LO,RE]{\color{gray} Page \thepage}
-\fancyhead[RO,LE]{\color{gray} CONTENTS}
-
+\fancyhead[RO,LE]{\color{gray} Page \thepage}
+\fancyhead[LO,RE]{\color{gray} CONTENTS}
+\tableofcontents
 \newpage
-\mbox{}
 
-\chapter{Introduction}
+\fancyhead[LO,RE]{\color{gray} ABBREVIATIONS}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\include{Abbreviations}
+
+\fancyhead[LO]{\color{gray} \nouppercase{\rightmark}}
+\fancyhead[RE]{\color{gray} \nouppercase{\leftmark}}
+\fancyfoot[RO,LE]{\color{gray} Daniel Cocking}
+\fancyfoot[RE,LO]{\color{gray} University of Nottingham}
+
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\fancyhead[RO]{\color{gray} \nouppercase{\rightmark}}
-\fancyhead[LE]{\color{gray} \nouppercase{\leftmark}}
-\fancyfoot[LO,RE]{\color{gray} Daniel Cocking}
-\fancyfoot[LE,RO]{\color{gray} University of Nottingham}
+\include{Chapters/Introduction}
+\newpage
 
-\import{Sections/}{Introduction}
+\include{Chapters/Theory}
+\newpage
 
-\chapter{Theory}
-\import{Sections/}{Theory}
+\include{Chapters/ChapterD2O}
+\newpage
 
-\chapter{Scanning post Heavy Water Loading}
-\import{Sections/}{ChapterD2O}
+\include{Chapters/ChapterGlu}
+\newpage
 
-\chapter{Comparing D$_2$-glucose and D$_7$-glucose in DMI}
-\import{Sections/}{ChapterGlu}
+\include{Chapters/ChapterLipid}
+\newpage
 
-\chapter{Lipid Turnover using Heavy Water}
-\import{Sections/}{ChapterLipid}
+\include{Chapters/ChapterQuad}
+\newpage
 
-\chapter{Quadrupolar Effects using Heavy Water}
-\import{Sections/}{ChapterQuad}
-
-\chapter{Conclusion}
-\import{Sections/}{Conclusion}
-
+\include{Chapters/Conclusion}
 \newpage
 
 \addcontentsline{toc}{chapter}{Bibliography}
