@@ -22,7 +22,7 @@
 \addbibresource{refs.bib} %Import the bibliography file
 
 % Include only certain chapters for drafts 
-% \includeonly{Abbreviations, Chapters/ChapterLipid} 
+%\includeonly{Abbreviations, Chapters/Conclusion} 
 
 \begin{document} 
 
@@ -52,31 +52,53 @@
  
    \end{center}
 \end{titlepage}
-
-\mbox{}
 \thispagestyle{empty}
 \pagenumbering{roman}
 \vspace*{\fill}
-\begin{abstract}
+
+\newpage
+\thispagestyle{plain}
 \addcontentsline{toc}{chapter}{Abstract}
-    \thispagestyle{plain}
-    \setcounter{page}{1}
-    \blindtext
-\end{abstract}
-\vspace*{\fill}
-\newpage
+\setcounter{page}{1}
+\begin{center}
+    \textbf{Abstract}
+\end{center}
+Deuterium ($^2$H) as a tracer combined with Magnetic Resonance (MR) Imaging/Spectroscopy offers the potential to replace ionising diagnostic techniques such as \ac{PET} imaging. Proton ($^1$H) MR scanning is already commonly used in the clinic and in research, however $^2$H comes with associated challenges such as a decreased \ac{SNR}. However, thanks to reduced relaxation times, much of the available MR signal can be recovered to allow for reasonable scan times. In this thesis these techniques are implemented in healthy human participants \textit{in vivo} on both 3T and 7T MR scanners to investigate metabolism and key inherent MR parameters of $^2$H.
 
-\renewcommand{\abstractname}{Acknowledgements}
-\begin{abstract}
-    \addcontentsline{toc}{chapter}{Acknowledgements}
-    \thispagestyle{plain}
-    \setcounter{page}{3}
-    \blindtext
-\end{abstract}
-\vspace*{\fill}
-\newpage
+Participants were given a \ac{D$_2$O} solution to ingest means that the \ac{SNR} of \textit{in vivo} $^2$H signals are increased. \ac{MEGE} images at a range of \ac{TR} values are used to obtain relaxation times (T$_1$ and T$_2^*$) in \ac{CSF}, \ac{GM} and \ac{WM} at 7T. The $^2$H signal time-course was also measured following initial loading and compared to body water estimates.
 
-%\setcounter{page}{3}
+Glucose with two/seven attached $^2$H atoms (D$_2$/D$_7$-glucose respectively) was ingested by healthy human participants. The change in \textit{in vivo} downstream $^2$H metabolite maps \ac{HDO}, Glx and lactate along with glucose was tracked in different brain regions with/without visual stimulation using \ac{MRSI} at 7T. An increased \ac{SNR} was noted for all metabolites following D$_7$-glucose ingestion.
+
+The \ac{D$_2$O} was then given to participants again to increase $^2$H \ac{SNR}, this time to investigate lipid metabolism and the quadrupolar behaviour of $^2$H \textit{in vivo} using clinical 3T scanners. An increase in $^2$H lipid signal was detected in participants following \ac{D$_2$O} ingestion. Quadrupolar separation was quantified in skeletal muscle at different angles respective to the $B_0$ field, along with the isolated \ac{DQF} signal.
+\vspace*{\fill}
+
+\newpage
+\vspace*{\fill}
+
+\newpage
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\begin{center}
+    \textbf{Acknowledgements}
+\end{center}
+First I would like to thank my supervisor Prof. Richard Bowtell for his support and his direction throughout my PhD which has allowed me to become the researcher I am today. Learning under such a well respected mentor that is motivated, hardworking and incredibly intelligent was an honour I am very grateful for. 
+
+I would also like to thank Dr. Robin Damion, Prof. Dorothee Auer, Dr. Matthew Clemence and Dr. Andrew Peters for their help in making a difficult project run smoothly. Without them this project would not have been half as successful or as enjoyable as it has been to work on. And to the Beacon Precision Imaging for funding the work here and my PhD.
+
+Next I would like to thank the whole of the SPMIC for creating such a welcoming and enjoyable working environment, that have showed if you work hard you can play hard. I would like to namely thank Abi Spicer, Caitlin Connolly, Natalie Rhodes, Sebastian Coleman and Dr. Alex Daniel for their friendship and pushing me to be the best physicist I can be, and forcing me to take the time to enjoy and experience life during a PhD.
+
+There is no way I could have done this without the lifelong support of my family (Rita, Graham, Rob, Gareth, John, Evie, Kiera) for always being proud of me and supporting me, making a long drive seem only down the road is not an easy task and couldn't have done it without you all. I would like to make a special thank you to my Mum Tina, you have always pushed me to put everything into whatever I am doing and to always 'back yourself' which is what has made this Thesis possible so I am lucky to call you Mum.
+
+To my closest friends (Alfie, Flint, Josh, Liam, Matt, Sarah, Elle and Rachel) to be able to say that we have been this close for so long is one hell of an undertaking, you have been there for me through it all and without you I do not see how any of this would have been possible. 
+
+Yvonne, you introduced me to the world of mathematics which kickstarted this whole journey, and for that I will always be hugely grateful.
+
+Lucy, my fianc\'ee, when I look at you I can see an incredible future together and that has always been a driving motivator throughout my PhD. You have encouraged me to be the best version of myself, whether that's pushing me though long hours or taking well earned rests you have been in my corner at every second of this PhD. This thesis is not only my achievement but is a testament to you.
+
+Finally, I could dedicate this work to anyone mentioned above but I would like to dedicate it to Margaret Cocking, my grandma. Though you never got to see me off into higher education I want this Thesis to be my message to you on how much I have achieved, and to say how much I love and miss you
+\vspace*{\fill}
+
+\newpage
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{1 pt}
@@ -84,8 +106,8 @@
 \fancyhead[RO,LE]{\color{gray} Page \thepage}
 \fancyhead[LO,RE]{\color{gray} CONTENTS}
 \tableofcontents
-\newpage
 
+\newpage
 \fancyhead[LO,RE]{\color{gray} ABBREVIATIONS}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 \include{Abbreviations}
@@ -97,28 +119,27 @@
 
 \setcounter{page}{1}
 \pagenumbering{arabic}
-
 \include{Chapters/Introduction}
-\newpage
 
+\newpage
 \include{Chapters/Theory}
-\newpage
 
+\newpage
 \include{Chapters/ChapterD2O}
-\newpage
 
+\newpage
 \include{Chapters/ChapterGlu}
-\newpage
 
+\newpage
 \include{Chapters/ChapterLipid}
-\newpage
 
+\newpage
 \include{Chapters/ChapterQuad}
-\newpage
 
+\newpage
 \include{Chapters/Conclusion}
-\newpage
 
+\newpage
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 
