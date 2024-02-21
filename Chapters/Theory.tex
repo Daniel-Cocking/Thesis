@@ -2,28 +2,49 @@
 \label{Chap:Theory}
 
 \section{How \ac{NMR} Works}
-\subsection{The Quantum Behaviours}
+\subsection{Quantum Behaviour}
 
-All subatomic particles have a quantum 'spin' and its important to note that whilst the 'rotation' does not scale to the macroscopic world, a strong analogy can be made to the macroscopic spin to explain the physics behind their behaviour in the quantum world. This spin induces an angular momentum defined by the operator J, which is made up of orbital angular momentum ($L = r\, \textrm{x} \, p$, $r$ is position $p$ is momentum) as well as spin angular momentum ($S$ for total spin and $m_s$ for z-component). From Coulombs law \cite{Coulomb1785PremierMagnetisme} the spin of charges in an atomic nucleus will produce an alternating electric field, and from Faraday's law \cite{Faraday1821OnMagnetism} it is known that an alternating magnetic field will also be produced from this. The atomic nucleus can therefore be represented to a magnetic dipole (which is analogous to an electric dipole) which means it will possess a magnetic moment which will tell us how easily the nucleus wants to align with external magnetic fields. The magnetic moment ($\mu$) of a nucleus is dependent on the spin of a nucleus as shown in equation \ref{eqn:theory:moment}.
+Many subatomic particles have a quantum `spin' and its important to note that whilst the `rotation' does not scale to the macroscopic world, a strong analogy can be made to macroscopic spin to explain the physics behind their behaviour in the quantum world. This spin is linked to an angular momentum defined by the operator J, which is made up of orbital angular momentum ($\mathbf{L} = \mathbf{r}\, \textrm{x} \, \mathbf{p}$, $\mathbf{r}$ is position $\mathbf{p}$ is momentum) as well as spin angular momentum ($\mathbf{S}$ for total spin and $m_s$ for z-component). The spin of sub-atomic particles is associated with a magnetic moment. The atomic nucleus can therefore be represented to a magnetic dipole (which is analogous to an electric dipole) which tend to align with external magnetic fields. The magnetic moment ($\mathbf{\mu}$) of a nucleus is dependent on its spin as shown in equation \ref{eqn:theory:moment}.
 
 \begin{equation}
-    \mu = \frac{g_sq}{2m} \mathbf{S}
+    \mathbf{\mu} = \frac{g_sq}{2m} \mathbf{S}
     \label{eqn:theory:moment}
 \end{equation}
 
+Here, $\mathbf{S}$ is the spin angular momentum, $q$ is the charge, $g_s$ is dimensionless and is known as the spin g-factor and $m$ is the mass. The constant of proportionality linking the magnetic moment to the spin is known as the gyromagnetic ratio ($\gamma$) and is a constant for each nucleus. 
+
 \begin{equation}
-    \gamma = \frac{q}{2m}
+    \gamma = \frac{g_sq}{2m}
     \label{eqn:theory:gyro}
 \end{equation}
 
-Here, $q$ is the charge, $g_s$ is dimensionless and is known as the spin g-factor and $m$ is the mass. The strength of the coupling between the magnetic moment is known as the gyromagnetic ratio ($\gamma$) and is a constant for each nucleus. When the nucleus is placed in an external static magnetic field ($B_0$) it will possess an energy according to equation \ref{eqn:theory:ESpin} which is also dependent on $\mu$.
+When a nucleus is exposed to an external static magnetic field ($\mathbf{B}$) it will possess an energy according to equation \ref{eqn:theory:ESpin} which is also dependent on $\mu$.
+
+\begin{equation}
+    E = \mathbf{\mu} \cdot \mathbf{B}
+\end{equation}
+
+In 1922 an experiment was undertaken \cite{Gerlach1922DerMagnetfeld} which showed that spin only takes specific discrete values ($s =$ 0, 1/2, 1, 3/2 ...), which gives eigenvalues for the angular momentum operator $\mathbf{S}$ as $\hbar m_s$. Where $m_s$ can take values of $-s$ to $+s$ in integer steps. Which means the magnetic moment and therefore the energy will also take specific discrete energy levels.
 
 \begin{equation}
     E = -m_s\hbar \gamma B_0
     \label{eqn:theory:ESpin}
 \end{equation}
 
-In 1922 an experiment was undertaken \cite{Gerlach1922DerMagnetfeld} which showed that spin only takes specific discrete values (0, 1/2, 1, 3/2 ...), which gives eigenvalues for the $\mathbf{S}$ operator as $\hbar m_s$. Which means the magnetic moment and therefore the energy will also take specific discrete energy levels, which can be seen in Figure \ref{fig:theory:zeeman}.
+This is evident in Figure \ref{fig:theory:zeeman}. The energy of an electromagnetic photon is directly 
+proportional to its frequency ($f$), with a constant of proportionality equal to Planck's constant $h$, this is known as the Planck relation. Therefore, an absorbed photon will need a minimum energy equal to the separation between these quantified energy states, this relationship is shown in equation \ref{eqn:theory:ELamor}.
+
+\begin{equation}
+    \Delta E = hf = \frac{h}{2\pi}\gamma B_0
+    \label{eqn:theory:ELamor}
+\end{equation}  
+
+The nucleus' frequency of precession here is therefore directly proportional to the magnitude of the applied external magnetic field ($B_0$), with $\gamma$ being the constant of proportionality meaning this frequency is also specific to each nucleus. This frequency is called the Larmor frequency \cite{Larmor1897LXIII.Ions} and is often represented as an angular frequency ($\omega$). Which therefore shows that for a nucleus with spin the energy, frequency and applied magnetic field share a quantum relationship. 
+
+\begin{equation}
+    \omega = \gamma B_0
+    \label{eqn:theory:Lamor}
+\end{equation}
 
 \begin{figure}[h]
     \centering
@@ -32,25 +53,11 @@ In 1922 an experiment was undertaken \cite{Gerlach1922DerMagnetfeld} which showe
     \label{fig:theory:zeeman}
 \end{figure}
 
-Now a picture has been made that links the energy in a static magnetic field of a nucleus to its spin, it turns out that the frequency of the spin is specific to each nuclei. This angular frequency is known as the Larmor frequency \cite{Larmor1897LXIII.Ions} ($\omega$) and relates the ($\gamma$) to the static magnetic field.
+This gives a good overview of how individual spins act and behave in magnetic fields, however our bodies contain a collection of spins of different nuclei. Therefore, it is important to apply these relationships to a collection of spins which will give an overview of macroscopic behaviours that make up the theory of \ac{NMR}.
 
-\begin{equation}
-    \omega = \gamma B_0
-    \label{eqn:theory:Lamor}
-\end{equation}
+\subsection{Macroscopic Behaviour}
 
-Since there is a relationship between the energy and the static magnetic field along with a relationship between the static magnetic field and the Larmor frequency a relationship can be drawn between the energy and the Larmor frequency. It turns out that the energy is directly proportional to the Larmor frequency with Planck's constant ($h$) being the constant of proportionality, this is shown empirically in equation \ref{eqn:theory:ELamor}.
-
-\begin{equation}
-    E = hf
-    \label{eqn:theory:ELamor}
-\end{equation}
-
-This gives a good overview of how individual spins act and behave in magnetic fields, however our bodies are made up of collection of spins of different nuclei. Therefore, it is vitally important to apply these relationships to a collection of spins which will give an overview of macroscopic behaviours that make up the theory of \ac{NMR}.
-
-\subsection{The Macroscopic Behaviour}
-
-The nuclei of interests for \ac{NMR} are in the liquid state which means the motion of the spin is largely random and due to Brownian motion, thermal energy then becomes the dominant driving force and therefore quantum effects become negligible. When particles have a large enough temperature ($T$) and there's enough particles, the distribution over multiple energy levels can be described according to the Boltzmann distribution \cite{Boltzmann1872WeitereGasmolekulen}. Equation \ref{eqn:theory:boltz} empirically states the probability $p$ of a single particle being in a specific state.
+The molecules of interest for \ac{MRI} are in the liquid state which means the motion of the spin is largely random and due to Brownian motion, thermal energy then becomes the dominant driving force and therefore quantum effects become negligible. When particles have a large enough temperature ($T$) and there are enough particles, the distribution over multiple energy levels can be described according to the Boltzmann distribution \cite{Boltzmann1872WeitereGasmolekulen}. Equation \ref{eqn:theory:boltz} empirically states the probability $p$ of a single particle being in a specific state.
 
 \begin{equation}
     p_i = \frac{\exp\left(\frac{E_i}{k_BT}\right)}{\displaystyle \sum_{j = 1}^{M}\exp\left(\frac{E_j}{k_BT}\right)}
