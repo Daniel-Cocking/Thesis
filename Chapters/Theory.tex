@@ -57,35 +57,37 @@ This gives a good overview of how individual spins act and behave in magnetic fi
 
 \subsection{Macroscopic Behaviour}
 
-The molecules of interest for \ac{MRI} are in the liquid state which means the motion of the spin is largely random and due to Brownian motion, thermal energy then becomes the dominant driving force and therefore quantum effects become negligible. When particles have a large enough temperature ($T$) and there are enough particles, the distribution over multiple energy levels can be described according to the Boltzmann distribution \cite{Boltzmann1872WeitereGasmolekulen}. Equation \ref{eqn:theory:boltz} empirically states the probability $p$ of a single particle being in a specific state.
+The molecules of interest for \ac{MRI} are in the liquid state which means the motion of the spin is largely random and due to Brownian motion, thermal energy then becomes the dominant driving force and therefore quantum effects become negligible. When particles have a large enough temperature ($T$) and there are enough particles, the distribution over multiple energy levels can be described according to the Boltzmann distribution \cite{Boltzmann1872WeitereGasmolekulen}. Equation \ref{eqn:theory:boltz} states the probability $p$ of a single particle being in a specific state.
 
 \begin{equation}
-    p_i = \frac{\exp\left(\frac{E_i}{k_BT}\right)}{\displaystyle \sum_{j = 1}^{M}\exp\left(\frac{E_j}{k_BT}\right)}
+    p_i = \frac{\exp\left(\frac{-E_i}{k_BT}\right)}{\displaystyle \sum_{j = 1}^{M}\exp\left(\frac{-E_j}{k_BT}\right)}
     \label{eqn:theory:boltz}
 \end{equation}
 
-Where $i$ indicates the specific energy levels and $M$ is the total number of available states for a specific nuclei. The overall magnetic field that results from a large group of spins can be described by a vector called magnetisation ($M$). Most of the spins contributions will cancel so the only contribution to the magnetisation vector arises from the difference in the number of energy levels. A generalised summation that calculates the equilibrium magnetisation is shown in equation \ref{eqn:theory:mag}.
+\noindent where $i$ indicates the specific energy level and $M$ is the total number of available states for a specific nucleus. The overall magnetic field that results from a large group of spins can be described by a vector called the magnetisation ($M$). Most of the spins contributions will cancel so the only contribution to the magnetisation vector arises from the difference in the populations of the different energy levels. A generalised summation that calculates the equilibrium magnetisation is shown in equation \ref{eqn:theory:mag}.
 
 \begin{equation}
     M = N\sum_{j = 1}^{M}p_j\mu_j
     \label{eqn:theory:mag}
 \end{equation}
 
-Where $N$ is the number of spins of interest. A more simplified version of equation \ref{eqn:theory:mag} that is still general to all spins is empirically shown in equation \ref{eqn:theory:mag_s}.
+\noindent where $N$ is the number of spins of interest. 
+
+A major assumption that is made to get to this point which is that the thermal energy at room temperature is much larger than the nuclear magnetic energies ($\gamma \hbar B_0\ll k_BT$). A more simplified version of equation \ref{eqn:theory:mag} that is still general to all spins is empirically shown in equation \ref{eqn:theory:mag_s}.
 
 \begin{equation}
     M = \frac{s(s+1)\gamma^2 \hbar^2 N B_0}{3k_BT}
     \label{eqn:theory:mag_s}
 \end{equation}
 
-A major assumption that is made to get to this point which is that the thermal energy at room temperature is much larger than the nuclear magnetic energies. Most fundamental particles and most nuclei that are of interest for \ac{NMR} are spin-1/2, which give two distinct energy levels. So in order to simplify the magnetisation calculations only the spin-1/2 nuclei are considered. Equation \ref{eqn:theory:mag_1H} calculates the magnetisation for spin-1/2 nuclei.
+\noindent Most nuclei that are of interest for \ac{NMR} have a spin-1/2, which give two distinct energy levels. So in order to simplify the magnetisation calculations only the spin-1/2 nuclei are considered. Equation \ref{eqn:theory:mag_1H} calculates the equilibrium magnetisation for spin-1/2 nuclei, equation \ref{eqn:theory:mag_2H} calculates the equilibrium magnetisation for spin-1 nuclei such as $^2$H.
 
 \begin{equation}
-    M = \frac{\gamma^2 \hbar^2 N B_0}{4k_BT}
+    M_0 = \frac{\gamma^2 \hbar^2 N B_0}{4k_BT}
     \label{eqn:theory:mag_1H}
 \end{equation}
 
-Magnetisation is largely responsible for the signal produced in \ac{NMR} experiments, which is proportional to the total number of spins inversely proportional to temperature (measured in kelvin). The temperature will mostly remain constant for experiments performed in humans \textit{in vivo} at room temperature (except for hyperpolarisation). Also, $M$ is proportional to the magnitude of any applied external magnetic field applied ($B_0$) this is because the fields applied in \ac{NMR}/\ac{MRI} are on the scale of Tesla's or 10's of Tesla (T) whilst earth's magnetic field is on the scale of 5x10$^{-5}$T, therefore magnetisation due to earth's field is often considered zero. Therefore, all the magnetic moments will be pointing in random directions which is why they cancel. When $B_0$ is applied the orientation of the spins still remains random and Brownian, however a bias will be present which generates the overall magnetisation of the collection of spins. This alone is not enough for \ac{NMR}/\ac{MRI} to develop on the scale as it has, in order to receive vital \textit{in vivo} information of the human body it is important to manipulate magnetisation \cite{Haacke2014MagneticDesign}. 
+The equilibrium magnetisation is responsible for the signal produced in \ac{NMR} experiments. It is proportional to the total number of spins and inversely proportional to temperature (measured in kelvin). The temperature will mostly remain constant for experiments performed in humans \textit{in vivo}. Also, $M$ is proportional to the magnitude of any applied external magnetic field applied ($B_0$). The presence of equilibrium magnetisation alone is not enough for \ac{NMR}/\ac{MRI} to receive vital \textit{in vivo} information about the human body it is important to manipulate the magnetisation \cite{Haacke2014MagneticDesign}. 
 
 \subsection{Manipulating Magnetisation}
 
@@ -96,32 +98,37 @@ Magnetisation is largely responsible for the signal produced in \ac{NMR} experim
     \label{fig:theory:moment}
 \end{figure}
 
-The overall direction of the magnetisation vector is the in the same direction as the applied field. Magnetisation is made up of two main components, the longitudinal and the transverse. The longitudinal is the component that is parallel to the applied field, with the transverse being a combination of the two other orthogonal directions. Often the applied field, and analogously the magnetisation, is given as $\mathbf{B}=B_0\mathbf{z}$ and therefore the longitudinal component is the z-direction, which makes the transverse component a combination of the x and y component. This means that the transverse magnetisation (M$_{xy}$) during the applied field is zero. After a large enough period of time of an applied field the magnetisation  will reach the value outlined in equation \ref{eqn:theory:mag_1H} (M$_0$). The total evolution of the magnetisation including the longitudinal and transverse components is referred to as the Bloch equation \cite{Bloch1946NuclearInduction}.
+The direction of the equilibrium magnetisation vector is the same as the applied field. In general magnetisation is made up of two main components, the longitudinal and the transverse. The longitudinal component is parallel to the applied field, with the transverse component being a combination of the two other orthogonal directions. Often the applied field, and analogously the magnetisation, is defined as $\mathbf{B}=B_0\mathbf{z}$ and therefore the longitudinal component is in the z-direction, which makes the transverse component a combination of the x and y components. The transverse magnetisation (M$_{xy}$) is zero at equilibrium. After a large enough period of time in an applied field the longitudinal magnetisation will reach the value outlined in equation \ref{eqn:theory:mag_1H} (M$_0$), whilst the transverse component will remain at zero. The evolution of the longitudinal and transverse components of the magnetisation is described by the Bloch equation \cite{Bloch1946NuclearInduction}.
 
 \begin{equation}
     \frac{d\mathbf{M}}{dt} = \, \gamma\mathbf{M}\textrm{x}\mathbf{B} \, + \, \frac{M_0-M_z}{T_1}\mathbf{z} \, - \, \frac{\mathbf{M_{xy}}}{T_2}
     \label{eqn:theory:Bloch}
 \end{equation}
 
-The first term in equation \ref{eqn:theory:Bloch} describes the change in magnetisation according to the Larmor frequency. The second term describes how the longitudinal magnetisation reaches steady state value during a static applied field in the z-direction (parallel to the field), where T$_1$ is the longitudinal or spin-lattice relaxation time constant and results from the spins interaction to its surrounding lattice. The final term shows how the transverse magnetisation returns back to zero if an applied field is applied in the transverse plane, where T$_2$ is the transverse or spin-spin relaxation time constant and arises from dephasing due to each spins interaction to its neighbouring spins. 
+The first term in equation \ref{eqn:theory:Bloch} describes the evolution of the magnetisation in the presence of a magnetic field $\mathbf{B}$. The second term describes the evolution of the longitudinal magnetisation due to longitudinal relaxation, where T$_1$ is the longitudinal or spin-lattice relaxation time constant. This relaxation, results from spins interactions with the surrounding `lattice'. The final term describes how the transverse magnetisation evolves over time, where T$_2$ is the transverse or spin-spin relaxation time constant. It arises from dephasing due to each spin's interaction with neighbouring spins. 
 
-The transverse relaxation time is outlined here in the perfect case where the field applied is perfectly homogenous, however in reality this is rarely the case. This alters the time constant such that it is now T$_2^*$.
+The transverse relaxation time described here relates to the case where the field applied is perfectly homogenous. However in reality this is rarely the case. In the presence of field inhomogeneity spins dephase more rapidly and the relevant relaxation is T$_2^*$.
 
 \begin{equation}
     \frac{1}{T_2^*} = \frac{1}{T_2} + \frac{1}{T_2^{'}}
     \label{eqn:theory:trans}
 \end{equation}
 
-Where T$_2^{'}$ is dependent only on the homogeneity of the field, this means that technically T$_2^*$ can change between scans and scanners ect. Realistically T$_2^*$ does not vary much between cases. The relaxation times T$_1$ and T$_2^*$ are specific for each nuclei, tissue type and field strength. In spectroscopy the \ac{FWHM} of each signal/peak is related to the total transverse relaxation (\ac{FWHM}$ = 1 / \pi T_2^*$). The Bloch equation can then be separated for each component ($x,y,z$) and made specific for each experiment, for example there is the static field case substituting $\mathbf{B}=B_0\mathbf{z}$, or it is possible to flip the magnetisation into the transverse plane using $\mathbf{B}=B_0\mathbf{z}+B_1\mathbf{x}$. 
+Here T$_2^{'}$ is dependent only on the homogeneity of the field. This means that T$_2^*$ can change between scans and scanners ect. Realistically T$_2^*$ does not vary much between cases. The relaxation times T$_1$ and T$_2^*$ are specific for each nuclei, tissue type and field strength. In spectroscopy the \ac{FWHM} of each signal/peak is related to the total transverse relaxation (\ac{FWHM}$ = 1 / \pi T_2^*$). 
+
+%The Bloch equation can then be separated for each component ($x,y,z$) and made specific for each experiment, for example there is the static field case substituting $\mathbf{B}=B_0\mathbf{z}$, or it is possible to flip the magnetisation into the transverse plane using $\mathbf{B}=B_0\mathbf{z}+B_1\mathbf{x}$. 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Theory/Magnetisation.png}
-    \caption{\textit{Diagram visually showing the effect of applied external magnetic fields on magnetic moment vectors and magnetisation.(a) Shows the precession of a collection of magnetic moment vectors after a static magnetic field (B$_0$) is applied the z-direction, and just before a 90$^\circ$ degree pulse (B$_1$) is applied in and B$_0$ is removed. (b) Here the magnetic moments have been tipped to all align in the positive y-direction following an applied B$_1$ pulse. (c) Now the pulse has been removed and the spins begin to dephase according to transverse relaxations with the time constant T$_2^*$. With the spins 'fanning' out in the x-y plane until no overall transverse magnetisation is left and the spins return to random orientations. (d-f) Follow show the spins experiencing the same B$_0$ and B$_1$ as in (a-c) except now only the overall Magnetisation vector is shown in the rotating reference frame. It is important to note the spins do not experience longitudinal relaxation as B$_0$ has already been turned off and is 0 in the x-y plane, if B$_0$ was still applied spins would return to the orientations in (a,d), therefore the diagram only demonstrates transverse relaxation.}}
+    \caption{\textit{Diagram visually showing the effect of applied external magnetic fields on magnetic moment vectors and magnetisation.(a) Shows the precession of a collection of magnetic moment vectors after a static magnetic field (B$_0$) is applied the z-direction, and just before a 90$^\circ$ degree pulse (B$_1$) is applied. (b) Here the magnetic moments have been tipped to all align in the positive y-direction following an applied 90$^\circ$ \ac{RF} with $B_1$ along $x$ in the rotating frame. (c) After the \ac{RF} pulse the spins begin to dephase , with the spins `fanning' out in the x-y plane until no overall transverse magnetisation is left. (d-f) Show the spins experiencing the same B$_0$ and B$_1$ as in (a-c) except now only the overall magnetisation vector is shown in the rotating reference frame.}}
     \label{fig:theory:Mag}
 \end{figure}
 
-The precession of magnetisation can be difficult to conceptualise/visualise in a stationary reference frame due to the complex 3D motion. Therefore it is beneficial to consider the system in a rotational reference frame ie. as if the observer rotates around the z-axis. The common reference frame used is one that rotates at the same frequency as the applied B$_1$ frequency ($\gamma B_1$) around the z-axis. This gives the following separated Bloch equations for the variation of magnetization in each orthogonal axis ($x',y',z$) in the reference frame, for a left-circularly polarised \ac{RF} field B$_1$ which is parallel to $x'$ in the rotating frame.
+
+The \ac{NMR} signal arises from the longitudinal magnetisation, however this is very small and can be dominated by magnetisation from electron currents within atoms and molecules. Therefore the magnetisation is often tipped into the transverse plane where it is in the same plane as the precession and will therefore induce current in a receiver coil, at the Larmor frequency. This is achieved by applying a short alternating magnetic field $\mathbf{B} = B_1\hat{x}\cos (\omega t)$, this is often referred to as an \ac{RF} pulse since the frequency is in the \ac{RF} range.
+
+The precession of magnetisation can be difficult to conceptualise/visualise in a stationary reference frame due to the complex 3D motion. Therefore it is beneficial to consider the system in a rotating frame of reference ie. as if the observer rotates around the z-axis. The common reference frame used is one that rotates at the frequency of the applied \ac{RF} around the z-axis, this is because the \ac{RF} pulse is made up of 2 counter-rotating components one of which will appear as stationary in the rotating reference frame. This gives the following separated Bloch equations for the evolution of magnetization ($x',y',z$) in the rotating reference frame, for a left-circularly polarised \ac{RF} field B$_1$ which is assumed to be parallel to $x'$ in the rotating frame.
 
 \begin{equation}
     \frac{dM_{x'}}{dt} = \Delta\omega M_y^{'} - \frac{M_x^{'}}{T_2}
@@ -136,30 +143,32 @@ The precession of magnetisation can be difficult to conceptualise/visualise in a
     \label{eqn:theory:Blochz}
 \end{equation}
 
-Here, $\Delta\omega$ is the difference between the Larmor frequency ($\omega_0$) and the frequency of the rotating reference frame ($\omega$), and represents any off resonance effects. Therefore, if the reference frame rotates at the Larmor frequency these terms disappear. If only the static field case wants to be considered the $\omega_1$ terms disappear as well which leaves only the relaxation dominant terms. If short-lived pulses are considered where $\omega_1$ is much larger than 1/T$_1$ and 1/$T_2$ the solutions to equations \ref{eqn:theory:Blochx} - \ref{eqn:theory:Blochz} are given as follows.
+Here, $\Delta\omega$ is the difference between the Larmor frequency ($\omega_0$) and the frequency of the rotating reference frame ($\omega$), and represents any off resonance effects and $\omega_1=\gamma B_1$. Therefore, if the \ac{RF} is applied at the Larmor frequency, these terms disappear. If only the static field case is being considered, the $\omega_1$ terms disappear as well, which leaves only the relaxation dominant terms. If short-lived \ac{RF} pulses are considered the solutions to equations \ref{eqn:theory:Blochx} - \ref{eqn:theory:Blochz} describing the evolution of magnetisation of that are after the pulse are shown in equations \ref{eqn:theory:xprime} - \ref{eqn:theory:zprime}.
 
 \begin{equation}
     M_{x'}(t) = \exp(-t/T_2) \left( M_{x'}(0)\cos\Delta\omega t \, + \, M_{y'}(0)\sin\Delta\omega t \right)
+    \label{eqn:theory:xprime}
 \end{equation}
 \begin{equation}
-    M_{y'}(t) = \exp(-t/T_2) \left( M_{y'}(0)\cos\Delta\omega t \, + \, M_{x'}(0)\sin\Delta\omega t \right)
+    M_{y'}(t) = \exp(-t/T_2) \left( M_{y'}(0)\cos\Delta\omega t \, - \, M_{x'}(0)\sin\Delta\omega t \right)
 \end{equation}
 \begin{equation}
     M_z(t) = M_z(0)\exp(-t/T_1) \, + \, M_0 \left( 1-\exp(-t/T_1) \right)
+    \label{eqn:theory:zprime}
 \end{equation}
 
-The \ac{NMR} signal arises from the longitudinal magnetisation, however this is very small and can be dominated by magnetisation from electron currents within atoms and molecules. Therefore the magnetisation is often tipped into the transverse plane where it is in the same plane as the precession and will therefore induce current in a receiver coil, at the Larmor frequency. In between short applied fields (\ac{RF} pulses) it is therefore important to wait a large enough period of time for the transverse signal to relax back into its longitudinal state before repeating the process to acquire more data. Therefore, whilst the longitudinal magnetisation is important for overall signal it is important to accurately and reliably tip the magnetisation exactly at 90$^\circ$, as deviations in this 'flip-angle' ($\theta$) could reduce the available signal \cite{deGraaf2019InSpectroscopy}.
+RF pulses are used to rotate the longitudinal magnetisation into the transverse plane. In between short applied fields (\ac{RF} pulses) it is therefore important to wait a large enough period of time for the transverse signal to relax back into its longitudinal state before repeating the process to acquire more data. Therefore, whilst the longitudinal magnetisation is important for overall signal it is important to accurately and reliably tip the magnetisation exactly at 90$^\circ$, as deviations in this 'flip-angle' ($\theta$) could reduce the available signal \cite{deGraaf2019InSpectroscopy}.
 
 \subsection{Flip Angles, Phase and Signal}
 
-The flip angle ($\theta$) generated from a short, finite \ac{RF} pulse applied (excitation) is dependent on the B$_1$ magnetic field and the duration that the pulse is turned on for ($\tau$) according \ref{eqn:theory:FA}.
+The flip angle ($\theta$) generated from a short, finite \ac{RF} pulse applied (excitation) is dependent on the B$_1$ magnetic field and the pulse duration ($\tau$) according \ref{eqn:theory:FA}.
 
 \begin{equation}
     \Delta\theta = \gamma B_1 \tau
     \label{eqn:theory:FA}
 \end{equation}
 
-Where $\theta$ is the angle after excitation to the longitudinal z-axis, also known as the flip-angle. The closer this is to 90$^\circ$ the larger the contribution of longitudinal signal is transferred into the transverse plane. The precessing transverse signal is said to be a complex signal such that $f(t) = R(t) + I(t)$, this is known as a \ac{FID} and is the signal induced in the receiver coil.
+Where $\theta$ is the angle the magnetisation is rotated through after excitation, also known as the flip-angle.if starting from the equilibrium situation the closer this is to 90$^\circ$ the larger the amount of longitudinal magnetisation that is rotated into the transverse plane. The signal produced by precessing transverse magnetisation can be described as a complex signal such that $f(t) = R(t) + I(t)$. This is known as a \ac{FID}. The signal induced in the receiver coil after a 90$^\circ$ pulse is applied to equilibrium magnetisation can be written as.
 
 \begin{equation}
     R(t) = M_0\cos(\omega t+ \phi)\exp(-t/T_2^*)
@@ -170,26 +179,28 @@ Where $\theta$ is the angle after excitation to the longitudinal z-axis, also kn
     \label{eqn:theory:imag}
 \end{equation}
 
-Where $\phi$ is the phase of the signal and represents the angle the transverse magnetisation makes to the $x'$ axis after excitation, i.e a phase of -90$^\circ$ would be aligned parallel to the y-axis. The parameters that depend on the total signal from equations \ref{eqn:theory:real} and \ref{eqn:theory:imag} ($M_0, \, \omega, \, \phi \, \textrm{and} \, 1/T_2^*$) represent the parameters that were mentioned in the previous section (Amplitude, frequency, phase and linewidth) respectively. The real and imaginary components can be combined using Euler's formula to give equation \ref{eqn:theory:euler}. This signal is currently in the time-domain and therefore is difficult to separate different frequency contributions from the signal. Therefore, it is important to change this signal to be in the frequency domain spectrum which can be done using a \ac{FT} \cite{Fourier1822TheorieChaleur}, the equation used for doing this is shown in equation \ref{eqn:theory:fourier}.
+\noindent where $\phi$ is the phase of the signal and represents the angle the transverse magnetisation makes to the $x'$ axis after excitation, i.e a phase of -90$^\circ$ would be aligned parallel to the y-axis. $M_0, \, \omega, \, \phi \, \textrm{and} \, 1/T_2^*$ are parameters that were mentioned in the previous section (amplitude, frequency, phase and relaxation rate) respectively. The real and imaginary components can be combined using Euler's formula to give equation \ref{eqn:theory:euler}. 
+
+\begin{equation}
+    f(t) = M_0\exp(-\omega t)\exp(-t/T_2^*)\exp(i\phi)
+    \label{eqn:theory:euler}
+\end{equation}
+
+This signal is described in the time-domain. To separate different frequency contributions to the signal, it is useful to transform this signal into the frequency domain, which can be done using a \ac{FT} \cite{Fourier1822TheorieChaleur}. The equation used for doing this is
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Theory/FID_Lorentz.png}
-    \caption{\textit{Graphs of \ac{FID}'s (left) and corresponding lineshapes (right) for different frequency offsets ($\nu_0$), transverse relaxation times (T$_2^*$) and phases ($\phi$), all graphs have an amplitude ($A$) of 1. The parameters for (a) and (b) are $\nu_0$=-10 Hz, T$_2^*$= 70 ms and $\phi$=0, each row then changes one parameter each. (c) and (d) have a different $\nu_0$ of +100 Hz. (e) and (f) have a shorter T$_2^*$ of 20 ms. (g) and (h) have a lower phase of $\phi$=-$\pi$/3.}}
+    \caption{\textit{Plots of \ac{FID}s (left) and corresponding lineshapes (right) for different frequency offsets ($\nu_0$), transverse relaxation times (T$_2^*$) and phases ($\phi$), all FIDs have an amplitude ($A$) of 1. The parameters for (a) and (b) are $\nu_0$=-10 Hz, T$_2^*$= 70 ms and $\phi$=0, one parameter is changed in each row. (c) and (d) have a different $\nu_0$ of +100 Hz. (e) and (f) have a shorter T$_2^*$ of 20 ms. (g) and (h) have a phase of $\phi$=-$\pi$/3.}}
     \label{fig:theory:FID_Lorentz}
 \end{figure}
 
 \begin{equation}
-    f(t) = M_0\exp(-2\pi i \nu_0t)\exp(-t/T_2^*)\exp(i\phi)
-    \label{eqn:theory:euler}
-\end{equation}
-
-\begin{equation}
-    F(\nu) = \int_{-\infty}^{+\infty} f(t)\exp(-2\pi i \nu t) \, dt
+    F(\omega) = \int_{-\infty}^{+\infty} f(t)\exp(-\omega t) \, dt
     \label{eqn:theory:fourier}
 \end{equation}
 
-Where $F(\nu)$ is the new frequency domain spectrum, $\nu$ is the frequency , $f(t)$ is the time domain signal which in this case is the \ac{FID}. By applying a \ac{FT} to the \ac{FID} equation \ref{eqn:theory:lorentz} is obtained, which depends on the same four parameters as the \ac{FID}. The relationship between the T$_2^*$ and the FWHM has already been shown, therefore as the T$_2^*$ gets longer the wider the peak becomes. It is important to note that the integral/area under the peak remains the same for changes in T$_2^*$ as it depends on the amplitude (A). Therefore, the shorter the T$_2^*$ the larger the peak height and \textit{vice versa}, and therefore maximising A and minimising T$_2^*$ maximises the available \ac{SNR} in the spectrum.
+\noindent where $F(\nu)$ is the frequency domain spectrum, $\nu$ is the frequency. By applying a \ac{FT} to the \ac{FID} equation \ref{eqn:theory:lorentz} is obtained, which depends on the same four parameters as the \ac{FID}. The relationship between the T$_2^*$ and the FWHM has already been shown: as the T$_2^*$ gets longer peak becomes broader. It is important to note that the integral/area under the peak is independent of T$_2^*$. The integral only depends on the amplitude (A). Therefore, the shorter the T$_2^*$ the larger the peak height and \textit{vice versa}, and therefore maximising A and minimising T$_2^*$ maximises the available \ac{SNR} in the spectrum.
 
 \begin{equation}
     F(\nu) = A\exp(i\phi)\frac{R_2^*-i2\pi(\nu-\nu_0)}{R_2^{*2}+4\pi^2(\nu-\nu_0)^2}
