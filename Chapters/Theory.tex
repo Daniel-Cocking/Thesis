@@ -4,7 +4,7 @@
 \section{How \ac{NMR} Works}
 \subsection{Quantum Behaviour}
 
-Many subatomic particles have a quantum `spin' and its important to note that whilst the `rotation' does not scale to the macroscopic world, a strong analogy can be made to macroscopic spin to explain the physics behind their behaviour in the quantum world. This spin is linked to an angular momentum defined by the operator J, which is made up of orbital angular momentum ($\mathbf{L} = \mathbf{r}\, \textrm{x} \, \mathbf{p}$, $\mathbf{r}$ is position $\mathbf{p}$ is momentum) as well as spin angular momentum ($\mathbf{S}$ for total spin and $m_s$ for z-component). The spin of sub-atomic particles is associated with a magnetic moment. The atomic nucleus can therefore be represented to a magnetic dipole (which is analogous to an electric dipole) which tend to align with external magnetic fields. The magnetic moment ($\mathbf{\mu}$) of a nucleus is dependent on its spin as shown in equation \ref{eqn:theory:moment}.
+Many subatomic particles have a quantum `spin' and its important to note that whilst the `rotation' does not scale to the macroscopic world, a strong analogy can be made to macroscopic spin to explain the physics behind their behaviour in the quantum world. This spin is linked to an angular momentum defined by the operator J, which is made up of orbital angular momentum ($\mathbf{L} = \mathbf{r}\, \textrm{x} \, \mathbf{p}$, $\mathbf{r}$ is position $\mathbf{p}$ is momentum) as well as spin angular momentum ($\mathbf{S}$ for total spin and $m_s$ for z-component). The spin of sub-atomic particles is associated with a magnetic moment. The atomic nucleus can therefore be represented to a magnetic dipole (which is analogous to an electric dipole) which tend to align with external magnetic fields. The magnetic moment ($\mathbf{\mu}$) of a nucleus is dependent on its spin as shown in Eq. \ref{eqn:theory:moment}.
 
 \begin{equation}
     \mathbf{\mu} = \frac{g_sq}{2m} \mathbf{S}
@@ -18,7 +18,7 @@ Here, $\mathbf{S}$ is the spin angular momentum, $q$ is the charge, $g_s$ is dim
     \label{eqn:theory:gyro}
 \end{equation}
 
-When a nucleus is exposed to an external static magnetic field ($\mathbf{B}$) it will possess an energy according to equation \ref{eqn:theory:ESpin} which is also dependent on $\mu$.
+When a nucleus is exposed to an external static magnetic field ($\mathbf{B}$) it will possess an energy according to Eq. \ref{eqn:theory:ESpin} which is also dependent on $\mu$.
 
 \begin{equation}
     E = \mathbf{\mu} \cdot \mathbf{B}
@@ -31,8 +31,7 @@ In 1922 an experiment was undertaken \cite{Gerlach1922DerMagnetfeld} which showe
     \label{eqn:theory:ESpin}
 \end{equation}
 
-This is evident in Figure \ref{fig:theory:zeeman}. The energy of an electromagnetic photon is directly 
-proportional to its frequency ($f$), with a constant of proportionality equal to Planck's constant $h$, this is known as the Planck relation. Therefore, an absorbed photon will need a minimum energy equal to the separation between these quantified energy states, this relationship is shown in equation \ref{eqn:theory:ELamor}.
+This is evident in Fig. \ref{fig:theory:zeeman}. The energy of an electromagnetic photon is directly proportional to its frequency ($f$), with a constant of proportionality equal to Planck's constant $h$, this is known as the Planck relation. Therefore, an absorbed photon will need a minimum energy equal to the separation between these quantified energy states, this relationship is shown in Eq. \ref{eqn:theory:ELamor}.
 
 \begin{equation}
     \Delta E = hf = \frac{h}{2\pi}\gamma B_0
@@ -64,7 +63,7 @@ The molecules of interest for \ac{MRI} are in the liquid state which means the m
     \label{eqn:theory:boltz}
 \end{equation}
 
-\noindent where $i$ indicates the specific energy level and $M$ is the total number of available states for a specific nucleus. The overall magnetic field that results from a large group of spins can be described by a vector called the magnetisation ($M$). Most of the spins contributions will cancel so the only contribution to the magnetisation vector arises from the difference in the populations of the different energy levels. A generalised summation that calculates the equilibrium magnetisation is shown in equation \ref{eqn:theory:mag}.
+\noindent where $i$ indicates the specific energy level and $M$ is the total number of available states for a specific nucleus. The overall magnetic field that results from a large group of spins can be described by a vector called the magnetisation ($M$). Most of the spins contributions will cancel so the only contribution to the magnetisation vector arises from the difference in the populations of the different energy levels. A generalised summation that calculates the equilibrium magnetisation is shown in Eq. \ref{eqn:theory:mag}.
 
 \begin{equation}
     M = N\sum_{j = 1}^{M}p_j\mu_j
@@ -73,14 +72,14 @@ The molecules of interest for \ac{MRI} are in the liquid state which means the m
 
 \noindent where $N$ is the number of spins of interest. 
 
-A major assumption that is made to get to this point which is that the thermal energy at room temperature is much larger than the nuclear magnetic energies ($\gamma \hbar B_0\ll k_BT$). A more simplified version of equation \ref{eqn:theory:mag} that is still general to all spins is empirically shown in equation \ref{eqn:theory:mag_s}.
+A major assumption that is made to get to this point which is that the thermal energy at room temperature is much larger than the nuclear magnetic energies ($\gamma \hbar B_0\ll k_BT$). A more simplified version of Eq. \ref{eqn:theory:mag} that is still general to all spins is empirically shown in Eq. \ref{eqn:theory:mag_s}.
 
 \begin{equation}
     M = \frac{s(s+1)\gamma^2 \hbar^2 N B_0}{3k_BT}
     \label{eqn:theory:mag_s}
 \end{equation}
 
-\noindent Most nuclei that are of interest for \ac{NMR} have a spin-1/2, which give two distinct energy levels. So in order to simplify the magnetisation calculations only the spin-1/2 nuclei are considered. Equation \ref{eqn:theory:mag_1H} calculates the equilibrium magnetisation for spin-1/2 nuclei, equation \ref{eqn:theory:mag_2H} calculates the equilibrium magnetisation for spin-1 nuclei such as $^2$H.
+\noindent Most nuclei that are of interest for \ac{NMR} have a spin-1/2, which give two distinct energy levels. So in order to simplify the magnetisation calculations only the spin-1/2 nuclei are considered. Equation \ref{eqn:theory:mag_1H} calculates the equilibrium magnetisation for spin-1/2 nuclei, Eq. \ref{eqn:theory:mag_2H} calculates the equilibrium magnetisation for spin-1 nuclei such as $^2$H.
 
 \begin{equation}
     M_0 = \frac{\gamma^2 \hbar^2 N B_0}{4k_BT}
@@ -98,14 +97,14 @@ The equilibrium magnetisation is responsible for the signal produced in \ac{NMR}
     \label{fig:theory:moment}
 \end{figure}
 
-The direction of the equilibrium magnetisation vector is the same as the applied field. In general magnetisation is made up of two main components, the longitudinal and the transverse. The longitudinal component is parallel to the applied field, with the transverse component being a combination of the two other orthogonal directions. Often the applied field, and analogously the magnetisation, is defined as $\mathbf{B}=B_0\mathbf{z}$ and therefore the longitudinal component is in the z-direction, which makes the transverse component a combination of the x and y components. The transverse magnetisation (M$_{xy}$) is zero at equilibrium. After a large enough period of time in an applied field the longitudinal magnetisation will reach the value outlined in equation \ref{eqn:theory:mag_1H} (M$_0$), whilst the transverse component will remain at zero. The evolution of the longitudinal and transverse components of the magnetisation is described by the Bloch equation \cite{Bloch1946NuclearInduction}.
+The direction of the equilibrium magnetisation vector is the same as the applied field. In general magnetisation is made up of two main components, the longitudinal and the transverse. The longitudinal component is parallel to the applied field, with the transverse component being a combination of the two other orthogonal directions. Often the applied field, and analogously the magnetisation, is defined as $\mathbf{B}=B_0\mathbf{z}$ and therefore the longitudinal component is in the z-direction, which makes the transverse component a combination of the x and y components. The transverse magnetisation (M$_{xy}$) is zero at equilibrium. After a large enough period of time in an applied field the longitudinal magnetisation will reach the value outlined in Eq. \ref{eqn:theory:mag_1H} (M$_0$), whilst the transverse component will remain at zero. The evolution of the longitudinal and transverse components of the magnetisation is described by the Bloch Eq. \cite{Bloch1946NuclearInduction}.
 
 \begin{equation}
     \frac{d\mathbf{M}}{dt} = \, \gamma\mathbf{M}\textrm{x}\mathbf{B} \, + \, \frac{M_0-M_z}{T_1}\mathbf{z} \, - \, \frac{\mathbf{M_{xy}}}{T_2}
     \label{eqn:theory:Bloch}
 \end{equation}
 
-The first term in equation \ref{eqn:theory:Bloch} describes the evolution of the magnetisation in the presence of a magnetic field $\mathbf{B}$. The second term describes the evolution of the longitudinal magnetisation due to longitudinal relaxation, where T$_1$ is the longitudinal or spin-lattice relaxation time constant. This relaxation, results from spins interactions with the surrounding `lattice'. The final term describes how the transverse magnetisation evolves over time, where T$_2$ is the transverse or spin-spin relaxation time constant. It arises from dephasing due to each spin's interaction with neighbouring spins. 
+The first term in Eq. \ref{eqn:theory:Bloch} describes the evolution of the magnetisation in the presence of a magnetic field $\mathbf{B}$. The second term describes the evolution of the longitudinal magnetisation due to longitudinal relaxation, where T$_1$ is the longitudinal or spin-lattice relaxation time constant. This relaxation, results from spins interactions with the surrounding `lattice'. The final term describes how the transverse magnetisation evolves over time, where T$_2$ is the transverse or spin-spin relaxation time constant. It arises from dephasing due to each spin's interaction with neighbouring spins. 
 
 The transverse relaxation time described here relates to the case where the field applied is perfectly homogenous. However in reality this is rarely the case. In the presence of field inhomogeneity spins dephase more rapidly and the relevant relaxation is T$_2^*$.
 
@@ -143,7 +142,7 @@ The precession of magnetisation can be difficult to conceptualise/visualise in a
     \label{eqn:theory:Blochz}
 \end{equation}
 
-Here, $\Delta\omega$ is the difference between the Larmor frequency ($\omega_0$) and the frequency of the rotating reference frame ($\omega$), and represents any off resonance effects and $\omega_1=\gamma B_1$. Therefore, if the \ac{RF} is applied at the Larmor frequency, these terms disappear. If only the static field case is being considered, the $\omega_1$ terms disappear as well, which leaves only the relaxation dominant terms. If short-lived \ac{RF} pulses are considered the solutions to equations \ref{eqn:theory:Blochx} - \ref{eqn:theory:Blochz} describing the evolution of magnetisation of that are after the pulse are shown in equations \ref{eqn:theory:xprime} - \ref{eqn:theory:zprime}.
+Here, $\Delta\omega$ is the difference between the Larmor frequency ($\omega_0$) and the frequency of the rotating reference frame ($\omega$), and represents any off resonance effects and $\omega_1=\gamma B_1$. Therefore, if the \ac{RF} is applied at the Larmor frequency, these terms disappear. If only the static field case is being considered, the $\omega_1$ terms disappear as well, which leaves only the relaxation dominant terms. If short-lived \ac{RF} pulses are considered the solutions to Eqs. \ref{eqn:theory:Blochx} - \ref{eqn:theory:Blochz} describing the evolution of magnetisation of that are after the pulse are shown in Eqs. \ref{eqn:theory:xprime} - \ref{eqn:theory:zprime}.
 
 \begin{equation}
     M_{x'}(t) = \exp(-t/T_2) \left( M_{x'}(0)\cos\Delta\omega t \, + \, M_{y'}(0)\sin\Delta\omega t \right)
@@ -179,7 +178,7 @@ Where $\theta$ is the angle the magnetisation is rotated through after excitatio
     \label{eqn:theory:imag}
 \end{equation}
 
-\noindent where $\phi$ is the phase of the signal and represents the angle the transverse magnetisation makes to the $x'$ axis after excitation, i.e a phase of -90$^\circ$ would be aligned parallel to the y-axis. $M_0, \, \omega, \, \phi \, \textrm{and} \, 1/T_2^*$ are parameters that were mentioned in the previous section (amplitude, frequency, phase and relaxation rate) respectively. The real and imaginary components can be combined using Euler's formula to give equation \ref{eqn:theory:euler}. 
+\noindent where $\phi$ is the phase of the signal and represents the angle the transverse magnetisation makes to the $x'$ axis after excitation, i.e a phase of -90$^\circ$ would be aligned parallel to the y-axis. $M_0, \, \omega, \, \phi \, \textrm{and} \, 1/T_2^*$ are parameters that were mentioned in the previous section (amplitude, frequency, phase and relaxation rate) respectively. The real and imaginary components can be combined using Euler's formula to give Eq. \ref{eqn:theory:euler}. 
 
 \begin{equation}
     f(t) = M_0\exp(-\omega t)\exp(-t/T_2^*)\exp(i\phi)
@@ -200,14 +199,14 @@ This signal is described in the time-domain. To separate different frequency con
     \label{eqn:theory:fourier}
 \end{equation}
 
-\noindent where $F(\nu)$ is the frequency domain spectrum, $\nu$ is the frequency. By applying a \ac{FT} to the \ac{FID} equation \ref{eqn:theory:lorentz} is obtained, which depends on the same four parameters as the \ac{FID}. The relationship between the T$_2^*$ and the FWHM has already been shown: as the T$_2^*$ gets longer peak becomes broader. It is important to note that the integral/area under the peak is independent of T$_2^*$. The integral only depends on the amplitude (A). Therefore, the shorter the T$_2^*$ the larger the peak height and \textit{vice versa}, and therefore maximising A and minimising T$_2^*$ maximises the available \ac{SNR} in the spectrum.
+\noindent where $F(\nu)$ is the frequency domain spectrum, $\nu$ is the frequency. By applying a \ac{FT} to the \ac{FID} Eq. \ref{eqn:theory:lorentz} is obtained, which depends on the same four parameters as the \ac{FID}. The relationship between the T$_2^*$ and the FWHM has already been shown: as the T$_2^*$ gets longer peak becomes broader. It is important to note that the integral/area under the peak is independent of T$_2^*$. The integral only depends on the amplitude (A). Therefore, the shorter the T$_2^*$ the larger the peak height and \textit{vice versa}, and therefore maximising A and minimising T$_2^*$ maximises the available \ac{SNR} in the spectrum.
 
 \begin{equation}
     F(\nu) = A\exp(i\phi)\frac{R_2^*-i2\pi(\nu-\nu_0)}{R_2^{*2}+4\pi^2(\nu-\nu_0)^2}
     \label{eqn:theory:lorentz}
 \end{equation}
 
-Using \ac{NMR} to measure signals from pure samples with only one nuclear magnetic resonance will produce spectra with single peaks. However in general samples contain a range of different molecules, in which the atoms of each atomic species can be in different chemical environments. This is certainly the goal for \ac{MRS} measurements on living systems. The shielding of the magnetic field at the nucleus by surrounding electron cloud changes the magnetic field at the nucleus, which changes the resonant frequency of precession for nuclei. Therefore, nuclei that have different chemical environments will have different frequencies which means that the \ac{NMR} signal will be found at different frequency positions in an \ac{NMR} spectrum. Therefore by identifying the positioning of peaks in an \ac{NMR} spectra and finding the amplitudes of the peaks, it is possible to probe the chemical structure of the compounds found in the sample. This is useful in studies of medical conditions and diseases. The main unit of measure for frequency is hertz (Hz), however the values here will change greatly depending on the nuclei of interest and the field strength being used. Therefore a different unit of measurement is often used to characterise the frequency in \ac{NMR} spectra to make it more general and therefore applicable to all nuclei and field strengths. The chemical shift ($\delta$) of each signal is measured in parts-per-million (ppm). The equation to calculate chemical shift from frequency is shown in equation \ref{eqn:theory:chemshift}.
+Using \ac{NMR} to measure signals from pure samples with only one nuclear magnetic resonance will produce spectra with single peaks. However in general samples contain a range of different molecules, in which the atoms of each atomic species can be in different chemical environments. This is certainly the goal for \ac{MRS} measurements on living systems. The shielding of the magnetic field at the nucleus by surrounding electron cloud changes the magnetic field at the nucleus, which changes the resonant frequency of precession for nuclei. Therefore, nuclei that have different chemical environments will have different frequencies which means that the \ac{NMR} signal will be found at different frequency positions in an \ac{NMR} spectrum. Therefore by identifying the positioning of peaks in an \ac{NMR} spectra and finding the amplitudes of the peaks, it is possible to probe the chemical structure of the compounds found in the sample. This is useful in studies of medical conditions and diseases. The main unit of measure for frequency is hertz (Hz), however the values here will change greatly depending on the nuclei of interest and the field strength being used. Therefore a different unit of measurement is often used to characterise the frequency in \ac{NMR} spectra to make it more general and therefore applicable to all nuclei and field strengths. The chemical shift ($\delta$) of each signal is measured in parts-per-million (ppm). The equation to calculate chemical shift from frequency is shown in Eq. \ref{eqn:theory:chemshift}.
 
 \begin{equation}
     \delta = \frac{\nu - \nu_{\textrm{ref}}}{\nu_\textrm{ref}} \, \textrm{x} \, 10^6
@@ -218,13 +217,13 @@ Where $\nu_{\textrm{ref}}$ is a reference frequency. So far it has been outlined
 
 \subsection{Introduction of Gradients}
 
-According to equation \ref{eqn:theory:Lamor} the frequency of precession is dependent on the applied magnetic field. Therefore if the magnetic field varies in any direction the frequency of precession will also vary in that direction. In particular a magnetic field gradient corresponding to the linear variation of field with position, produces a linear variation of frequency with position. For example when a gradient is applied in the $z$-direction.
+According to Eq. \ref{eqn:theory:Lamor} the frequency of precession is dependent on the applied magnetic field. Therefore if the magnetic field varies in any direction the frequency of precession will also vary in that direction. In particular a magnetic field gradient corresponding to the linear variation of field with position, produces a linear variation of frequency with position. For example when a gradient is applied in the $z$-direction.
 
 \begin{equation}
     B = Gz,\; \omega = \gamma Gz 
 \end{equation}
 
-Previously, we considered the situation where a static spatially-homogeneous $B_0$ was applied to a sample and an \ac{RF} pulse was used to tip the magnetisation of all the spins into the transverse plane. However if a gradient is applied along with B$_0$ only the spins with the same frequency as the \ac{RF} pulse will be tipped. The magnetic field in the presence of a gradient is described by equation \ref{eqn:theory:B_Grad}, with the frequency that is spatially dependent is shown in equation \ref{eqn:theory:f_Grad}.
+Previously, we considered the situation where a static spatially-homogeneous $B_0$ was applied to a sample and an \ac{RF} pulse was used to tip the magnetisation of all the spins into the transverse plane. However if a gradient is applied along with B$_0$ only the spins with the same frequency as the \ac{RF} pulse will be tipped. The magnetic field in the presence of a gradient is described by Eq. \ref{eqn:theory:B_Grad}, with the frequency that is spatially dependent is shown in Eq. \ref{eqn:theory:f_Grad}.
 
 \begin{equation}
     B(r) = B_0 \, + \, Gr
@@ -236,7 +235,7 @@ Previously, we considered the situation where a static spatially-homogeneous $B_
     \label{eqn:theory:f_Grad}
 \end{equation}
 
-\noindent Here $r$ is used to represent any direction. Therefore only a spatially localised 'slice' will be excited and any signal received will be specifically from that slice. By changing the frequency of the pulse applied means that a different slice can be applied. If the pulse contains a range of frequencies (bandwidth) all the frequencies in the bandwidth will be excited, this results in a slice being excited that has a physical thickness. If this process is repeated spectra can be acquired from multiple slices and therefore the changes in signals can be compared to position in the body of which the slice was acquired. The link between magnetic field/frequency and position using gradients is demonstrated visually in Figure \ref{fig:theory:Grad}.
+\noindent Here $r$ is used to represent any direction. Therefore only a spatially localised 'slice' will be excited and any signal received will be specifically from that slice. By changing the frequency of the pulse applied means that a different slice can be applied. If the pulse contains a range of frequencies (bandwidth) all the frequencies in the bandwidth will be excited, this results in a slice being excited that has a physical thickness. If this process is repeated spectra can be acquired from multiple slices and therefore the changes in signals can be compared to position in the body of which the slice was acquired. The link between magnetic field/frequency and position using gradients is demonstrated visually in Fig. \ref{fig:theory:Grad}.
 
 \begin{figure}
     \centering
@@ -249,14 +248,14 @@ If the chemical composition of what is being investigated is not important it is
 
 \section{Differences for $^2$H}
 
-Deuterium ($^2$H) is a stable isotope of hydrogen. The nucleus of a $^2$H atom is called a deuteron. Large elements are formed during collisions of neutron stars \cite{Watson2019IdentificationStars}, whilst lighter elements up to iron are made in the cores of stars during fusion. However, $^2$H is destroyed very quickly in star's fusion \cite{Patrignani2016ReviewPhysics} therefore almost all the $^2$H exists naturally is formed from Big Bang Nucleosynthesis. The $^2$H abundance found in Earth's oceans is similar to what has been found in comets, which adds evidence that ocean water originates from comets \cite{Hersant2001APlanets}. Most of the natural $^2$H content occurs as \ac{HDO}, and the $^2$H content of different water sources (oceans, rainwater etc) can be used to track the water cycle \cite{Bowen2019IsotopesApplications}. Our bodies consequently have a very low \ac{NA} $\approx$0.015\% of $^2$H, which makes $^2$H appealing for tracer studies, as small concentration increases are easy to detect above baseline. The addition of a neutron to the nucleus of $^2$H means the gyromagnetic ratio ($\gamma$) is smaller than that of $^1$H (6.54 vs 42.6 MHzT$^{-1}$) which reduces the Larmor frequency of $^2$H according to equation \ref{eqn:theory:Lamor}. A magnetic moment is a vector quantity that is used to describe magnetic fields and interactions that arise from charges. Dipolar moments arise from dipolar charges such as point charges and bar magnets, a quadrupolar moment is a second rank expansion of the dipolar moment and is used to describe non-spherical charge distributions. $^2$H has an integer spin of 1 and due to the non-symmetric distribution of charge within the nucleus also has a quadrupolar magnetic moment of 0.286 fm$^2$. The nuclear quadrupolar moment interacts with local electric field gradients, and fluctuations in this interaction cause relaxation, thus reducing both the longitudinal and transverse relaxation times of quadrupolar nuclei. Deuterium's spin of 1 also introduces an extra Zeeman energy level more than for $^1$H, with available spin values of $m_s$ = -1, 0 and 1. Considering the magnetisation is the net vector sum of $\mathbf{\mu}$ the net magnetisation is due to the population differences between the lowest and largest energy levels. Using equation \ref{eqn:theory:mag} and/or \ref{eqn:theory:mag_s} a simplified equilibrium magnetisation can be found, which is shown in equation \ref{eqn:theory:mag_2H}.
+Deuterium ($^2$H) is a stable isotope of hydrogen. The nucleus of a $^2$H atom is called a deuteron. Large elements are formed during collisions of neutron stars \cite{Watson2019IdentificationStars}, whilst lighter elements up to iron are made in the cores of stars during fusion. However, $^2$H is destroyed very quickly in star's fusion \cite{Patrignani2016ReviewPhysics} therefore almost all the $^2$H exists naturally is formed from Big Bang Nucleosynthesis. The $^2$H abundance found in Earth's oceans is similar to what has been found in comets, which adds evidence that ocean water originates from comets \cite{Hersant2001APlanets}. Most of the natural $^2$H content occurs as \ac{HDO}, and the $^2$H content of different water sources (oceans, rainwater etc) can be used to track the water cycle \cite{Bowen2019IsotopesApplications}. Our bodies consequently have a very low \ac{NA} $\approx$0.015\% of $^2$H, which makes $^2$H appealing for tracer studies, as small concentration increases are easy to detect above baseline. The addition of a neutron to the nucleus of $^2$H means the gyromagnetic ratio ($\gamma$) is smaller than that of $^1$H (6.54 vs 42.6 MHzT$^{-1}$) which reduces the Larmor frequency of $^2$H according to Eq. \ref{eqn:theory:Lamor}. A magnetic moment is a vector quantity that is used to describe magnetic fields and interactions that arise from charges. Dipolar moments arise from dipolar charges such as point charges and bar magnets, a quadrupolar moment is a second rank expansion of the dipolar moment and is used to describe non-spherical charge distributions. $^2$H has an integer spin of 1 and due to the non-symmetric distribution of charge within the nucleus also has a quadrupolar magnetic moment of 0.286 fm$^2$. The nuclear quadrupolar moment interacts with local electric field gradients, and fluctuations in this interaction cause relaxation, thus reducing both the longitudinal and transverse relaxation times of quadrupolar nuclei. Deuterium's spin of 1 also introduces an extra Zeeman energy level more than for $^1$H, with available spin values of $m_s$ = -1, 0 and 1. Considering the magnetisation is the net vector sum of $\mathbf{\mu}$ the net magnetisation is due to the population differences between the lowest and largest energy levels. Using Eq. \ref{eqn:theory:mag} and/or \ref{eqn:theory:mag_s} a simplified equilibrium magnetisation can be found, which is shown in Eq. \ref{eqn:theory:mag_2H}.
 
 \begin{equation}
     M_0 = \frac{2\gamma^2 \hbar^2 N B_0}{3k_BT}
     \label{eqn:theory:mag_2H}
 \end{equation}
 
-Whilst the magnetisation appears to be 8/3 larger for $^2$H compared to $^1$H in equation \ref{eqn:theory:mag_2H}, it is important to remind the reader that $M_0$ is also dependent on the gyromagnetic ratio squared along with the number of spins. The gyromagnetic ratio squared is $\approx$42 times smaller for $^2$H. Also assuming the mass and volume of the sample/tissue being scanned/investigated is at \ac{NA} the number of spins will be $\approx$6.7x10$^{-3}$ smaller for $^2$H. The lower value of $\gamma$ also reduces the Larmor frequency, leading to a further reduction in the NMR signal. This reduction in $\gamma$ means stronger gradients are needed to produce the same amount of spatial encoding. As a consequence some of the loss in signal of $^2$H can thankfully be recovered due to the reduction in relaxation times. This is because the signal will return to equilibrium more rapidly and therefore the scans can be more rapidly repeated and averaged, increasing the number of averages that can be acquired per unit time. The decrease in \ac{SNR} for $^2$H compared to $^1$H makes \ac{MRI} difficult at \ac{NA}, which is why spectroscopic techniques are much more common for $^2$H. 
+Whilst the magnetisation appears to be 8/3 larger for $^2$H compared to $^1$H in Eq. \ref{eqn:theory:mag_2H}, it is important to remind the reader that $M_0$ is also dependent on the gyromagnetic ratio squared along with the number of spins. The gyromagnetic ratio squared is $\approx$42 times smaller for $^2$H. Also assuming the mass and volume of the sample/tissue being scanned/investigated is at \ac{NA} the number of spins will be $\approx$6.7x10$^{-3}$ smaller for $^2$H. The lower value of $\gamma$ also reduces the Larmor frequency, leading to a further reduction in the NMR signal. This reduction in $\gamma$ means stronger gradients are needed to produce the same amount of spatial encoding. As a consequence some of the loss in signal of $^2$H can thankfully be recovered due to the reduction in relaxation times. This is because the signal will return to equilibrium more rapidly and therefore the scans can be more rapidly repeated and averaged, increasing the number of averages that can be acquired per unit time. The decrease in \ac{SNR} for $^2$H compared to $^1$H makes \ac{MRI} difficult at \ac{NA}, which is why spectroscopic techniques are much more common for $^2$H. 
 
 % \subsection{Other Nuclei} Potential subsection
 % Carbon-13, Phosphorous-31
@@ -283,7 +282,7 @@ Whilst frequency encoding does work to obtain an additional dimension, there are
     \label{fig:enter-label}
 \end{figure}
 
-The final spatial dimension is encoded using a phase-encoding gradient (G$_{phase}$) which is applied before the signal is acquired under the read gradient. This gradient only affects the phase of the signal in a way which is dependent on the position in real-space. By changing linearly changing the magnitude of the applied phase encoding gradient a set of 1D spectra are acquired which can be represented in a 2D matrix. The data in the 2D matrix is therefore a collection of spatial frequencies that are centred on 0, a low spatial frequency describes the general trend of an image whilst the high spatial frequencies define the sharp edges. This frequency space where the data is stored is called k-space, and applying a 2D \ac{FT} to this data produces an image \cite{Lauterbur1973ImageResonance, Mansfield1977Multi-planarEchoes}. The collection of \ac{RF} pulses and gradients is called a pulse sequence, and the pulse sequence described is called gradient-echo imaging, and can be viewed in Figure \ref{fig:theory:GRE}.
+The final spatial dimension is encoded using a phase-encoding gradient (G$_{phase}$) which is applied before the signal is acquired under the read gradient. This gradient only affects the phase of the signal in a way which is dependent on the position in real-space. By changing linearly changing the magnitude of the applied phase encoding gradient a set of 1D spectra are acquired which can be represented in a 2D matrix. The data in the 2D matrix is therefore a collection of spatial frequencies that are centred on 0, a low spatial frequency describes the general trend of an image whilst the high spatial frequencies define the sharp edges. This frequency space where the data is stored is called k-space, and applying a 2D \ac{FT} to this data produces an image \cite{Lauterbur1973ImageResonance, Mansfield1977Multi-planarEchoes}. The collection of \ac{RF} pulses and gradients is called a pulse sequence, and the pulse sequence described is called gradient-echo imaging, and can be viewed in Fig. \ref{fig:theory:GRE}.
 
 \begin{figure}
     \centering
@@ -292,7 +291,7 @@ The final spatial dimension is encoded using a phase-encoding gradient (G$_{phas
     \label{fig:theory:GRE}
 \end{figure}
 
-Longitudinal and transverse relaxation time constants vary depending on the type of tissue. Therefore, when a particular pulse sequence is used the choice of \ac{TR} and \ac{TE} will effect the the contrast in the image. The image signal varies with \ac{TR} and \ac{TE} according to equation \ref{eqn:theory:Signal}, which drives the contrast.
+Longitudinal and transverse relaxation time constants vary depending on the type of tissue. Therefore, when a particular pulse sequence is used the choice of \ac{TR} and \ac{TE} will effect the the contrast in the image. The image signal varies with \ac{TR} and \ac{TE} according to Eq. \ref{eqn:theory:Signal}, which drives the contrast.
 
 \begin{equation}
     S = M_0\sin(\alpha)\exp(-\textrm{TE}/T_2^*)\frac{(1-\exp(\textrm{TR}/T_1)}{(1-\cos(\alpha)\exp(-\textrm{TR}/T_1))}
@@ -316,8 +315,7 @@ Acquiring MR spectra allows chemical and molecular concentrations to be obtained
     \label{fig:theory:CSI}
 \end{figure}
 
-
-The simplest and quickest method to acquire a spectrum is to apply an \ac{RF} pulse in a static magnetic field and acquire data from the FID immediately after the pulse. Application of a gradient during the \ac{RF} excitation will localise the data from a specific slice in the body. Usually this gradient is applied in the z-direction to localise the signal from a transverse slice through the body. However any direction of gradient can be used to excite a region. For example a sagittal or a coronal slice can be excited instead. The combination of these gradients increases the number of dimensions where data can be acquired, as has been shown with gradient echo imaging in Figure \ref{fig:theory:GRE}. Therefore, by applying gradients in all three Cartesian directions simultaneously only data from a small voxel is excited, if data is acquired during the full length of an \ac{FID}that will only come from one small voxel. By iteratively changing the strengths of the adjacent voxels are excited eventually a full 2D/3D grid of spectra is obtained, this pulse sequence is called \ac{CSI}. A diagram of the pulse sequence used to acquire a 2D \ac{CSI} is shown in Figure \ref{fig:theory:CSI}.
+The simplest and quickest method to acquire a spectrum is to apply an \ac{RF} pulse in a static magnetic field and acquire data from the FID immediately after the pulse. Application of a gradient during the \ac{RF} excitation will localise the data from a specific slice in the body. Usually this gradient is applied in the z-direction to localise the signal from a transverse slice through the body. However any direction of gradient can be used to excite a region. For example a sagittal or a coronal slice can be excited instead. The combination of these gradients increases the number of dimensions where data can be acquired, as has been shown with gradient echo imaging in Fig. \ref{fig:theory:GRE}. Therefore, by applying gradients in all three Cartesian directions simultaneously only data from a small voxel is excited, if data is acquired during the full length of an \ac{FID}that will only come from one small voxel. By iteratively changing the strengths of the adjacent voxels are excited eventually a full 2D/3D grid of spectra is obtained, this pulse sequence is called \ac{CSI}. A diagram of the pulse sequence used to acquire a 2D \ac{CSI} is shown in Fig. \ref{fig:theory:CSI}.
 
 \ac{CSI} has been used for different nuclei ($^{13}$C, $^{31}$P and $^2$H) to create maps that show the distribution of different metabolites. Acquiring this type of data takes a long time which can be a problem is functional data was to be acquired, which motivates work to decrease the acquisition time for \ac{MRSI} data.
 
@@ -340,14 +338,14 @@ The simplest and quickest method to acquire a spectrum is to apply an \ac{RF} pu
 
 When analysing \ac{MRS} data it is important to be able to accurately track changes for each spectra. The oldest method of doing this is peak integration whereby the spectral points are summed together. An integration range of at least two \ac{FWHM}'s is enough to get accurate quantification \cite{Near2021PreprocessingRecommendations}. The spectral peak integration value can also be obtained from the time-domain signal as the first point in the absorption spectra, as well as from the product of the \ac{FWHM}, $\pi$ and the spectral peak-height in the frequency domain \cite{deGraaf2019InSpectroscopy}. This technique is simple to implement computationally and takes little time, however it requires correctly phased spectra as any incorrect phasing will give the incorrect amplitude. Most biological tissues and processes involve complex chemical environments with many different compounds which will produce different MR signals appearing at different frequencies (also known as chemical shifts). This does not necessarily effect the peak integration method as long as each peak/signal has a large enough frequency offset relative to each other. However this is commonly not the case especially in $^1$H spectroscopy \cite{Alger2010QuantitativeReview}. 
 
-Therefore, a different methodology is needed to overcome this issue, which comes in fitting spectral signal to lineshapes, such as Lorentzian \cite{Lorentz1895TheHeat}, Gaussian and Voigt \cite{Near2021PreprocessingRecommendations}. This is performed through a method called least-squares \cite{Golub1973TheSeparate} fitting whereby the sum ($R^2$) of the squared differences between the experimental data and a model (residuals) is minimised\cite{Vanhamme2001MRMethods}. Mathematically this is demonstrated in equation \ref{eqn:theory:LS}.
+Therefore, a different methodology is needed to overcome this issue, which comes in fitting spectral signal to lineshapes, such as Lorentzian \cite{Lorentz1895TheHeat}, Gaussian and Voigt \cite{Near2021PreprocessingRecommendations}. This is performed through a method called least-squares \cite{Golub1973TheSeparate} fitting whereby the sum ($R^2$) of the squared differences between the experimental data and a model (residuals) is minimised\cite{Vanhamme2001MRMethods}. Mathematically this is demonstrated in Eq. \ref{eqn:theory:LS}.
 
 \begin{equation}
     R^2 = \sum_{i=1}^{n}[y_i - f(x_i,a_1,a_2,...,a_n)]
     \label{eqn:theory:LS}
 \end{equation}
 
-\noindent Where $i$ represents each data point with $n$ data points, and the range of values $a_1$ to $a_n$ covers the amount of fitting parameters such as linewidth (similar to \ac{FWHM}), frequency position, phase and most importantly amplitude. $R^2$ is said to be minimised when the following differential relationship for each fitting parameter is met, in equation \ref{eqn:theory:Diff} the derivative is referred to as the jacobian.
+\noindent Where $i$ represents each data point with $n$ data points, and the range of values $a_1$ to $a_n$ covers the amount of fitting parameters such as linewidth (similar to \ac{FWHM}), frequency position, phase and most importantly amplitude. $R^2$ is said to be minimised when the following differential relationship for each fitting parameter is met, in Eq. \ref{eqn:theory:Diff} the derivative is referred to as the jacobian.
 
 \begin{equation}
     \frac{\partial (R^2)}{\partial a_i} = 0
@@ -356,7 +354,7 @@ Therefore, a different methodology is needed to overcome this issue, which comes
 
 \noindent The fitting begins by using initial parameter guesses and finds the sum of squared residuals. An optimisation algorithm is then used to update the parameter values iteratively, until a certain threshold in the $R^2$ value is met or the max number of iterations is used. The best way to model experimental \ac{MRS} data is in the time domain as a series of exponentially damped sinusoids. 
 
-Since the full spectra comprising the sum many individual damped sinusoids is fit to the MR spectra. Therefore, the more signals present in the spectra the more difficult computationally this becomes. There is consequently a strong motivation to reduce the number of parameters, reduce the computational load and therefore increase the reliability of the fitting \cite{Near2021PreprocessingRecommendations}. It has been shown that one way to improve the reliability of fitting spectra that suffer from overlapping signals, which is the case for $^{31}$P \ac{MRS} data, is to use prior knowledge \cite{Hamilton2003PriorSpectra}. Some of the overlapping signals while distinctly different can share common ratios between some of their fitted parameter. One of the first fitting algorithms to include prior knowledge was the \ac{VARPRO} method \cite{Golub1973TheSeparate} which has successfully been used to analyse $^{31}$P data \cite{vanderVeen1988AccurateKnowledge,Stubbs199631P-MagneticADP}. Whilst \ac{VARPRO} was successful as an improved fitting methodology a new technique was recently developed called \ac{AMARES} which fits more reliably and accurately as well as having increased functionality, including lineshape choice, fitting echo signals and imposing upper and lower bounds on fitting parameters \cite{Vanhamme1997ImprovedKnowledge}. \ac{AMARES} is used regularly in \ac{MRS} analysis and is included in software packages such as JMRUI \cite{Stefan2009QuantitationPackage} and OXSA \cite{Purvis2017OXSA:MATLAB}, which have previously been used to analyse $^2$H \ac{MRS} data \cite{Simoes2022GlucoseGlioblastoma,Kreis2020MeasuringMRI,Kaggie2022DeuteriumMetabolism}. The model of summed damped sinusoids that is used in the \ac{AMARES} package is mathematically shown in equation \ref{eqn:theory:model}, with the trust region-reflective optimisation algorithm.
+Since the full spectra comprising the sum many individual damped sinusoids is fit to the MR spectra. Therefore, the more signals present in the spectra the more difficult computationally this becomes. There is consequently a strong motivation to reduce the number of parameters, reduce the computational load and therefore increase the reliability of the fitting \cite{Near2021PreprocessingRecommendations}. It has been shown that one way to improve the reliability of fitting spectra that suffer from overlapping signals, which is the case for $^{31}$P \ac{MRS} data, is to use prior knowledge \cite{Hamilton2003PriorSpectra}. Some of the overlapping signals while distinctly different can share common ratios between some of their fitted parameter. One of the first fitting algorithms to include prior knowledge was the \ac{VARPRO} method \cite{Golub1973TheSeparate} which has successfully been used to analyse $^{31}$P data \cite{vanderVeen1988AccurateKnowledge,Stubbs199631P-MagneticADP}. Whilst \ac{VARPRO} was successful as an improved fitting methodology a new technique was recently developed called \ac{AMARES} which fits more reliably and accurately as well as having increased functionality, including lineshape choice, fitting echo signals and imposing upper and lower bounds on fitting parameters \cite{Vanhamme1997ImprovedKnowledge}. \ac{AMARES} is used regularly in \ac{MRS} analysis and is included in software packages such as JMRUI \cite{Stefan2009QuantitationPackage} and OXSA \cite{Purvis2017OXSA:MATLAB}, which have previously been used to analyse $^2$H \ac{MRS} data \cite{Simoes2022GlucoseGlioblastoma,Kreis2020MeasuringMRI,Kaggie2022DeuteriumMetabolism}. The model of summed damped sinusoids that is used in the \ac{AMARES} package is mathematically shown in Eq. \ref{eqn:theory:model}, with the trust region-reflective optimisation algorithm.
 
 \begin{equation}
     y_n = \hat{y_n} + e_n = \sum_{k=1}^{k}a_k\exp(i\phi_k)\exp(-d_k(1-g_k+g_kt_n)t_n)\exp(i2\pi f_kt_n) + e_n
@@ -377,7 +375,7 @@ The low \ac{SNR} of $^2$H is often a problem during scanning and as scanning tim
     A \mathbf{v}_n = \sigma_r \mathbf{u}_m
 \end{equation}
 
-\noindent Where $r$ is the `rank' of the matrix and contains all the key components of $A$. The eigenvalues then form the diagonal elements of the matrix $\Sigma$ called the `core matrix', the eigenvalues are called the singular values and the size represents the importance for reconstructing $A$. By rearranging the matrices equation \ref{eqn:theory:SVD} is created for the matrix $A$.
+\noindent Where $r$ is the `rank' of the matrix and contains all the key components of $A$. The eigenvalues then form the diagonal elements of the matrix $\Sigma$ called the `core matrix', the eigenvalues are called the singular values and the size represents the importance for reconstructing $A$. By rearranging the matrices Eq. \ref{eqn:theory:SVD} is created for the matrix $A$.
 
 \begin{equation}
     A = U\Sigma V^\textrm{T} = \sum_{k=1}^{r} u_k\sigma_kv_k^\textrm{T}
@@ -386,7 +384,7 @@ The low \ac{SNR} of $^2$H is often a problem during scanning and as scanning tim
 
 \noindent However, a full reconstruction does not necessarily need to be performed, if the core matrix is arranged by size and the lower singular values are removed $A$ can be reconstructed with only the more important features. When this technique is applied to \ac{MRS} data this will de-noise the data as the noise will be represented by the lower singular values \cite{Brender2019DynamicHyperpolarization}. This technique can also be also used to fit \ac{MRS} data as the results can be converted into the regular fitting parameters \cite{Pijnappel1992SVD-basedSignals}, as well as to remove water signal post-processing \cite{Cabanes2001OptimizationBrain}.
 
-This only works in 2D matrices, which is an issue for \ac{MRSI} data which commonly has up to five dimensions (one spectral, three spatial, and a temporal domain). A similar technique can be used in this case called \ac{HOSVD} which is similar to regular \ac{SVD} but has the ability to work with higher dimension data. Here the matrix is decomposed into a collection of tensors $U$ equal to the number of dimensions of $A$ which is $d$, along with a core tensor $S$. The mathematical form of this decomposition is shown in equation \ref{eqn:theory:HOSVD}.
+This only works in 2D matrices, which is an issue for \ac{MRSI} data which commonly has up to five dimensions (one spectral, three spatial, and a temporal domain). A similar technique can be used in this case called \ac{HOSVD} which is similar to regular \ac{SVD} but has the ability to work with higher dimension data. Here the matrix is decomposed into a collection of tensors $U$ equal to the number of dimensions of $A$ which is $d$, along with a core tensor $S$. The mathematical form of this decomposition is shown in Eq. \ref{eqn:theory:HOSVD}.
 
 \begin{equation}
     A = S \otimes U_1 \otimes U_2 \otimes ... \otimes U_d
@@ -404,7 +402,7 @@ This only works in 2D matrices, which is an issue for \ac{MRSI} data which commo
 
 \subsection{Theory}
 
-% the voltage and current and the relationship with phase can be demonstrated through a phasor diagram which can also represent complex numbers. Therefore, many electrical components can also be represented as complex numbers. The current variation with time ($I(t)$) of an RLC circuit is shown in equation \ref{eqn:theory:Current}.
+% the voltage and current and the relationship with phase can be demonstrated through a phasor diagram which can also represent complex numbers. Therefore, many electrical components can also be represented as complex numbers. The current variation with time ($I(t)$) of an RLC circuit is shown in Eq. \ref{eqn:theory:Current}.
 
 % \begin{equation}
     % I(t) = I_{\mathrm{max}}\sin(\omega t + \phi)
@@ -413,7 +411,7 @@ This only works in 2D matrices, which is an issue for \ac{MRSI} data which commo
 
 % According to Ohm's law the voltage across a resistor ($\Delta V_R$) can be found, an inductor will oppose the current and will therefore have a corresponding reactance ($X_L$) and will be 90$^\circ$ ahead of the current. The time-varying voltage will cause the capacitor to continuously charge and discharge which resists the change in voltage and will also have a reactance ($X_C$). 
 
-The simplest way to build an \ac{RF} coil is to shape a wire into a loop (inductor) and connect a capacitor in parallel. This forms what is known as an LCR circuit which is often used to create a resonance for current. The LCR circuit will have a natural resonance frequency ($\omega_0$), therefore when the frequency of the applied current is the same as this natural frequency the circuit is considered on resonance ($\omega=\omega_0$). For a circuit to resonate the opposition of the (alternating) current flowing through the circuit, referred to as reactance ($X$), needs to be minimised. $X$ is the imaginary component of the impedance given as $Z = R+iX$, and for an LCR circuit is composed of two components the inductive reactance ($X_L$) and the capacitive reactance ($X_C$). The total reactance for a series LCR is the difference between $X_L$ and $X_C$, for a parallel LCR circuit the reciprocal of the total reactance is equal to the sum of the reciprocal of the individual components. The relationship between the reactances and the resonant frequency is shown in equation \ref{eqn:theory:X}.
+The simplest way to build an \ac{RF} coil is to shape a wire into a loop (inductor) and connect a capacitor in parallel. This forms what is known as an LCR circuit which is often used to create a resonance for current. The LCR circuit will have a natural resonance frequency ($\omega_0$), therefore when the frequency of the applied current is the same as this natural frequency the circuit is considered on resonance ($\omega=\omega_0$). For a circuit to resonate the opposition of the (alternating) current flowing through the circuit, referred to as reactance ($X$), needs to be minimised. $X$ is the imaginary component of the impedance given as $Z = R+iX$, and for an LCR circuit is composed of two components the inductive reactance ($X_L$) and the capacitive reactance ($X_C$). The total reactance for a series LCR is the difference between $X_L$ and $X_C$, for a parallel LCR circuit the reciprocal of the total reactance is equal to the sum of the reciprocal of the individual components. The relationship between the reactances and the resonant frequency is shown in Eq. \ref{eqn:theory:X}.
 
 \begin{equation}
 \begin{gathered}
@@ -423,21 +421,21 @@ The simplest way to build an \ac{RF} coil is to shape a wire into a loop (induct
 \end{gathered}
 \end{equation}
 
-The resonant condition of the LCR circuit is then well demonstrated well calculating the current flow, which is shown in equation \ref{eqn:theory:I} as the ratio between the voltage and the impedance.
+The resonant condition of the LCR circuit is then well demonstrated well calculating the current flow, which is shown in Eq. \ref{eqn:theory:I} as the ratio between the voltage and the impedance.
 
 \begin{equation}
     I = \frac{V}{Z} = \frac{V}{R+i(\omega L - \frac{1}{\omega C})} = \left| \frac{V}{\sqrt{R^2+(\omega L - \frac{1}{\omega C})^2}} \right|
     \label{eqn:theory:I}
 \end{equation}
 
-The natural resonance of the circuit is therefore given in equation \ref{eqn:theory:res}.
+The natural resonance of the circuit is therefore given in Eq. \ref{eqn:theory:res}.
 
 \begin{equation}
     \omega_0 = \frac{1}{\sqrt{LC}}
     \label{eqn:theory:res}
 \end{equation}
 
-The voltage variations with time for each electrical component is shown below in equation \ref{eqn:theory:Voltage}. As an \ac{RF} $B_1$ is applied to the coil, current will be induced which charges the capacitor. As the $B_1$ is then removed, the capacitor will then dissipate energy which causes current to flow through the rest of the circuit. Energy dissipates and therefore current decreases exponentially. Graphs of the change in voltage in this case are shown in Figure \ref{fig:theory:VI}, along with the corresponding absorption and dispersion curves. This behaviour is often referred to as an impulse response.
+The voltage variations with time for each electrical component is shown below in Eq. \ref{eqn:theory:Voltage}. As an \ac{RF} $B_1$ is applied to the coil, current will be induced which charges the capacitor. As the $B_1$ is then removed, the capacitor will then dissipate energy which causes current to flow through the rest of the circuit. Energy dissipates and therefore current decreases exponentially. Graphs of the change in voltage in this case are shown in Fig. \ref{fig:theory:VI}, along with the corresponding absorption and dispersion curves. This behaviour is often referred to as an impulse response.
 
 \begin{equation}
 \begin{gathered}
@@ -448,7 +446,7 @@ The voltage variations with time for each electrical component is shown below in
 \end{gathered}
 \end{equation}
 
-The most common cables that are used to connect to \ac{RF} coils are coaxial cables, which usually have a characteristic impedance of 50$\Omega$. When a coil is constructed and tuned to the Larmor frequency the impedance is most likely different to the impedance of the cable. The difference in impedance will cause some of the power to be reflected at the coil instead of transmitted. Therefore, the impedance of of the coil needs to be changed which can be done by changing its reactance. The most common ways of doing this are by adding an inductor or a capacitor in parallel to the coil. The method of adding a capacitor will be discussed here and an example circuit can be seen in figure\ref{fig:theory:RLC}.
+The most common cables that are used to connect to \ac{RF} coils are coaxial cables, which usually have a characteristic impedance of 50$\Omega$. When a coil is constructed and tuned to the Larmor frequency the impedance is most likely different to the impedance of the cable. The difference in impedance will cause some of the power to be reflected at the coil instead of transmitted. Therefore, the impedance of of the coil needs to be changed which can be done by changing its reactance. The most common ways of doing this are by adding an inductor or a capacitor in parallel to the coil. The method of adding a capacitor will be discussed here and an example circuit can be seen in Fig. \ref{fig:theory:RLC}.
 
 \begin{figure}
     \centering
@@ -457,14 +455,14 @@ The most common cables that are used to connect to \ac{RF} coils are coaxial cab
     \label{fig:theory:RLC}
 \end{figure}
 
-The capacitor in series with the coil is referred to as the tuning capacitor (C$_T$) with the other capacitor called the matching capacitor (C$_M$). The total capacitance is C$_M$+C$_T$. A relationship between C$_M$ and C$_T$ can be found that is related to the quality factor (Q) \cite{Chen1989ChapterNoise} which is the resonance frequency divided by the bandwidth of the coil resonance in Figure \ref{fig:theory:VI}, and is shown in equation \ref{eqn:theory:match}. 
+The capacitor in series with the coil is referred to as the tuning capacitor (C$_T$) with the other capacitor called the matching capacitor (C$_M$). The total capacitance is C$_M$+C$_T$. A relationship between C$_M$ and C$_T$ can be found that is related to the quality factor (Q) \cite{Chen1989ChapterNoise} which is the resonance frequency divided by the bandwidth of the coil resonance in Fig. \ref{fig:theory:VI}, and is shown in Eq. \ref{eqn:theory:match}. 
 
 \begin{equation}
     C_M = \sqrt{\frac{C_T}{Q\omega_0Z}}
     \label{eqn:theory:match}
 \end{equation}
 
-The combination of equations \ref{eqn:theory:res} and \ref{eqn:theory:match} can be used to find the capacitances needed to tune and match the coil \cite{Chen1989ChapterNoise}. To test a fully constructed coil an \ac{AC} is applied to the coil and the reflected power is plotted against frequency as a logarithmic scale measured in decibels (dB), the graph will appear similar to the absorption spectra shown in Figure \ref{fig:theory:VI}. A level of 20 dB is commonly perceived as a good enough value of reflected power, with the peak appearing at the Larmor frequency. Realistically soldering and adding components will change the circuit and the theoretical components can be wrong so will often need changing based on the measured response.
+The combination of Eqs. \ref{eqn:theory:res} and \ref{eqn:theory:match} can be used to find the capacitances needed to tune and match the coil \cite{Chen1989ChapterNoise}. To test a fully constructed coil an \ac{AC} is applied to the coil and the reflected power is plotted against frequency as a logarithmic scale measured in decibels (dB), the graph will appear similar to the absorption spectra shown in Fig. \ref{fig:theory:VI}. A level of 20 dB is commonly perceived as a good enough value of reflected power, with the peak appearing at the Larmor frequency. Realistically soldering and adding components will change the circuit and the theoretical components can be wrong so will often need changing based on the measured response.
 
 \begin{figure}
     \centering
@@ -527,7 +525,7 @@ Volumetric coils such as saddle coils have more homogeneous B$_1$ fields than su
     \label{fig:theory:3D_Saddle}
 \end{figure}
 
-The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape and has an angular width of 120$^\circ$ a length of 16.8 cm and a diameter of 14.8 cm. Where the copper tape that links the two squares intersects/crosses over an insulated wire is used to avoid a capacitor being created. Also, the wires here run close side by side so that the fields from the opposing currents will cancel. Diagrams of the circuit for the coil are shown in figures \ref{fig:theory:2D_Saddle} and \ref{fig:theory:3D_Saddle} with pictures in Figure \ref{fig:theory:Saddle_pic}. The tuning capacitance is 47.3 pF, the total matching capcitance 8.8 pF.
+The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape and has an angular width of 120$^\circ$ a length of 16.8 cm and a diameter of 14.8 cm. Where the copper tape that links the two squares intersects/crosses over an insulated wire is used to avoid a capacitor being created. Also, the wires here run close side by side so that the fields from the opposing currents will cancel. Diagrams of the circuit for the coil are shown in Figs. \ref{fig:theory:2D_Saddle} and \ref{fig:theory:3D_Saddle} with pictures in Fig. \ref{fig:theory:Saddle_pic}. The tuning capacitance is 47.3 pF, the total matching capcitance 8.8 pF.
 
 \begin{figure}
     \centering
