@@ -291,6 +291,8 @@ The final spatial dimension is encoded using a phase-encoding gradient (G$_{phas
     \label{fig:theory:GRE}
 \end{figure}
 
+It has been shown the introduction of gradients can be used to acquire more spatial dimensions of an image. They can also be used to destroy/null signal in a specific region, for example it can be beneficial to null signal at the end of each \ac{TR}. These gradients are referred to as 'spoiler' gradients and work by increasing de-phasing of spins. If signal can be nulled outside a 3D volume before imaging this removes the need for slice selective gradients during imaging. This is usually performed with the use of an \ac{RF} pulse positioned outside of the 3D volume that has a different frequency to the Larmor frequency, followed by the use of spoiler gradients. This is referred to as \ac{OVS} and is commonly used to acquire reduced \ac{FOV} image data with reduced motion artefacts \cite{Smith2012ReducedSuppression}.
+
 Longitudinal and transverse relaxation time constants vary depending on the type of tissue. Therefore, when a particular pulse sequence is used the choice of \ac{TR} and \ac{TE} will effect the the contrast in the image. The image signal varies with \ac{TR} and \ac{TE} according to Eq. \ref{eqn:theory:Signal}, which drives the contrast.
 
 \begin{equation}
