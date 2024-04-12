@@ -16,6 +16,15 @@
 \usepackage{import}
 \usepackage{fancyhdr}
 \usepackage{multicol}
+\usepackage{etoolbox}
+
+\makeatletter
+\newif\if@in@acrolist
+\AtBeginEnvironment{acronym}{\@in@acrolisttrue}
+\newrobustcmd{\LU}[2]{\if@in@acrolist#1\else#2\fi}
+\newcommand{\ACF}[1]{{\@in@acrolisttrue\acf{#1}}}
+\makeatother
+
 \usepackage[super]{nth}
 \usepackage[printonlyused]{acronym}
 \usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package
@@ -63,13 +72,13 @@
 \begin{center}
     \textbf{Abstract}
 \end{center}
-Use of deuterium ($^2$H) as a tracer combined with Magnetic Resonance (MR) Imaging/Spectroscopy could potentially replace diagnostic techniques that use ionising radiation such as \ac{PET} imaging. Proton ($^1$H) MR scanning is used clinically and in research, however $^2$H comes with a decreased \ac{SNR}. However, thanks to its reduced T$_1$ relaxation times, much of the \ac{SNR} loss can be compensated by rapid averaging to allow for reasonable scan times. In this thesis deuterium magnetic resonance has been these techniques are implemented in healthy human participants \textit{in vivo} on both 3T and 7T MR scanners to investigate metabolism and key inherent MR parameters of $^2$H.
+Use of deuterium ($^2$H) as a tracer combined with Magnetic Resonance (MR) Imaging/Spectroscopy could potentially replace diagnostic techniques that use ionising radiation such as \ac{PET} imaging. Proton ($^1$H) MR scanning is used clinically and in research, but $^2$H comes with a decreased \ac{SNR}. However, thanks to the reduced T$_1$ relaxation times of $^2$H, much of the \ac{SNR} loss can be compensated by rapid averaging to allow for reasonable scan times. In this thesis deuterium magnetic resonance has been implemented in healthy human participants \textit{in vivo} on both 3T and 7T MR scanners to investigate metabolism and key inherent MR parameters of $^2$H.
 
-\ac{MEGE} images at a range of \ac{TR} values were used to obtain relaxation times (T$_1$ and T$_2^*$) in \ac{CSF}, \ac{GM} and \ac{WM} at 7T in subjects who had ingested heavy water (D$_2$O) to increase the $^2$H concentration by $\sim$x100 times. The $^2$H signal time-course was also measured following initial loading and compared to estimated changes in $^2$H concentration based on consideration of body water mixing.
+7T \ac{MEGE} images at a range of \ac{TR} values were used to obtain relaxation times (T$_1$ and T$_2^*$) in \ac{CSF}, \ac{GM} and \ac{WM} in subjects who had ingested heavy water (D$_2$O) to increase the $^2$H concentration by $\sim$x100 times. The $^2$H signal time-course was also measured following initial loading and compared to estimated changes in $^2$H concentration based on consideration of body water mixing.
 
-Glucose with two or seven attached $^2$H atoms (D$_2$/D$_7$-glucose respectively) was ingested by healthy human participants. The change in \textit{in vivo} downstream $^2$H metabolite maps semi-heavy water (HDO), glucose, Glx and lactate was tracked in different brain regions using \ac{MRSI} at 7T. An increased \ac{SNR} was noted for all metabolites following D$_7$-glucose ingestion. Time-courses for each metabolite was obtained and D$_7$/D$_2$ signal ratios were explained by differing numbers of labels.
+Glucose with two or seven attached $^2$H atoms (D$_2$/D$_7$-glucose respectively) was ingested by healthy human participants. The change in \textit{in vivo} downstream $^2$H metabolite maps of semi-heavy water (HDO), glucose, Glx and lactate was tracked in different brain regions using \ac{MRSI} at 7T. An increased \ac{SNR} was noted for all metabolites following D$_7$-glucose ingestion. Time-courses for each metabolite were obtained and D$_7$/D$_2$ signal ratios were explained by the differing numbers of labels.
 
-Lipid metabolism and the quadrupolar splitting of $^2$H signals \textit{in vivo} was investigated using a clinical 3T scanner in subjects who had ingested D$_2$O. An increase in $^2$H lipid signal was detected. Quadrupolar separation was quantified in skeletal muscle at different angles respective to the $B_0$ field, along with the isolation of a \ac{DQF} signal.
+Lipid metabolism and the quadrupolar splitting of $^2$H signals \textit{in vivo} was investigated using a clinical 3T scanner in subjects who had ingested D$_2$O. An increase in $^2$H lipid signal was detected. Quadrupolar splitting was quantified in skeletal muscle at different angles with respect to the $B_0$ field, along with the isolation of a \ac{DQF} signal.
 
 \newpage
 \vspace*{\fill}
@@ -84,9 +93,9 @@ First I would like to thank my supervisor Prof. Richard Bowtell for his support 
 
 I would also like to thank Dr. Robin Damion, Prof. Dorothee Auer, Dr. Matthew Clemence and Dr. Andrew Peters for their help in making a difficult project run smoothly. Without them this project would not have been half as successful or as enjoyable as it has been to work on. And to the Beacon Precision Imaging for funding the work here and my PhD.
 
-Next I would like to thank the whole of the SPMIC for creating such a welcoming and enjoyable working environment, that have showed if you work hard you can play hard. I would like to namely thank Abi Spicer, Caitlin Connolly, Natalie Rhodes and Dr. Alex Daniel for their friendship and pushing me to be the best physicist I can be, and forcing me to take the time to enjoy and experience life during a PhD.
+Next I would like to thank the whole of the SPMIC for creating such a welcoming and enjoyable working environment, that has showed if you work hard you can play hard. I would like to namely thank Abi Spicer, Caitlin Connolly, Natalie Rhodes and Dr. Alex Daniel for their friendship and pushing me to be the best physicist I can be, and forcing me to take the time to enjoy and experience life during a PhD.
 
-There is no way I could have done this without the lifelong support of my family (Rita, Graham, Rob, Gareth, John, Gemma, Evie, Kiera) for always being proud of me and supporting me, making a long drive seem only down the road is not an easy task and couldn't have done it without you all. I would like to make a special thank you to my Mum Tina, you have always pushed me to put everything into whatever I am doing and to always 'back yourself' which is what has made this Thesis possible so I am lucky to call you Mum.
+There is no way I could have done this without the lifelong support of my family (Rita, Graham, Rob, Gareth, John, Gemma, Evie, Kiera) for always being proud of me and supporting me, making a long drive seem only down the road is not an easy task and I could not have done it without you all. I would like to make a special thank you to my Mum Tina, you have always pushed me to put everything into whatever I am doing and to always 'back yourself' which is what has made this Thesis possible so I am lucky to call you Mum.
 
 If I was not already fortunate enough to have such an amazing family, having such incredible friends has continuously made me feel blessed. Alfie, Flint, Josh, Liam, Matt, Sarah, Elle and Rachel to be able to say that we have been this close for so long is one hell of an undertaking, you have been there for me through it all and without you I do not see how any of this would have been possible. Yvonne, you introduced me to the world of mathematics which kick-started this whole journey, and for that I will always be hugely grateful. To Graham and Oliver the help you have given my mum and I is beyond comprehension, and to say I am grateful is an understatement. To all listed here you will forever and always be additions to my family and I could not have done this without you. 
 
