@@ -38,14 +38,14 @@ This is evident in Fig. \ref{fig:theory:zeeman}. The energy of an electromagneti
     \label{eqn:theory:ELamor}
 \end{equation}  
 
-The magnetic moment of the nuclei of interest in an applied magnetic field $\mathbf{B}$ will want to align with the field. However, due to the angular momentum of the nuclei it will instead precess around the magnetic field, with an associated frequency of precession. This angular frequency is referred to as the Larmor frequency \cite{Larmor1897LXIII.Ions} and is often represented as an angular frequency ($\omega$). The Larmor frequency is directly related to $f$ in Eq. \ref{eqn:theory:ELamor} by $\omega=2\pi f$ and is therefore directly proportional to the magnitude of the applied external magnetic field ($B_0$), with $\gamma$ being the constant of proportionality (meaning this frequency is also specific to each nucleus). This therefore shows that for a nucleus with spin, the energy, frequency and applied magnetic field share a quantum relationship. 
+The magnetic moment of the nuclei of interest in an applied magnetic field $\mathbf{B}$ will tend to align with the field. However, due to the angular momentum of the nuclei they will instead precess around the magnetic field, with an associated frequency of precession. The angular frequency of precession is referred to as the Larmor frequency ($\omega$) \cite{Larmor1897LXIII.Ions}. The Larmor frequency is directly related to $f$ in Eq. \ref{eqn:theory:ELamor} by $\omega=2\pi f$ and is therefore directly proportional to the magnitude of the applied external magnetic field ($B_0$), with $\gamma$ being the constant of proportionality (meaning this frequency is also specific to each nucleus). This therefore shows that for a nucleus with spin, the energy, frequency and applied magnetic field share a quantum relationship. 
 
 \begin{equation}
     \omega = \gamma B_0
     \label{eqn:theory:Lamor}
 \end{equation}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/Theory/Zeeman.png}
     \caption{\textit{Figure demonstrating the change in spin energy levels due to increasing magnetic field B$_0$, for spin-1/2 and spin-1 nuclei. Demonstrating the Zeeman Effect \cite{Zeeman1896VerslagenAfdeeling}.}}
@@ -267,7 +267,7 @@ Whilst the magnetisation appears to be 8/3 larger for $^2$H compared to $^1$H in
 
 \subsection{Imaging}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Figures/Theory/1D_Projection.png}
     \caption{Diagram showing how a 1D projection of an image is created using a gradient applied in the x direction.}
@@ -313,14 +313,16 @@ Acquiring MR spectra allows molecular concentrations to be obtained by comparing
 
 \subsubsection{Chemical Shift Imaging}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Theory/CSI_sequence.png}
-    \caption{\textit{Example pulse sequence diagram for a 2D \ac{CSI}, which includes a 90$^\circ$ \ac{RF} pulse applied at the same time as a slice selective G$_z$, which is followed by a rephasing lobe. During rephasing, G$_x$ and G$_y$ gradients are applied to spatially localise the resulting \ac{FID} which is also shown.}}
+    \caption{\textit{Example pulse sequence diagram for a 2D \ac{CSI}, which includes a 90$^\circ$ \ac{RF} pulse applied at the same time as a slice selective gradient G$_z$, which is followed by a rephasing lobe. During this rephasing, G$_x$ and G$_y$ gradients are also applied to spatially localise the resulting via phase encoding \ac{FID}.}}
     \label{fig:theory:CSI}
 \end{figure}
 
-The simplest and quickest method to acquire a spectrum is to apply an \ac{RF} pulse in a static magnetic field and acquire data from the FID immediately after the pulse. Application of a gradient during the \ac{RF} excitation will localise the data from a specific slice in the body. Often this gradient is applied in the z-direction to localise the signal from a transverse slice through the body. However any direction of gradient can be used to excite a region. For example a sagittal or a coronal slice can be excited instead. The combination of gradients increases the number of dimensions in which spatial position can be localised, as has been shown with gradient echo imaging in Fig. \ref{fig:theory:GRE}. By applying three phase-encoded gradients in three orthorgonal directions that excite three slabs, their overlap excites a cuboid shape which forms a voxel. By then changing the strength of each gradient for each \ac{TR} a full 3D grid of \ac{FID}s are obtained which can form a 3D grid of spectra. This pulse sequence is called \ac{CSI}, a diagram of the pulse sequence used to acquire a 2D \ac{CSI} is shown in Fig. \ref{fig:theory:CSI}. 
+The simplest and quickest method to acquire a spectrum is to apply an \ac{RF} pulse in a static magnetic field and acquire data from the FID immediately after the pulse. Application of a gradient during the \ac{RF} excitation will localise the data from a specific slice in the body. Often this gradient is applied in the z-direction to localise the signal from a transverse slice through the body. However any direction of gradient can be used to excite a region. For example a sagittal or a coronal slice can be excited instead. The combination of gradients increases the number of dimensions in which spatial position can be localised, as has been shown with gradient echo imaging in Fig. \ref{fig:theory:GRE}. By applying a phase encoding gradient along one axis before it is possible to make the phase of the signal dependent on the position in the gradient direction. Repeating the \ac{FID} acquisition with different phase encoding gradient amplitude and then applying a Fourier transform the stacked spectra produces a one dimensional chemical shift image. If phase encode gradients are independently applied in two or three directions. Fourier transformation of the resulting \ac{FID}s in two or three dimensions produces 2D or 3D chemical shift images. This pulse sequence is called \ac{CSI}, a diagram of the pulse sequence used to acquire a 2D \ac{CSI} is shown in Fig. \ref{fig:theory:CSI}. 
+
+% By applying three phase-encoded gradients in three orthorgonal directions that excite three slabs, their overlap excites a cuboid shape which forms a voxel. By then changing the strength of each gradient for each \ac{TR} a full 3D grid of \ac{FID}s are obtained which can form a 3D grid of spectra. 
 
 % Therefore, by applying gradients in all three Cartesian directions simultaneously only data from a small voxel is excited, if data is acquired during the full length of an \ac{FID} that will only come from one small voxel. By iteratively changing the strengths of the adjacent voxels are excited eventually a full 2D/3D grid of spectra is obtained, this pulse sequence is called \ac{CSI}. 
 

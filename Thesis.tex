@@ -1,4 +1,4 @@
-\documentclass[12pt,english]{report}
+\documentclass[12pt]{report}
 \usepackage{standalone}
 \usepackage[a4paper, left=1.5in, right=1.5in, top=1.2in, bottom=1.2in,]{geometry}
 \geometry{twoside=true}
@@ -19,11 +19,13 @@
 \usepackage{etoolbox}
 \usepackage{rotating}
 
+\DeclareUnicodeCharacter{2032}{$^\prime$}
+
 \makeatletter
 \newif\if@in@acrolist
 \AtBeginEnvironment{acronym}{\@in@acrolisttrue}
 \newrobustcmd{\LU}[2]{\if@in@acrolist#1\else#2\fi}
-\newcommand{\ACF}[1]{{\@in@acrolisttrue\acf{#1}}}
+\newcommand{\ACF}[1]{\@in@acrolisttrue\acf{#1}}
 \makeatother
 
 \usepackage[super]{nth}
@@ -116,13 +118,15 @@ Finally, I could dedicate this work to anyone mentioned above but I would like t
 
 \newpage
 \fancyhead[LO,RE]{\color{gray} ABBREVIATIONS}
-\addcontentsline{toc}{chapter}{Acknowledgements}
+\addcontentsline{toc}{chapter}{Abbreviations}
 \include{Abbreviations}
 
 \fancyhead[LO]{\color{gray} \nouppercase{\rightmark}}
 \fancyhead[RE]{\color{gray} \nouppercase{\leftmark}}
 \fancyfoot[RO,LE]{\color{gray} Daniel Cocking}
 \fancyfoot[RE,LO]{\color{gray} University of Nottingham}
+
+\setlength{\headheight}{37.4pt}
 
 \setcounter{page}{1}
 \pagenumbering{arabic}
