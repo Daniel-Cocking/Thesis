@@ -33,8 +33,16 @@
 \usepackage[backend=biber, style=numeric, citestyle=nature, doi=false, isbn=false, url=false, eprint=false]{biblatex} %Imports biblatex package
 \addbibresource{refs.bib} %Import the bibliography file
 
-% Include only certain chapters for drafts 
-%\includeonly{Abbreviations, Chapters/Conclusion} 
+% Converts @misc references to show up as online
+\DeclareSourcemap{
+  \maps[datatype=bibtex, overwrite=true]{
+    \map{
+      \step[typesource=misc, typetarget=patent, final]
+      \step[fieldsource=url, final]
+      \step[typesource=patent, typetarget=online]
+    }
+  }
+}
 
 \begin{document} 
 
