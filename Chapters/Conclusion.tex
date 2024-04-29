@@ -1,7 +1,37 @@
 \chapter{Conclusion}
 \label{section:Conclusion}
 
-In this thesis \ac{MRI} and \ac{MRSI} tuned to the $^2$H resonance at 3T and 7T have been used to explore some important $^2$H MR parameters such as T$_1$ relaxation times. The metabolic behaviour of $^2$H glucose has also been investigated \textit{in vivo} using \ac{DMI} at 7T. Due to this work not being performed on human scanners \textit{in vivo} at the \ac{SPMIC} previously, some of the hardware used, such as \ac{RF} coils, were in-house built and the details of designing and building of these coils have also been described here. $^2$H MRSI with $^2$H glucose is now being used to investigate metabolic diseases such as brain cancer due to the increased \ac{CNR} from metabolite concentration maps. The aim of this work is to successfully lay the ground for future studies at the SPMIC to investigate brain tumours in patients \textit{in vivo} using \ac{DMI} at 7T. At the time of writing ethics have been approved for patient studies, and the first scan in planned. 
+In this thesis \ac{MRI} and \ac{MRSI} tuned to the $^2$H resonance at 3T and 7T have been used to explore some important $^2$H MR parameters such as T$_1$ relaxation times. The metabolic behaviour of $^2$H glucose has also been investigated \textit{in vivo} using \ac{DMI} at 7T. Due to this work not being performed on human scanners \textit{in vivo} at the \ac{SPMIC} previously, some of the hardware used, such as \ac{RF} coils, were in-house built and the details of designing and building of these coils have also been described here. $^2$H MRSI with $^2$H glucose is now being used to investigate metabolic diseases such as brain cancer due to the increased \ac{CNR} from metabolite concentration maps. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/CSI.png}
+    \caption{\textit{$^2$H CSI data acquired in $\sim$12.5 minutes (purple) along with corresponding fits (yellow). In tumour voxels (red) and contralateral voxels (blue).}}
+    \label{fig:Conc:CSI}
+\end{figure}
+
+The aim of this work is to successfully lay the ground for future studies at the SPMIC to investigate brain tumours in patients using \ac{DMI} at 7T \textit{in vivo}. At the time of writing this conclusion the first DMI scan was performed in a patient with a brain tumour using ingestion of D$_7$-glucose at 7T \textit{in vivo}, which was performed by our group at the SPMIC. In a preliminary analysis, the data has been fitted using the OXSA-AMARES toolbox \cite{Purvis2017OXSA:MATLAB} (Fig. \ref{fig:Conc:CSI}), metabolite fitting amplitudes have been obtained and tracked over time and can be seen in Fig. \ref{fig:Conc:Time}. Decreased Glx was found in tumour voxels compared to contralateral voxels along with increased lactate in the three last scans. This resulted in a statistical increase in Lac/Glx in tumour voxels which is visible in Fig. \ref{fig:Conc:Box}, 0.5 $\pm$ 0.2 compared to 0.2 $\pm$ 0.2 p$<$0.05. Average metabolite maps from the post-ingestion scans are visible in Fig. \ref{fig:Conc:Maps}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/Time_Course.png}
+    \caption{Average fitting amplitudes for each metabolite (HDO, Glucose (Glu), Glx and Lac) over the contralateral (red) voxels and the tumour (blue) voxels. For the Natural Abundance Scan (1) and the post-ingestion scans (2 to 6).}
+    \label{fig:Conc:Time}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.8\textwidth]{Figures/Conclusion/BarChart.png}
+    \caption{Box plots for the average Lac/Glx ratios in the tumour and the contralateral voxels indicating an increase in the tumour region (p$<$0.05). For the final three post-ingestion scans where the Glx and Lac signals appear to have reached a steady state.}
+    \label{fig:Conc:Box}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/Maps.png}
+    \caption{Average metabolite maps from the post-ingestion scans from the slice indicating the tumour.}
+    \label{fig:Conc:Maps}
+\end{figure}
 
 \section{Chapter Overviews}
 
