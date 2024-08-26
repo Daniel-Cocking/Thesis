@@ -1,4 +1,4 @@
-\chapter{Evaluating the Feasibility of Monitoring Lipid Turnover using Heavy Water Loading and $^2$H Magnetic Resonance}
+\chapter{Evaluating the Feasibility of Monitoring Lipid Turnover using Heavy Water Loading and \texorpdfstring{$^2$H}{2H} Magnetic Resonance}
 \label{Chap:Lipid}
 
 \section{Introduction}
@@ -78,18 +78,18 @@ As a precursor to tracer studies we explored the deuterium spectrum obtained fro
 
 \section{Methodology}
 
-\subsection{\ac{NA} Scanning}
+\subsection{\texorpdfstring{\ac{NA}}{NA} Scanning}
 
-T$_1$ relaxation times of \ac{HDO} and lipid signals were measured \textit{in vivo} at 3T in the calf of in four different healthy human participants \cite{Damion2021NaturalT}. Scanning was performed on a 3T scanner (Philips Achieva) using an in-house built surface coil (5 cm diameter) tuned to the deuterium resonance 19.6 MHz. The surface coil was placed under the calf muscle of the left leg. Non-localised \ac{IR} spectra were acquired at \ac{NA}, using a 900 Hz bandwidth adiabatic inversion pulse followed by an inversion delay and then a non-selective \ac{RF} pulse of 90$^\circ$ nominal flip angle. Inversion times were $\tau$: {5, 10, 20, 40, 80, 160, 320, 1000} ms, for a fixed \ac{TR}: 1200 ms (time between adiabatic pulses). \ac{FID}s were collected with 512 samples, NSA: 128, \ac{BW}: 3000 Hz. FIDs were truncated, zero-filled to 512 points, and line-broadened using a 5 Hz exponential filter. % The pulse sequence used to obtain this data can be viewed in Fig. \ref{fig.pulse}. 
+T$_1$ relaxation times of \ac{HDO} and lipid signals were measured \textit{in vivo} at 3T in the calf of in four different healthy human participants \cite{Damion2021NaturalT}. Scanning was performed on a 3T scanner (Philips Achieva) using an in-house built surface coil (5 cm diameter) tuned to the deuterium resonance 19.6 MHz. The surface coil was placed under the calf muscle of the left leg. Non-localised \ac{IR} spectra were acquired at \ac{NA}, using a 900 Hz bandwidth adiabatic hyperbolic secant inversion pulse followed by an inversion delay and then a non-selective \ac{RF} pulse of 90$^\circ$ nominal flip angle. Inversion times were $\tau$: {5, 10, 20, 40, 80, 160, 320, 1000} ms, for a fixed \ac{TR}: 1200 ms (time between adiabatic pulses). \ac{FID}s were collected with 512 samples, NSA: 128, \ac{BW}: 3000 Hz. FIDs were truncated, zero-filled to 512 points, and line-broadened using a 5 Hz exponential filter. % The pulse sequence used to obtain this data can be viewed in Fig. \ref{fig.pulse}. 
 
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Figures/Lipid/Coil.jpg}
-    \caption{\textit{$^1$H images of the calf (\ac{FOV}: 128 $\times$ 128 $\times$ 192 mm$^3$) also showing the position and extent of the $^2$H surface coil. Left image: mid-sagittal slice. Right image: mid-axial slice.}}
+    \caption{\textit{$^1$H images of the calf (\ac{FOV}: 128 $\times$ 128 $\times$ 192 mm$^3$) also showing the position and extent of the $^2$H surface coil. Left image: mid-sagittal slice. Right image: mid-axial slice. Figure made by Prof. Richard Bowtell.}}
     \label{fig:Lip:Coil}
 \end{figure}
 
-The data was analysed using code written in MATLAB (MathWorks, Natick, USA). Spectra acquired with a surface coil over a large volume can show peaks with different phases due to the averaging of various \ac{RF} factors over spatial distributions which are different for the molecules producing the spectral peaks. Therefore, a global zeroth-order phase-correction cannot be applied. Instead, the complex spectra were fitted to a sum of two complex Lorentzian lineshape functions employing independent phases for each spectral peak, as well as independent values of amplitude, frequency, and R$_2^*$. The inappropriateness of a simple phase-correction and the fact that the phases are functions of inversion time (other than the usual phase-shift at the null-point) mean that the inversion-recovery curve also needs to be analysed as a complex function for each resonance:
+The data was analysed using code written in MATLAB (MathWorks, Natick, USA). Spectra acquired with a surface coil over a large volume can show peaks with different phases due to the averaging of various \ac{RF} factors over spatial distributions which are different for the molecules producing the spectral peaks. Therefore, a global zeroth-order phase-correction cannot be applied. Instead, the complex spectra were fitted to a sum of two complex Lorentzian lineshape functions employing independent phases for each spectral peak, as well as independent values of amplitude, frequency, and R$_2^*$. The inappropriateness of a simple phase-correction and the fact that the phases are functions of inversion time (other than the usual phase-shift at the null-point) mean that the inversion-recovery curve also needs to be analysed as a complex function for each resonance as this allows phase to vary with $\tau$ and \ac{TR}. The complex equation used for fitting is shown here  
 
 \begin{equation}
     M(\tau) = \alpha - \beta\exp(-\frac{\tau}{T_1}) + (\beta - \alpha)\exp(-\frac{T_R}{T_1})
@@ -123,7 +123,7 @@ The larger peak in Fig. \ref{fig:Lip:IR} corresponds to the HDO present in the c
     \label{fig:Lip:R_Table}
 \end{table}
 
-\subsection{Fat Measurements by D$_2$O Loading}
+\subsection{Fat Measurements by \texorpdfstring{D$_2$O}{D2O} Loading}
 
 \begin{figure}
     \centering

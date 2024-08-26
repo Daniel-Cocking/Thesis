@@ -108,7 +108,7 @@ The qualitative increase in signal during the loading period in Fig. \ref{fig:D2
 
 \subsection{Relaxation Times}
 
-Figure \ref{fig:D2O:R1_R2} shows sagittal and axial relaxation rate maps from two participants, with the dominant feature in the $^2$H maps being the reduced R$_2^*$ and R$_1$ relaxation rates in the ventricles. The elevated R$_2^*$ values seen in deep grey matter structures in the $^1$H maps are not evident in the $^2$H maps. Table \ref{fig:D2O:R_times} reports the average and standard deviation of the $^2$H T$_1$ and T$_2^*$ values, along with $^1$H T$_2^*$ values measured measured in \ac{GM}, \ac{WM} and \ac{CSF} in the four participants. These values were calculated by applying the binarised segmentation masks to the relaxation maps.
+Figure \ref{fig:D2O:R1_R2} shows sagittal and axial relaxation rate maps from two participants, with the dominant feature in the $^2$H maps being the reduced R$_2^*$ and R$_1$ relaxation rates in the ventricles. The elevated R$_2^*$ values seen in deep grey matter structures in the $^1$H maps are not evident in the $^2$H maps. Scatter plots of the voxelwise T$_1$ and T$_2^*$ relaxation times and the proton and deuterium T$_2^*T$ relaxation times, across four subjects are shown in Fig. \ref{fig:D2O:scatter}. Table \ref{fig:D2O:R_times} reports the average and standard deviation of the $^2$H T$_1$ and T$_2^*$ values, along with $^1$H T$_2^*$ values measured measured in \ac{GM}, \ac{WM} and \ac{CSF} in the four participants. These values were calculated by applying the binarised segmentation masks to the relaxation maps.
 
 \begin{figure}[H]
     \centering
@@ -129,6 +129,13 @@ Figure \ref{fig:D2O:R1_R2} shows sagittal and axial relaxation rate maps from tw
     \includegraphics[width=1\textwidth]{Figures/D2O/R1_R2.png}
     \caption{\textit{$^2$H R$_2^*$ and R$_1$ maps are shown along with $^1$H R$_2^*$ maps in sagittal (a) and axial (b) format. Maps show five central slices from Participants C and D. Relaxation maps were calculated from MEGE data equivalent to that displayed in Fig. \ref{fig:D2O:TR_TE}. The elevated R$_2^*$ in iron-rich deep GM structures is evident in the lower slices of the $^1$H maps (red arrows), but is not seen in the $^2$H maps. The images shown have a reduced FOV of 204 × 204 mm$^2$.}}
     \label{fig:D2O:R1_R2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/D2O/Scatter.png}
+    \caption{\textit{Scatter plots of the voxelwise deuterium T$_1$ and T$_2^*$ relaxation times (a) and the voxelwise proton and deuterium T$_2^*$ relaxation times (b).}}
+    \label{fig:D2O:scatter}
 \end{figure}
 
 % Attempt to create overleaf table, data is too big for fontsize
@@ -174,19 +181,3 @@ Rapid increases in body water enrichment can lead to feelings of dizziness and n
 \section{Conclusion}
 
 $^2$H MR measurements at 7T have been successfully used to track the increase in concentration of $^2$H in brain during \ac{D$_2$O} loading to 100 times \ac{NA}, in four human participants. Gradient echo images with an \ac{SNR} of 16 and a voxel volume of 0.36 ml could be acquired in 7.5 minutes. $^2$H T$_1$ and T$_2^*$ relaxation times from water in \ac{GM}, \ac{WM} and \ac{CSF} have also been measured at 7T. These relaxation times can be applied in research protocols using the \ac{NA} $^2$H signal from water for calibration and concentration calculations. This lays the ground work for further studies involving ingested \ac{D$_2$O} in order to measure lipid turnover in Chapter \ref{Chap:Lipid}. In future work we aim to track uptake from a single \ac{D$_2$O} dose on a shorter time scale, using faster, interleaved acquisition of $^2$H images and spectra. 
-
-To demonstrate the potential of this approach a $^2$H \ac{EPI} acquisition has been used for faster scanning during heavy water loading, allowing 75 3D image dynamics to be acquired in 48 minutes of scanning ($\sim$38 s each). A healthy human participant was scanned at 7T with a \ac{FOV}: 288 $\times$ 288 $\times$ 240 mm$^3$, voxel size: 6 $\times$ 6 $\times$ 10mm$^3$, \ac{TR}: 250 ms, TE: 13.8 ms, flip angle: 70$^\circ$, 75 dynamics, \ac{EPI} factor: 23. The participant was taking part in the studies in Chapter \ref{Chap:Lipid} and \ref{Chap:Quad} at the time of scanning and therefore followed the loading regime outlined there. The participant had completed the initial loading and was in the steady-state period. Immediately prior to scanning their 50 ml daily top-up was ingested. Traces of heavy water in the mouth and throat can be seen in the first few dynamics of Fig. \ref{fig:D2O:EPI}. The data was de-noised using a Tucker decomposition with a core matrix size of 24 $\times$ 24 $\times$ 12, afterwards the slices shown were averaged over the centre five sagittal slices. Each individual slice is shown after averaging all the temporal dynamics in Fig. \ref{fig:D2O:EPI_avg}, here no de-noising is applied.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/D2O/EPI.png}
-    \caption{\textit{Time-course from the five centre averaged sagittal slices of a healthy human brain in vivo, during the steady-state of D$_2$O loading, acquired using an \ac{EPI} acquisition with 75 dynamics, tuned to the $^2$H resonance at 7T.}}
-    \label{fig:D2O:EPI}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/D2O/EPI_avg.png}
-    \caption{\textit{Individual sagittal slices of a healthy human brain in vivo, during the steady-state of D$_2$O loading, using an \ac{EPI} acquisition averaged over all 75 dynamics, tuned to the $^2$H resonance at 7T.}}
-    \label{fig:D2O:EPI_avg}
-\end{figure}

@@ -2,12 +2,7 @@
 
 \label{Chap:Coils}
 
-\ac{RF} coils have two functions: first to apply a B$_1$ field to tip the magnetisation, and second to receive a signal from precessing magnetisation Faraday's law of induction. The profile of the applied B$_1$ field depends on the design/shape of the coil, the sensitivity of the coil also depends on the electronic components used for tuning and matching. The frequency of the applied $B_1$ depends on the applied waveform. The key point in designing/building the \ac{RF} coil is to maximise the $B_1$ per unit voltage by tuning the coil to resonate at the Larmor frequency and matching the coil's impedance to whatever it is connected to. This shows how important design and building of \ac{RF} coils is. Lots of different companies exist from whom it is possible to buy \ac{RF} coils. This can be expensive due to the experience and time that goes into coil building. Therefore it is useful when starting new research with a new nucleus of interest (such as $^2$H) to be able to build home-made coils. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Don't Forget to include details of T/R switch and preamp interface
-% Could include small detail on why this is only done at 3T
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ac{RF} coils have two functions: first to apply a B$_1$ field to tip the magnetisation, and second to receive a signal from precessing magnetisation Faraday's law of induction. The profile of the applied B$_1$ field depends on the design/shape of the coil, the sensitivity of the coil also depends on the electronic components used for tuning and matching. The frequency of the applied $B_1$ depends on the applied waveform. The key point in designing/building the \ac{RF} coil is to maximise the $B_1$ per unit voltage by tuning the coil to resonate at the Larmor frequency and matching the coil's impedance to whatever it is connected to. This shows how important design and building of \ac{RF} coils is. Lots of different companies exist from whom it is possible to buy \ac{RF} coils. This can be expensive due to the experience and time that goes into coil building. Therefore it is useful when starting new research with a new nucleus of interest (such as $^2$H) to be able to build home-made coils. The coils described in this chapter are interfaced using a T/R switch that is already built into our Philips Achieva 3T \ac{MRI} scanner along with a Philips preamp interface.
 
 \section{Theory}
 
@@ -100,7 +95,7 @@ The combination of Eqs. \ref{eqn:coils:res} and \ref{eqn:coils:match} can be use
 
 When a coil is placed over a sample or body tissue coupling occurs which changes the total impedance. This can change the matching condition as well as the resonant frequency of the coil. Therefore it is important to load the coil with a phantom that matches the loading response that will be present during scanning, when designing/building the coil.
 
-\subsection{Transmit and Receive of $B_1$}
+\subsection{Transmit and Receive of \texorpdfstring{$B_1$}{B1}}
 
 % Insert few paragraphs of B_1, B_1+ and B_1- along with polarisation
 
@@ -142,9 +137,7 @@ During an \ac{MRI} scan the \ac{RF} power is monitored and the tissue heating is
     SAR = \frac{\sigma|E|^2}{2\rho}
 \end{equation}
 
-Where $\rho$ is the density of the tissue. The \ac{SAR}, which is measured in W/kg, was modelled for all the coils built in this thesis. Based on these models the $B_1$ was adapted to ensure the coil was safe to use, by making sure the \ac{SAR} values fall within safe guidelines.
-
-% Could find what the SAR limits are
+Where $\rho$ is the density of the tissue. The \ac{SAR}, which is measured in W/kg, was modelled for all the coils built in this thesis. Based on these models the $B_1$ was adapted to ensure the coil was safe to use, by making sure the \ac{SAR} values fall within safe guidelines. The International Electrotechnical Commission (IEC) and the US Food and Drug Administration (FDA) developed the first international safety requirements for MR equipment, which includes \ac{SAR} limits. For local transmit coils this is 20 W/kg and for volume transmit coils it is $[10 - 8\times r]$ where $r$ is the ratio of the exposed body weight to the total body weight.
 
 \section{Coils Built}
 
@@ -154,65 +147,94 @@ After the building of each coil, the coil is placed around a phantom and spectra
 
 \subsection{Surface Coil}
 
-A surface coil is the simplest and most basic coil to design, where the coil often forms a simple circular loop. The magnetic field is largest on axis and decreases, with distance from the coil. Therefore the field is spatially inhomogeneous which is why this coil design is often used for non-localised spectroscopy, where the localisation of the signal is down to the placement of the coil. The penetration depth of the magnetic field for a surface coil is approximately equal to the diameter of the coil \cite{Gruber2018RFNonphysicists}, and therefore a surface coil is sensitive to regions closest to the coil. 
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{Figures/Coils/Surface_Coil.png}
     \caption{\textit{Diagram of a typical planar surface coil with circuit elements attached, the coaxial cable attaches to a BNC connector. C$_T$ is the tuning capacitor and C$_{M2}$ and C$_{M1}$ are the matching capacitors.}}
     \label{fig:coils:Surface}
 \end{figure}
 
-The surface coils used for data collection were built for use in the study described in Chapter \ref{Chap:Lipid}. The first coil is a small 5 cm coil with two loops of copper wire with a tuning capacitance of 173.4 pF and a matching capacitance of 11 pF which is split over both wires of the loop to keep it balanced. The coil is made small to maximise the sensitivity to signal from subcutaneous fat in the calf.
+A surface coil is the simplest and most basic coil to design, where the coil often forms a simple circular loop. The magnetic field is largest on axis and decreases, with distance from the coil. Therefore the field is spatially inhomogeneous which is why this coil design is often used for non-localised spectroscopy, where the localisation of the signal is down to the placement of the coil. The penetration depth of the magnetic field for a surface coil is approximately equal to the diameter of the coil \cite{Gruber2018RFNonphysicists}, and therefore a surface coil is sensitive to regions closest to the coil. 
 
-\begin{figure}
+
+The surface coils used for data collection were built for use in the study described in Chapter \ref{Chap:Lipid}. The first coil is a small 5 cm coil with two loops of copper wire with a tuning capacitance of 173.4 pF and a matching capacitance of 11 pF which is split over both wires of the loop to keep it balanced. The coil is made small to maximise the sensitivity to signal from subcutaneous fat in the calf. Maps for the $B_y, B_\rho, |E|$ and \ac{SAR} maps for this coil are shown in Fig. \ref{fig:coils:Calf_Maps}, the maximum \ac{SAR} of this coil was <20 W/kg. This was calculated assuming the target $B_1$ of 40 $\mu$T occurs 4 cm from coil on coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/Coils/Calf_Maps.png}
+    \caption{\textit{(a) Map of $B_y$ measured in $\mu T$, (b) map of $B_\rho$ measured in $\mu$T, $|E|$ measured in (V/m) and (d) map of \ac{SAR} measured in (W/kg). All maps show the spatial dependence up to 20 cm away from the calf coil in the $z$ and $\rho$ direction. Figure by Prof. Richard Bowtell.}}
+    \label{fig:coils:Calf_Maps}
+\end{figure}
+
+The second coil is 12 cm in diameter and again made out of copper wire, and is designed for imaging the liver. This coil is larger so that the penetration depth is large enough to reach the liver. The coil is slightly curved in plane in order for the coil to sit closer to the liver on one side of the abdomen and is mounted onto a holder so that the coil can be rotated whilst still being attached to the scanner bed. Maps for the $B_y, B_\rho, |E|$ and \ac{SAR} maps for this coil are shown in Fig. \ref{fig:coils:Liver_Maps}, the maximum \ac{SAR} of this coil was <20 W/kg. This was calculated assuming the target $B_1$ of 40 $\mu$T occurs 4 cm from coil on coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m. These simulations were performed by Prof. Richard Bowtell.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Figures/Coils/Liver_Coil.png}
     \caption{\textit{Diagram of the circular surface C$_T$ is the tuning capacitor and C$_{M2}$ and C$_{M1}$ are the matching capacitors which are attached to a BNC cable which continues of the diagram. The bottom bar of the diagram is housing which slides into the \ac{MRI} bed, then the two spokes then hold the coil in plastic housing. The circular joint in the top-left of the image allows movement so the coil can be comfortable and close to the participant.}}
     \label{fig:coils:Liver}
 \end{figure}
 
-The second coil is 12 cm in diameter and again made out of copper wire, and is designed for imaging the liver. This coil is larger so that the penetration depth is large enough to reach the liver. The coil is slightly curved in plane in order for the coil to sit closer to the liver on one side of the abdomen and is mounted onto a holder so that the coil can be rotated whilst still being attached to the scanner bed.
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Coils/Coil_Pics.png}
     \caption{\textit{Photos of the calf surface coil from two different angles (a \& b) with a photo of the liver surface coil (c), both tuned to the $^2$H Larmor frequency at 3T. The yellow tablets that can be seen in all the photos are vitamin tablets (also known as fiducial markers) used to identify where the coil is in an image.}}
     \label{fig:coils:Pics}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/Coils/Liver_Maps.png}
+    \caption{\textit{(a) Map of $B_y$ measured in $\mu$T, (b) map of $B_\rho$ measured in $\mu$T, $|E|$ measured in (V/m) and (d) map of \ac{SAR} measured in (W/kg). All maps show the spatial dependence up to 20 cm away from the liver coil in the $z$ and $\rho$ direction. Figure by Prof. Richard Bowtell.}}
+    \label{fig:coils:Liver_Maps}
+\end{figure}
+
 \subsection{Saddle}
 
-\begin{figure}
+Volumetric coils such as saddle coils have more homogeneous B$_1$ fields than surface coils and are able to cover a larger volume. A saddle coil derives its name from the fact that the coil elements it uses have a similar appearance to a horse's saddle. Two square loops surround a circular tube with an angular separation of 120$^\circ$ of the wires in each saddle. The saddle coil has optimum geometry that has been previously been found which includes the length/diameter between 1 and 2, and an angular width for each coil of $\sim$120$^\circ$ \cite{Ginsberg1970OptimumField,Salmon2006OptimizationImaging}.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/Coils/Planar_Saddle.png}
     \caption{\textit{2D circuit diagram of the saddle coil used for scanning of the calf.}}
     \label{fig:coils:2D_Saddle}
 \end{figure}
 
-Volumetric coils such as saddle coils have more homogeneous B$_1$ fields than surface coils and are able to cover a larger volume. A saddle coil derives its name from the fact that the coil elements it uses have a similar appearance to a horse's saddle. Two square loops surround a circular tube with an angular separation of 120$^\circ$ of the wires in each saddle. The saddle coil has optimum geometry that has been previously been found which includes the length/diameter between 1 and 2, and an angular width for each coil of $\sim$120$^\circ$ \cite{Ginsberg1970OptimumField,Salmon2006OptimizationImaging}.
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/Coils/3D_Saddle.png}
     \caption{\textit{3D circuit diagram of the saddle coil used for scanning of the calf.}}
     \label{fig:coils:3D_Saddle}
 \end{figure}
 
-The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape and has an angular width of 120$^\circ$ a length of 16.8 cm and a diameter of 14.8 cm. Where the copper tape that links the two squares intersects/crosses over, an insulated wire is used to avoid a capacitor being created. Also, the wires here run close side by side so that the fields from the opposing currents will cancel. Diagrams of the circuit for the coil are shown in Figs. \ref{fig:coils:2D_Saddle} and \ref{fig:coils:3D_Saddle} with pictures in Fig. \ref{fig:coils:Saddle_pic}. The tuning capacitance is 47.3 pF, the total matching capacitance 8.8 pF.
+The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape and has an angular width of 120$^\circ$ a length of 16.8 cm and a diameter of 14.8 cm. Where the copper tape that links the two squares intersects/crosses over, an insulated wire is used to avoid a capacitor being created. Also, the wires here run close side by side so that the fields from the opposing currents will cancel. Diagrams of the circuit for the coil are shown in Figs. \ref{fig:coils:2D_Saddle} and \ref{fig:coils:3D_Saddle} with pictures in Fig. \ref{fig:coils:Saddle_pic}. The tuning capacitance is 47.3 pF, the total matching capacitance 8.8 pF. Simulations of the Biot-Savart equation were used to simulate the $B_x$ and $B_y$ components through the saddle coil. Plots of the $B_x$ and $B_y$ at four different planes along $z$ are shown in Fig. \ref{fig:coils:Saddle_BMap}, these were calculated by Prof. Richard Bowtell. The vector potential $A$ and therefore $E$ were also simulated to calculate \ac{SAR} values across the same axis, plots across four different planes along $z$ are then shown in Fig. \ref{fig:coils:Saddle_SAR}. The maximum \ac{SAR} value was found to be safe $<$ 9 W/kg. This is a different limit for the surface coils because this is a volume coil, assuming the weight of the calf takes up 5\% of the total body weight the limit here is 10 W/kg.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Figures/Coils/Saddle_Coil.jpg}
     \caption{\textit{Photo of the saddle coil used to obtain $^2$H data from the calf.}}
     \label{fig:coils:Saddle_pic}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{Figures/Coils/Saddle_BMap.png}
+    \caption{\textit{Maps of the $B_x$ (a) and $B_y$ (b) components inside the saddle coil plotted against $x$ and $y$ covering the diameter of the coil. The planes are of the z direction at the centre of the coil (top left), 2/3 of the length of the coil (top right), 4/5 of the length of the coil (bottom left) and 19/20 down the length of the coil.}}
+    \label{fig:coils:Saddle_BMap}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/Coils/Saddle_SAR.png}
+    \caption{\textit{Maps of the SAR magnitude measured in W/kg covering the diameter of the coil in the $x$ and $y$ direction. Top left is at the centre of the coil, top right is 2/3 down the length of the coil, bottom left 4/5 down the length of the coil and bottom right 19/20 down the length of the coil all in the z direction.}}
+    \label{fig:coils:Saddle_SAR}
+\end{figure}
+
 \subsection{Helmholtz coil}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/Coils/Planar_Helmholtz.png}
+    \includegraphics[width=0.9\textwidth]{Figures/Coils/Planar_Helmholtz.png}
     \caption{\textit{2D circuit diagram of the Helmholtz coil used for scanning of the arm.}}
     \label{fig:coils:2D_Helmholtz}
 \end{figure}

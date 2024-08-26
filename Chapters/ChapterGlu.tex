@@ -1,4 +1,4 @@
-\chapter{Comparing glucose-d$_2$ and glucose-d$_7$ in DMI}
+\chapter{Comparing \texorpdfstring{glucose-d$_2$}{D2} and \texorpdfstring{glucose-d$_7$}{D7} in DMI}
 \label{Chap:Glucose}
 
 \section{Introduction}
@@ -18,12 +18,12 @@ In its simplest form, \ac{DMI} is relatively straightforward to implement using 
 
 Other labelled compounds than glucose-d$_2$ have also been used to investigate \textit{in vivo} metabolism in conjunction with \ac{DMI} in animal experiments. For example [6,6'-$^2$H$_2$] fructose has been used to investigate liver cancer \cite{Zhang202366-2H2Cancer}. Fructose was found to have a similar spectral appearance as the glucose, with slightly different kinetics. Intravenous injection of deuterated acetate ([$^2$H$_3$] acetate) has been used to investigate myocardial metabolism \cite{Wang2021NoninvasiveImaging} and tumour metabolism \cite{DeFeyter2018DeuteriumVivo}, where acetate accumulation and Glx changes were tracked.
 
-One important way of increasing the $^2$H signal is to use a form of deuterated glucose with a larger number of $^2$H labels. Since there are twelve hydrogen atoms in the glucose molecule, all twelve could potentially be substituted with $^2$H atoms. However, atoms in the hydroxyl groups exchange rapidly with the surrounding water and therefore are not usually useful in metabolic applications. The seven other locations in which the $^2$H atoms are directly carbon-bonded are less labile and potentially useful labelling sites, yielding the form [1,2,3,4,5,6,6'-$^2$H$_7$]-glucose (glucose-d$_7$). Compared with [6,6'-$^2$H$_2$]-glucose (glucose-d$_2$), the $^2$H spectrum of glucose-d$_7$ should contain a factor of 7/2 times more components, many of which overlap due to the broad linewidths of $^2$H, thus producing a gain in \ac{SNR}. An example $^2$H high-resolution NMR spectrum of 100mM of glucose-d$_7$ dissolved in H$_2$O obtained at 9.4 T, showing the overlapping spread of peaks, is shown in Fig. \ref{fig:glu:NMR}.
+One important way of increasing the $^2$H signal is to use a form of deuterated glucose with a larger number of $^2$H labels. Since there are twelve hydrogen atoms in the glucose molecule, all twelve could potentially be substituted with $^2$H atoms. However, atoms in the hydroxyl groups exchange rapidly with the surrounding water and therefore are not usually useful in metabolic applications. The seven other locations in which the $^2$H atoms are directly carbon-bonded are less labile and potentially useful labelling sites, yielding the form [1,2,3,4,5,6,6'-$^2$H$_7$]-glucose (glucose-d$_7$). Compared with [6,6'-$^2$H$_2$]-glucose (glucose-d$_2$), the $^2$H spectrum of glucose-d$_7$ should contain a factor of 7/2 times more components, many of which overlap due to the broad linewidths of $^2$H, thus producing a gain in \ac{SNR}. An example $^2$H high-resolution NMR spectrum of 100mM of glucose-d$_7$ dissolved in H$_2$O obtained at 9.4 T, showing the overlapping spread of peaks, is shown in Fig. \ref{fig:glu:NMR} which was performed by Dr. Galina Pavlovskaya.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{Figures/Glucose/D7_Spectra.pdf}
-    \caption{\textit{$^2$H spectrum of 100mM of glucose-d$_7$ dissolved in H$_2$O obtained at 9.4T. Also, showing $^2$H spectra for distilled water and oil obtained for reference.}}
+    \caption{\textit{$^2$H spectrum of 100mM of glucose-d$_7$ dissolved in H$_2$O obtained at 9.4T. Also, showing $^2$H spectra for distilled water and oil obtained for reference. Figure created by Dr. Galina Pavlovskaya.}}
     \label{fig:glu:NMR}
 \end{figure}
 
@@ -145,7 +145,7 @@ The amplitude and phase values for each metabolite peak at each voxel position w
 \subsection{Concentration calculations}
 \label{Chap:Glu:conc}
 
-Concentrations $C^m$ for each metabolite $m$ were determined using the following equation
+Concentrations $C^m$ for each metabolite $m$ were determined by Dr. Robin Damion using the following equation
 
 \begin{equation}
     C^m = \frac{A^m}{kE^mN^m},
@@ -218,7 +218,7 @@ Axial and sagittal slices from denoised 3D \ac{CSI} data from two participants, 
 \begin{figure}
     \centering
     \includegraphics[width = 1\textwidth]{Figures/Glucose/Avg_Amp.png}
-    \caption{\textit{Average time-courses of normalised metabolite signals for the occipital lobe, frontal lobe, and the whole brain from participants who ingested glucose-d$_2$ (blue, 8 participants) and glucose-d$_7$ (pink, 7 participants). A running average over a number of the nearest points in time equal to the number of participants was calculated, with error bars representing the standard deviation over the points in the running average.}}
+    \caption{\textit{Average time-courses of normalised metabolite signals for the occipital lobe, frontal lobe, and the whole brain from participants who ingested glucose-d$_2$ (blue, 8 participants) and glucose-d$_7$ (pink, 7 participants). A running average over a number of the nearest points in time equal to the number of participants was calculated, with error bars representing the standard deviation over the points in the running average. Figures made by Dr. Robin Damion.}}
     \label{fig:Glu:Avg_Amp}
 \end{figure}
 
@@ -227,7 +227,7 @@ Figure \ref{fig:Glu:Avg_Amp} shows participant-averaged metabolite time-courses 
 \begin{figure}
     \centering
     \includegraphics[width = 1\textwidth]{Figures/Glucose/Ind_Amp.png}
-    \caption{\textit{Normalised metabolite signal amplitude time-courses for each participant for glucose-d$_2$ (top) and glucose-d$_7$ (bottom) for each \ac{ROI}: the occipital lobe, frontal lobe, and the whole brain. The results at time = 0 are the results from the pre-ingestion scanning, the \ac{HDO} results here are used for normalisation.}}
+    \caption{\textit{Normalised metabolite signal amplitude time-courses for each participant for glucose-d$_2$ (top) and glucose-d$_7$ (bottom) for each \ac{ROI}: the occipital lobe, frontal lobe, and the whole brain. The results at time = 0 are the results from the pre-ingestion scanning, the \ac{HDO} results here are used for normalisation. Graphs made by Dr. Robin Damion.}}
     \label{fig:Glu:Ind_Amp}
 \end{figure}
 
@@ -236,7 +236,7 @@ The same data, converted to concentrations are shown in Fig. \ref{fig:Glu:Avg_Co
 \begin{figure}
     \centering
     \includegraphics[width = 1\textwidth]{Figures/Glucose/Avg_Conc.png}
-    \caption{\textit{Average time-courses of metabolite concentrations from the occipital lobe, frontal lobe, and the whole brain from participants who ingested glucose-d$_2$ (blue, 8 participants) and glucose-d$_7$ (pink, 7 participants). More details on the concentration calculation can be found in Section \ref{Chap:Glu:conc}. A running average over a number of nearest points in time equal to the number of participant was calculated, with error bars representing the standard deviation over the points in the running average.}}
+    \caption{\textit{Average time-courses of metabolite concentrations from the occipital lobe, frontal lobe, and the whole brain from participants who ingested glucose-d$_2$ (blue, 8 participants) and glucose-d$_7$ (pink, 7 participants). More details on the concentration calculation can be found in Section \ref{Chap:Glu:conc}. A running average over a number of nearest points in time equal to the number of participant was calculated, with error bars representing the standard deviation over the points in the running average. Figure made by Dr. Robin Damion.}}
     \label{fig:Glu:Avg_Conc}
 \end{figure}
 
@@ -245,7 +245,7 @@ To provide a clearer depiction of the relative metabolite signal amplitudes aris
 \begin{figure}
     \centering
     \includegraphics[width = 1\textwidth]{Figures/Glucose/D7_D2.png}
-    \caption{\textit{Normalised ratios of signal amplitude for each metabolite following glucose-d$_7$ and glucose-d$_2$ for the same regions in Fig. \ref{fig:Glu:Avg_Conc}. The glucose-d$_7$ data is interpolated (after the moving average in Fig. \ref{fig:Glu:Avg_Conc}. is applied) to the same time-course as the glucose-d$_2$ data before the ratio is calculated. The amplitude of the errorbars are calculated from the standard deviations of the numerator and denominator using the standard method of combining independent errors of a quotient.}}
+    \caption{\textit{Normalised ratios of signal amplitude for each metabolite following glucose-d$_7$ and glucose-d$_2$ for the same regions in Fig. \ref{fig:Glu:Avg_Conc}. The glucose-d$_7$ data is interpolated (after the moving average in Fig. \ref{fig:Glu:Avg_Conc}. is applied) to the same time-course as the glucose-d$_2$ data before the ratio is calculated. The amplitude of the errorbars are calculated from the standard deviations of the numerator and denominator using the standard method of combining independent errors of a quotient. Figure made by Dr. Robin Damion.}}
     \label{fig:Glu:D7_D2}
 \end{figure}
 
@@ -258,7 +258,7 @@ This ratio is shown in Fig. \ref{fig:Glu:HDO_Rat} as well as similar plots for g
 \begin{figure}
     \centering
     \includegraphics[width = 1\textwidth]{Figures/Glucose/HDO_Ratio.png}
-    \caption{\textit{Ratio of each metabolite signal to the sum of downstream metabolites (Glx and lactate) for the same regions shown in Fig. \ref{fig:Glu:Avg_Conc}. The glucose-d$_7$ data is interpolated (after the moving average in Fig. \ref{fig:Glu:Avg_Conc}. is applied) to the same time-course as the glucose-d$_2$ data before the ratio is calculated. The amplitude of the errorbars are calculated from the standard deviations of the numerator and denominator using the standard method of combining independent errors of a quotient.}}
+    \caption{\textit{Ratio of each metabolite signal to the sum of downstream metabolites (Glx and lactate) for the same regions shown in Fig. \ref{fig:Glu:Avg_Conc}. The glucose-d$_7$ data is interpolated (after the moving average in Fig. \ref{fig:Glu:Avg_Conc}. is applied) to the same time-course as the glucose-d$_2$ data before the ratio is calculated. The amplitude of the errorbars are calculated from the standard deviations of the numerator and denominator using the standard method of combining independent errors of a quotient. Figure made by Dr. Robin Damion.}}
     \label{fig:Glu:HDO_Rat}
 \end{figure}
 
@@ -267,7 +267,7 @@ No effect of visual stimulation could be discerned, either in comparison to part
 \begin{figure}
     \centering
     \includegraphics[width = 1\textwidth]{Figures/Glucose/Vis_Stim.png}
-    \caption{\textit{Average time-courses of metabolite concentrations from the occipital lobe, frontal lobe, and the whole brain from participants who ingested glucose-d$_2$ and had no visual stimulus (blue) and those who were visually stimulated (light-blue) along with those who ingested glucose-d$_7$ and had no visual stimulus (light-pink) and those were visually stimulated (dark-pink). A running average over a number of nearest points in time equal to the number of participants was calculated, with error bars representing the standard deviation over the points in the running average.}}
+    \caption{\textit{Average time-courses of metabolite concentrations from the occipital lobe, frontal lobe, and the whole brain from participants who ingested glucose-d$_2$ and had no visual stimulus (blue) and those who were visually stimulated (light-blue) along with those who ingested glucose-d$_7$ and had no visual stimulus (light-pink) and those were visually stimulated (dark-pink). A running average over a number of nearest points in time equal to the number of participants was calculated, with error bars representing the standard deviation over the points in the running average. Figure made by Dr. Robin Damion.}}
     \label{fig:Glu:Vis_Stim}
 \end{figure}
 

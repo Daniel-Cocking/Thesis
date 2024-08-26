@@ -18,6 +18,8 @@
 \usepackage{multicol}
 \usepackage{etoolbox}
 \usepackage{rotating}
+\usepackage{hyperref}
+\usepackage{doi}
 
 \DeclareUnicodeCharacter{2032}{$^\prime$}
 
@@ -27,6 +29,7 @@
 \newrobustcmd{\LU}[2]{\if@in@acrolist#1\else#2\fi}
 \newcommand{\ACF}[1]{\@in@acrolisttrue\acf{#1}}
 \makeatother
+
 
 \usepackage[super]{nth}
 \usepackage[printonlyused]{acronym}
@@ -44,7 +47,52 @@
   }
 }
 
+\DeclareSourcemap{
+    \maps{
+        % Replace '{\_}', '{_}' or '\_' with just '_' in doi field
+        \map{ 
+            \step[
+                fieldsource=doi,
+                match=\regexp{\{\\\_\}|\{\_\}|\\\_},
+                replace=\regexp{\_}
+            ]
+        }
+        % Replace '{\_}', '{_}' or '\_' with just '_' in url field
+        \map{ 
+            \step[
+                fieldsource=url,
+                match=\regexp{\{\\\_\}|\{\_\}|\\\_},
+                replace=\regexp{\_}
+            ]
+        }
+    }
+}
+
 \begin{document} 
+
+% DOI link to whole reference
+\newbibmacro{string+doiurl}[1]{%
+  \iffieldundef{doi}
+    {\iffieldundef{url}
+       {#1}
+       {\href{\thefield{url}}{#1}}}
+    {\href{https://doi.org/\thefield{doi}}{#1}}}
+
+\makeatletter
+\def\blx@driver#1{%
+  \ifcsdef{blx@bbx@#1}
+    {\usebibmacro{string+doiurl}{\csuse{blx@bbx@#1}}}
+    {\ifcsdef{blx@bbx@*}
+       {\blx@warning{%
+          No driver for entry type '#1'.\MessageBreak
+          Using fallback driver}%
+        \usebibmacro{string+doiurl}{\csuse{blx@bbx@*}}}
+       {\blx@error
+          {No driver found}
+          {I can't find a driver for the entry type
+           '\abx@field@entrytype'\MessageBreak
+           and there is no fallback driver either}}}}
+\makeatother
 
 \setlength{\headheight}{25pt}
 

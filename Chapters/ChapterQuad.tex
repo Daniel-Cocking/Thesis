@@ -10,7 +10,7 @@ As originally outlined in Chapter \ref{Chap:Theory}, spherical tensors are impor
 
 \subsection{Aims}
 
-In this work, healthy human participants ingested a \ac{D$_2$O} to increase their $^2$H abundance. The dependency of quadrupolar splitting frequency on angular orientation of skeletal muscle in a magnetic field was then measured, using \ac{CSI} data acquired from the forearm and the calf at 3T with an in-house built saddle coil and Helmholtz coil, respectively. Bulk and \ac{CSI} data were also obtained with \ac{DQF} and the effect of muscle orientation on \ac{DQF} signal was also explored.
+In this work, healthy human participants ingested \ac{D$_2$O} to increase their $^2$H abundance. The dependency of quadrupolar splitting frequency on angular orientation of skeletal muscle in a magnetic field was then measured, using \ac{CSI} data acquired from the forearm and the calf at 3T with an in-house built saddle coil and Helmholtz coil, respectively. Bulk and \ac{CSI} data were also obtained with \ac{DQF} and the effect of muscle orientation on \ac{DQF} signal was also explored.
 
 \section{Theory}
 \subsection{Quadrupolar Splitting}
@@ -19,15 +19,17 @@ The quadrupolar moment interacts with the local \ac{EFG} which can be represente
 \begin{equation}
     \eta = \frac{V_{xx}-V_{yy}}{V_{zz}}
 \end{equation}
-By considering the time-independent Hamiltonian ($H_Q$) of the quadrupolar interaction it is possible to find a mathematical generalised form.
+By considering the time-independent Hamiltonian ($H_Q$) of the quadrupolar interaction it is possible to find a mathematical generalised form
 \begin{equation}
-    H_Q = \frac{eQ}{4I(2I-1)}[V_0(3I^2_z-\boldsymbol{I}^2) + V_{\pm1}(I_{\mp}I_z+I_zI_\mp)+V_{\pm2}I^2_\mp]
+    H_Q = \frac{eQ}{4I(2I-1)}[V_0(3\boldsymbol{I_z}^2-I^2) + V_{\pm1}(\boldsymbol{I_{\mp}I_z}+\boldsymbol{I_zI_\mp})+V_{\pm2}\boldsymbol{I_\mp}^2]
 \end{equation}
-$V_0$, $V_{\pm1}$ and $V_{\pm2}$ are the three principal axis elements combined to create new elements, which are complex, that represent the total \ac{EFG}. When considering the rotational transformation from the molecule's fixed reference frame to the laboratory fixed reference frame \cite{Seelig1977DeuteriumMembranes}, along with an assumed value of $\eta$ = 0 (uniaxiality), the total Hamiltonian simplifies for $^2$H ($I$ = 1)  \cite{Sharf1995DetectionNMR-Spectroscopy}. The form of this equation, now using its simplified principal axis elements is
+$V_0$, $V_{\pm1}$ and $V_{\pm2}$ are the three complex principal axis elements combined to create new elements, that represent the total \ac{EFG}. $Q$ is the (scalar) quadrupole moment, $e$ is the charge of an electron, $\boldsymbol{I_\mp}$ is the nuclear spin raising and lowering operators, $\boldsymbol{I_z}$ is the nuclear spin operator in the $z$-direction and $I$ is the spin quantum number. 
+
+When considering the rotational transformation from the molecule's fixed reference frame to the laboratory fixed reference frame \cite{Seelig1977DeuteriumMembranes}, along with an assumed value of $\eta$ = 0 (uniaxiality), the total Hamiltonian simplifies for $^2$H ($I$ = 1)  \cite{Sharf1995DetectionNMR-Spectroscopy}. The form of this equation, now using its simplified principal axis elements is
 \begin{equation}
-    H = -g\beta_N\boldsymbol{I}\cdot\boldsymbol{H_0} + \frac{eQ(3\cos^2(\theta)-1)}{8}V_{zz}(3I_z^2-\boldsymbol{I}^2)
+    H = -g\beta_N\boldsymbol{I}\cdot\boldsymbol{H_0} + \frac{eQ(3\cos^2(\theta)-1)}{8}V_{zz}(3\boldsymbol{I_z}^2-\boldsymbol{I}^2)
 \end{equation}
-where $g$ is the g-factor, $\beta_N$ is the nuclear magneton, $Q$ is the (scalar) quadrupole moment, $\boldsymbol{H_0}$ is the magnetic field, $e$ is the charge of an electron, $I$ is the $^2$H nuclear spin and $\theta$ is the angle between the electric field gradient and the magnetic field. The perturbed energy levels can be calculated using the simplified total Hamiltonian. There is an associated energy difference and therefore a frequency difference between states $m=1$ and 0 and 0 and 1 of.
+where $g$ is the g-factor, $\beta_N$ is the nuclear magneton, $\boldsymbol{H_0}$ is the magnetic field,  and $\theta$ is the angle between the electric field gradient and the magnetic field. The perturbed energy levels can be calculated using the simplified total Hamiltonian. The first term describes the Zeeman interaction, whilst the second describes the quadrupolar interaction. There is an associated energy difference and therefore a frequency difference between states $m=-1$ and 0 and 0 and 1 of.
 \begin{equation}
     \nu_Q(\theta) = \frac{3}{2}\left(\frac{e^2qQ}{h}\right)\left(\frac{3\cos^2(\theta)-1}{2}\right)
     \label{eqn:Quad:Angle}
@@ -38,9 +40,9 @@ where the \ac{RQC}, which gives the magnitude of the splitting, in this case is 
     \label{eqn:Quad:RQC}
 \end{equation}
 
-This derivation shows that as a result of the quadrupolar magnetic moment interacting with the \ac{EFG}, a splitting is observed that is caused by the perturbation of the energy levels. The frequency magnitude of this splitting effect is given by the \ac{RQC} and depends only on the orientation of the deuterated  molecules with respect to the applied magnetic field (Eq. \ref{eqn:Quad:Angle}). In an isotropic structure this splitting effect is not visible due to averaging resulting from molecular motion. In an anisotropic media such as the skeletal muscle fibres in the calf, the quadrupolar splitting is at a maximum and equal to the \ac{RQC} value when the muscle fibres are oriented parallel to the magnetic field ($\theta = 0^\circ$). The splitting effect can also be nulled ($\nu_Q = 0$) if the muscle fibres are oriented at the magic angle $\theta = 54.74^\circ$ ($\cos^2\theta=1/3$) to the magnetic field.
+This derivation shows that as a result of the quadrupolar magnetic moment interacting with the \ac{EFG}, a splitting is observed that is caused by the perturbation of the energy levels. The frequency magnitude of this splitting effect is given by the \ac{RQC} and depends only on the orientation of the deuterated  molecules with respect to the applied magnetic field (Eq. \ref{eqn:Quad:Angle}). In an isotropic structure this splitting effect is not visible due to averaging resulting from molecular motion. In an anisotropic medium such as the skeletal muscle fibres in the calf, the quadrupolar splitting is at a maximum and equal to the \ac{RQC} value when the muscle fibres are oriented parallel to the magnetic field ($\theta = 0^\circ$). The splitting effect can also be nulled ($\nu_Q = 0$) if the muscle fibres are oriented at the magic angle $\theta = 54.74^\circ$ ($\cos^2\theta=1/3$) to the magnetic field.
 
-Therefore it is possible to measure the \ac{RQC} constant from these \ac{NMR} spectra which provides information on the anisotropy of the media beinginvestigated.
+Therefore it is possible to measure the \ac{RQC} constant from these \ac{NMR} spectra which provides information on the anisotropy of the medium being investigated.
 
 % This detected signal from the \ac{DQF} signal is related to a second rank tensor arising from the \ac{EFG}, which can only be formed in anisotropic media/phases. This technique is applied by manipulating the pulse sequence with alternating $\pi/2$ and $\pi$ RF pulses. 
 
@@ -60,21 +62,25 @@ A pulse sequence that can be used to suppress single quantum coherences and meas
     \label{eqn:Quad:Pulse}
 \end{equation}
 
-This phase cycle suppresses the single quantum coherences and preserves the double quantum coherences meaning only the \ac{DQF} signal is measured. The obtained FID appears as two anti-phase Lorentzian lines separated by the \ac{RQC}. If this separation is small the presence of two resonances can be difficult to identify, as the Lorentzian-lineshapes will overlap. The amplitude of the \ac{DQF} FID follows a damped sinusoid of the form. 
+This phase cycle suppresses the single quantum coherences and preserves the double quantum coherences meaning only the \ac{DQF} signal is measured. The obtained FID appears as two anti-phase Lorentzian lines separated by the \ac{RQC}. If this separation is small the presence of two resonances can be difficult to identify, as the Lorentzian-lineshapes will overlap. An example \ac{DQF} spectrum with corresponding fitting can be seen in Fig. \ref{fig:Quad:Ex_DQF}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/Quad/Example_DQF.png}
+    \caption{\textit{\ac{DQF} spectrum from an axial 2 cm slice of the lower leg, acquired with $\tau$ = 6.5 ms. The plots show the fitting of the two independent Lorentzians to an anti-phase \ac{DQF} doublet. The imaginary part of the spectrum (absorption) is shown in (a), the real part (dispersion) is shown in (b). The fitting produces a value for the splitting of $\nu_q$ = 27.7 Hz, and mean $T_2^*$ = 11.3 ms. In each case the fits to the two signal components are also shown separately. Figure by Dr. Robin Damion.}}
+    \label{fig:Quad:Ex_DQF}
+\end{figure}
+
+The amplitude of the \ac{DQF} FID follows a damped sinusoid of the form. 
 
 \begin{equation}
     A\sin(2\pi\nu_q\tau)\exp(-2\tau/T_2)
     \label{eqn:Quad:Amplitude}
 \end{equation}
 
-\noindent Here $T_2$ is the transverse relaxation time, $A$ is the signal amplitude, $\nu_q$ is the splitting frequency and $\tau$ is known as the creation time and is the time between the first two $\pi/2$ pulses. An example \ac{DQF} spectra with corresponding fitting can be seen in Fig. \ref{fig:Quad:Ex_DQF}. The form of the signal described in Eq. \ref{eqn:Quad:Amplitude} assumes perfect application of the flip angles shown in Fig. \ref{fig:Quad:Coherence} and that the signal is on-resonance. The coherence transfer pathway with the changing tensor terms can be seen in Fig. \ref{fig:Quad:Coherence}.
+\noindent Here $T_2$ is the transverse relaxation time, $A$ is the signal amplitude, $\nu_q$ is the splitting frequency and $\tau$ is known as the creation time and is the time between the first two $\pi/2$ pulses. The form of the signal described in Eq. \ref{eqn:Quad:Amplitude} assumes perfect application of the flip angles shown in Fig. \ref{fig:Quad:Coherence} and that the signal is on-resonance. The coherence transfer pathway with the changing tensor terms can be seen in Fig. \ref{fig:Quad:Coherence}.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{Figures/Quad/Example_DQF.png}
-    \caption{\textit{\ac{DQF} spectrum from an axial 2 cm slice of the lower leg, acquired with $\tau$ = 6.5 ms. The plots show the fitting of the two independent Lorentzians to an anti-phase \ac{DQF} doublet. The imaginary part of the spectrum (absorption) is shown in (a), the real part (dispersion) is shown in (b). The fitting produces a value for the splitting of $\nu_q$ = 27.7 Hz, and mean $T_2^*$ = 11.3 ms. In each case the fits to the two signal components are also shown separately.}}
-    \label{fig:Quad:Ex_DQF}
-\end{figure}
+Therefore, by performing spatial \ac{DQF} measurements on a part of the body can inform on the ordering of the tissue present. It has been shown already that the expected quadrupolar splitting in Hz using muscle fibre angles measured using diffusion tensor imaging (DTI) of the calf, approximately agree with splitting frequencies directly measured from $^2$H MRSI measurements \cite{Gursan2022ResidualMuscle}. As the overlapping frequencies can be hard to separate at lower fibre angles and at lower field strengths, \ac{DQF} offers an alternative method to measure tissue ordering. Which is explored in this chapter.    
 
 \section{Scanning}
 
@@ -109,7 +115,14 @@ During the second main study, after the initial \ac{D$_2$O} loading period was c
 In order to ensure that the forearm was always in the centre of the field, that a large enough range of angles were covered and that each participant was as comfortable as they could be. Each participant was removed from the scanner between acquisitions of data at different angles, which is why commonly scanning ran over two days. The protocol for each angle included  acquisition of a $^1$H scout scan and \ac{GE} anatomical images, two bulk spectra and finally a 3D \ac{CSI}. 
 % For angles larger than 45$^\circ$ the data had to be acquired sagittally as oppose to transverse.
 
-Whilst this study was similar to what was performed in the initial investigation, one of the major improvements made was in the analysis routine. It is difficult to estimate the angle of muscles of the forearm relative to the magnetic field. Here a paper printout of a compass attached to the top of the coil helped us to orient the arm in the scanner. In the initial work the angle used in the analysis was estimated from the $^1$H scout scan. Here the angle of the arm was calculated by measuring the angle of the ulna bone using the Mango software (downloaded from https://mangoviewer.com/download.html), which was found to be different from the angle estimated from the compass, as well as the angle used when planning the scanning.
+Whilst this study was similar to what was performed in the initial investigation, one of the major improvements made was in the analysis routine. It is difficult to estimate the angle of muscles of the forearm relative to the magnetic field. Here a paper printout of a compass attached to the top of the coil helped us to orient the arm in the scanner. In the initial work the angle used in the analysis was estimated from the $^1$H scout scan. Here the angle of the arm was calculated by measuring the angle of the ulna bone using the Mango software (downloaded from https://mangoviewer.com/download.html), which was found to be different from the angle estimated from the compass, as well as the angle used when planning the scanning. The angle two different members of the group used Mango to calculate the angles of one participants forearms at all angles acquired, and it was found that the largest difference between angles rounded up to 2$^\circ$. Therefore, this values was used as the error on the angle calculation. Screenshots of using Mango to calculate four angles is shown in Fig. \ref{fig:Quad:Example_Angle}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/Quad/Angle_Example.png}
+    \caption{\textit{Screenshots of the Mango software being used to calculate the angle of the ulna bone in one participant at what was supposed to be 0$^\circ$ (a), 30$^\circ$ (b), 50$^\circ$ (c) and 90$^\circ$ (d). But was calculated to be 11$^\circ$ (a), 38$^\circ$ (b), 62$^\circ$ (c) and 89$^\circ$ (d).}}
+    \label{fig:Quad:Example_Angle}
+\end{figure}
 
 Zero-order phase correction was applied to all spectra, as well as de-noising through using \ac{HOSVD} \cite{Bader2007EfficientTensors} with a compression core matrix of [64,6,6,3] (spectral, followed by three spatial dimensions). A binarised mask with the same spatial resolution as the \ac{CSI} data was then constructed, following thresholding of 35\% of the maximum spectral signal (the mask was then filled in using imfill). The OXSA-AMARES \cite{Purvis2017OXSA:MATLAB} toolbox in Matlab was used to fit three Lorentzian peaks to each masked voxel. These comprised of a central peak due to any signal from isotropic compartments plus a doublet due to quadrupolar splitting in any anisotropic compartments. Each peak in the doublet has the same linewidth and amplitude and all peaks are fit with the same phase. The initial estimate of the separation of the doublet varied depending on the angle of the arm in the scanner. The separation of the doublet was converted from ppm to Hz and then the values, along with the angle of the arm relative to the magnetic field, was fitted to Eq. \ref{eqn:Quad:Angle}.
 
@@ -194,11 +207,11 @@ Figure \ref{fig:Quad:Arm_CSI} shows how the \ac{CSI} spectra from the forearm ch
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Figures/Quad/Split_Angle_2.png}
-    \caption{\textit{Average quadrupolar splitting frequencies as a function of forearm angle to $B_0$, fitted to the form of Eq. \ref{eqn:Quad:Amplitude}. Data points are the average splitting over the forearm in each 3D \ac{CSI} data set, with data acquired at 10 different angles to the field from 3 subjects. Error bars show standard deviation of the splitting over the volume.}}
+    \caption{\textit{Average quadrupolar splitting frequencies as a function of forearm angle to $B_0$, fitted to the form of Eq. \ref{eqn:Quad:Amplitude}. Data points are the average splitting over the forearm in each 3D \ac{CSI} data set, with data acquired at 10 different angles to the field from 3 subjects. Vertical error bars show standard deviation of the splitting over the volume. Horizontal errorbars are $\pm$ 2$^\circ$ due to rounded highest difference between two people analysing the data.}}
     \label{fig:Quad:Split_Angle_2}
 \end{figure}
 
-Non-localised \ac{DQF} spectra from the forearm of three participants are plotted as a function of creation time ($\tau$) in Fig. \ref{fig:Quad:Bulk_DQF_2}. The biggest differences between participants visible here is the presence of signal at larger $\tau$ values.
+Non-localised \ac{DQF} spectra from the forearm of three participants are plotted as a function of creation time ($\tau$) in Fig. \ref{fig:Quad:Bulk_DQF_2}. The biggest differences between participants visible here is the presence of signal at larger $\tau$ values. It is expected that the amplitude of the \ac{DQF} signal varying with $\tau$ will follow  Eq. \ref{eqn:Quad:Amplitude}. Where the amplitude of the \ac{DQF} and the splitting frequency which can be found by fitting the amplitudes to Eq. \ref{eqn:Quad:Amplitude}, has been shown to be larger in compartments that interact with more ordered structures \cite{Navon2001MultiquantumTissues}. Doing this has also been used to show that increased temperature increases the ordering of the water surrounding elastin \textit{ex vivo}, by looking at the splitting frequency and amplitude of fitting \cite{Sun2010InvestigationNMR}.
 % Which is similar to Figure \ref{fig:Quad:Bulk_DQF_1} except more $\tau$ values are used here especially at shorter values. The new fitting method was used here and therefore led to more. The overall behaviour of the forearm spectra here is similar to the forearm spectra in Figure \ref{fig:Quad:Bulk_DQF_1}. accurate fits.
 
 \begin{figure}
@@ -208,7 +221,7 @@ Non-localised \ac{DQF} spectra from the forearm of three participants are plotte
     \label{fig:Quad:Bulk_DQF_2}
 \end{figure}
 
-Figure \ref{fig:Quad:SQFDQF_2} shows a comparison of 2D pulse-acquire \ac{CSI} and \ac{DQF}-\ac{CSI} data along with fits for the lower leg, highlighting spectra in individual voxels in the \ac{TA} and soleus muscles. 
+Figure \ref{fig:Quad:SQFDQF_2} shows a comparison of 2D pulse-acquire \ac{CSI} and \ac{DQF}-\ac{CSI} data along with fits for the lower leg, highlighting spectra in individual voxels in the \ac{TA} and soleus muscles. With the amplitude 
 % This Figure is similar to Fig. \ref{fig:Quad:SQFDQF_1} except here the \ac{SNR} is slightly better here thanks to de-noising as well as showing consistent fits to each voxel.
 
 \begin{figure}
@@ -254,7 +267,7 @@ Improving the fitting, de-noising  or the change in angle determination (\ac{FOV
 
 As is seen with the \ac{DQF} filtered \ac{CSI} data it can be difficult to identify where the regions of maximum \ac{DQF} signal are present due to the lack of discrimination of the anti-phase peaks. 
 
-However, in Fig. \ref{fig:Quad:SQFDQF_2} an increase in the signal in the \ac{TA} and gastrocnemius msucle and a decrease in the soleus muscle is visible which is consistent with separation maps from pulse-acquire \ac{SQF} results in Fig. \ref{fig:Quad:Calf_Arm_CSI}. This confirms that the strength of \ac{DQF} signal depends on the degree of tissue ordering, as the magnitude of the quadrupolar splitting has already been shown to depend on tissue ordering in Eq. \ref{eqn:Quad:Angle}. 
+However, in Fig. \ref{fig:Quad:SQFDQF_2} an increase in the signal in the \ac{TA} and gastrocnemius muscle and a decrease in the soleus muscle is visible which is consistent with separation maps from pulse-acquire \ac{SQF} results in Fig. \ref{fig:Quad:Calf_Arm_CSI}. This confirms that the strength of \ac{DQF} signal depends on the degree of tissue ordering, as the magnitude of the quadrupolar splitting has already been shown to depend on tissue ordering in Eq. \ref{eqn:Quad:Angle}. 
 
 % Therefore, analysing a creation-time ($\tau$) non-localised \ac{DQF} series is more complicated as it could contain multiple splitting frequencies ($\nu_q$) due to the ordering and T$_2$ times which appear in Eq. \ref{eqn:Quad:Amplitude}. 
 
