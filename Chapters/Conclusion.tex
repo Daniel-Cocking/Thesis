@@ -6,11 +6,11 @@ In this thesis \ac{MRI} and \ac{MRSI} tuned to the $^2$H resonance at 3T and 7T 
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/CSI.png}
-    \caption{\textit{$^2$H CSI data acquired in $\sim$12.5 minutes (purple) along with corresponding fits (yellow). In tumour voxels (red) and contralateral voxels (blue).}}
+    \caption{\textit{Final $^2$H CSI data acquired in $\sim$12.5 minutes (purple) along with corresponding fits (yellow). In tumour voxels (red) and contralateral voxels (blue).}}
     \label{fig:Conc:CSI}
 \end{figure}
 
-The aim of this work is to successfully lay the ground for future studies at the SPMIC to investigate brain tumours in patients using \ac{DMI} at 7T \textit{in vivo}. At the time of writing this conclusion the first DMI scan was performed in a patient with a brain tumour using ingestion of glucose-d$_7$ at 7T \textit{in vivo}, which was performed by our group at the SPMIC. In a preliminary analysis, the data has been fitted using the OXSA-AMARES toolbox \cite{Purvis2017OXSA:MATLAB} (Fig. \ref{fig:Conc:CSI}), metabolite fitting amplitudes have been obtained and tracked over time and can be seen in Fig. \ref{fig:Conc:stack} and Fig. \ref{fig:Conc:Time}. Decreased Glx was found in tumour voxels compared to contralateral voxels along with increased lactate in the three last scans. This resulted in a statistical increase in Lac/Glx in tumour voxels which is visible in Fig. \ref{fig:Conc:Box}, 0.5 $\pm$ 0.2 compared to 0.2 $\pm$ 0.2 p$<$0.05. Average metabolite maps from the post-ingestion scans are visible in Fig. \ref{fig:Conc:Maps}.
+The aim of this work is to successfully lay the ground for future studies at the SPMIC to investigate brain tumours in patients using \ac{DMI} at 7T \textit{in vivo}. At the time of writing this conclusion the first DMI scan was performed in a patient with a brain tumour using ingestion of glucose-d$_7$ at 7T \textit{in vivo}, which was performed by our group at the SPMIC. In a preliminary analysis, the data has been fitted using the OXSA-AMARES toolbox \cite{Purvis2017OXSA:MATLAB} (Fig. \ref{fig:Conc:CSI}), metabolite fitting amplitudes have been obtained and tracked over time and can be seen in Fig. \ref{fig:Conc:stack}, Fig. \ref{fig:Conc:Time} and \ref{fig:Conc:Time_Rat}. Decreased Glx was found in tumour voxels compared to contralateral voxels along with increased lactate in the three last scans. This resulted in a statistical increase in Lac/Glx in tumour voxels which is visible in Fig. \ref{fig:Conc:Box}, 0.5 $\pm$ 0.2 compared to 0.2 $\pm$ 0.2 p$<$0.05, the time-course of this ratio is visible in Fig. \ref{fig:Conc:Time_Rat}. Average metabolite maps from the post-ingestion scans are visible in Fig. \ref{fig:Conc:Maps}.
 
 \begin{figure}[H]
     \centering
@@ -24,6 +24,13 @@ The aim of this work is to successfully lay the ground for future studies at the
     \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/Time_Course.png}
     \caption{Average fitting amplitudes for each metabolite (HDO, Glucose (Glu), Glx and Lac) over the contralateral (red) voxels and the tumour (blue) voxels. For the Natural Abundance Scan (1) and the post-ingestion scans (2 to 6).}
     \label{fig:Conc:Time}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/Ratio_TimeCourse.png}
+    \caption{The time-course of the average ratios of fitting amplitudes of Lac/Glx for the voxels covering the tumour (blue) voxels and the contralateral (voxels). The error here is the propagated error from the standard deviations used in Fig. \ref{fig:Conc:Time}.}
+    \label{fig:Conc:Time_Rat}
 \end{figure}
 
 \begin{figure}[H]
