@@ -6,11 +6,18 @@ In this thesis \ac{MRI} and \ac{MRSI} tuned to the $^2$H resonance at 3T and 7T 
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/CSI.png}
-    \caption{\textit{Final $^2$H CSI data acquired in $\sim$12.5 minutes (purple) along with corresponding fits (yellow). In tumour voxels (red) and contralateral voxels (blue).}}
+    \caption{\textit{Final $^2$H CSI data acquired in $\sim$12.5 minutes (purple) along with corresponding fits (yellow). In tumour voxels (red) and contralateral voxels (blue). Along with an overlayed heatmap that represents the location of the tumour averaged over ten slices that cover the \ac{CSI} slice, each individual slice has a mask value of one.}}
     \label{fig:Conc:CSI}
 \end{figure}
 
-The aim of this work is to successfully lay the ground for future studies at the SPMIC to investigate brain tumours in patients using \ac{DMI} at 7T \textit{in vivo}. At the time of writing this conclusion the first DMI scan was performed in a patient with a brain tumour using ingestion of glucose-d$_7$ at 7T \textit{in vivo}, which was performed by our group at the SPMIC. In a preliminary analysis, the data has been fitted using the OXSA-AMARES toolbox \cite{Purvis2017OXSA:MATLAB} (Fig. \ref{fig:Conc:CSI}), metabolite fitting amplitudes have been obtained and tracked over time and can be seen in Fig. \ref{fig:Conc:stack}, Fig. \ref{fig:Conc:Time} and \ref{fig:Conc:Time_Rat}. Decreased Glx was found in tumour voxels compared to contralateral voxels along with increased lactate in the three last scans. This resulted in a statistical increase in Lac/Glx in tumour voxels which is visible in Fig. \ref{fig:Conc:Box}, 0.5 $\pm$ 0.2 compared to 0.2 $\pm$ 0.2 p$<$0.05, the time-course of this ratio is visible in Fig. \ref{fig:Conc:Time_Rat}. Average metabolite maps from the post-ingestion scans are visible in Fig. \ref{fig:Conc:Maps}.
+The aim of this work is to successfully lay the ground for future studies at the SPMIC to investigate brain tumours in patients using \ac{DMI} at 7T \textit{in vivo}. At the time of writing this conclusion the first DMI scan was performed in a patient with a brain tumour using ingestion of glucose-d$_7$ at 7T \textit{in vivo}, which was performed by our group at the SPMIC. In a preliminary analysis, the data has been fitted using the OXSA-AMARES toolbox \cite{Purvis2017OXSA:MATLAB} (Fig. \ref{fig:Conc:CSI}), metabolite fitting amplitudes have been obtained and tracked over time and can be seen in Fig. \ref{fig:Conc:stack}, Fig. \ref{fig:Conc:Time} and \ref{fig:Conc:Time_Rat}. The overlayed heatmap on Fig.\ref{fig:Conc:CSI} represents the location of the tumour, on each slice of the MPRAGE the tumour is manually segmented and the masks are averaged over all slices that cover the \ac{CSI} slice (ten slices). A value of one in the heatmap means that the voxel is present in the tumour in all ten slices, and a value of zero means that the voxel is not present in the tumour in any of the slices. It is important to note that the mask here is not drawn by a trained radiographer, instead it is drawn by the author and assessed by a clinical doctor (Dr. Milo Hollingworth).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/Maps.png}
+    \caption{Average metabolite maps from the post-ingestion scans from the slice indicating the tumour.}
+    \label{fig:Conc:Maps}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -18,6 +25,8 @@ The aim of this work is to successfully lay the ground for future studies at the
     \caption{\textit{Stacked spectra along with corresponding from the contralateral voxels (left) and of the voxels that cover the tumour region (right). Each spectra is obtained by averaging the three spectra in each ROI, the fitting here is performed before the averaging.}}
     \label{fig:Conc:stack}
 \end{figure}
+
+Decreased Glx was found in tumour voxels compared to contralateral voxels along with increased lactate in the three last scans. This resulted in a statistical increase in Lac/Glx in tumour voxels which is visible in Fig. \ref{fig:Conc:Box}, 0.5 $\pm$ 0.2 compared to 0.2 $\pm$ 0.2 p$<$0.05, the time-course of this ratio is visible in Fig. \ref{fig:Conc:Time_Rat}. Average metabolite maps from the post-ingestion scans are visible in Fig. \ref{fig:Conc:Maps}. These are promising preliminary results as it has been recently shown that there is a correlation between PET imaging in Alzheimers patients and the increase in Glx using \ac{DMI} \cite{Bgh2024ComparisonDisease}.
 
 \begin{figure}[H]
     \centering
@@ -38,13 +47,6 @@ The aim of this work is to successfully lay the ground for future studies at the
     \includegraphics[width = 0.8\textwidth]{Figures/Conclusion/BarChart.png}
     \caption{Box plots for the average Lac/Glx ratios in the tumour and the contralateral voxels indicating an increase in the tumour region (p$<$0.05). For the final three post-ingestion scans where the Glx and Lac signals appear to have reached a steady state.}
     \label{fig:Conc:Box}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width = 0.9\textwidth]{Figures/Conclusion/Maps.png}
-    \caption{Average metabolite maps from the post-ingestion scans from the slice indicating the tumour.}
-    \label{fig:Conc:Maps}
 \end{figure}
 
 \section{Chapter Overviews}
@@ -85,7 +87,7 @@ A common theme throughout the whole thesis is the use of some element of de-nois
 
 It is important to note that whilst this thesis shows how to obtain and analyse \textit{in vivo} $^2$H data, this work only sets the foundation. As has been pointed out \ac{PET}  is used for clinical studies but only provides limited metabolic information. $^2$H has the potential to provide more information. However, this first has to be shown in patient studies, as the usefulness of this technique can not truly be proven until direct comparisons are made with current clinical work. Whilst $^2$H glucose and Glx are important metabolites in the investigation of brain tumours, arguably the most important metabolite is lactate. Currently it is difficult to optimise a scan for imaging lactate as signal levels do not reach far above the noise level in scans of healthy participants. Brain tumours cause a significant increase in the lactate produced which can be detected using $^2$H \cite{Soares2009MagneticApplications}. Other metabolic diseases such as \ac{AD} and \ac{PD} also impair metabolism, which has been shown through \ac{PET} imaging\cite{Shokouhi2014ImagingTomography, Meles2017MetabolicDisease}, and therefore could potentially benefit from $^2$H scanning. It is important to optimise/reduce scan time as patients will struggle with extended periods in an MR scanner.
 
-One of the difficulties when trying to track $^2$H incorporation into lipids after D$_2$O ingestion is the overlap of signals. When only one peak in a spectrum is visible this means standard imaging approaches can be used to map the distribution of that specific signal. If the increased \ac{HDO} signal was able to be nulled only the lipid would be visible, therefore if the same sequence was used to acquire image data more rapid acquisitions could potentially be achieved, this would improve participant/patient comfort whilst scanning or averaging can then be used to increase \ac{SNR}. However, for this to be possible almost near perfect water suppression is needed which can be difficult to achieve. In the \ac{DQF} spectra the data suffers from low \ac{SNR} as well and only has one signal present, therefore this sequence could be made into an imaging sequence which could potentially result in smaller voxels which would hopefully reduce effects from partial voluming. Therefore in the future it would be beneficial to the field if more applications of $^2$H imaging as opposed to spectroscopy, could be developed when $^2$H spectra are sparse. It's important to note this wouldn't be possible for \ac{DMI} experiments due to the multiple metabolite peaks being present.
+One of the difficulties when trying to track $^2$H incorporation into lipids after D$_2$O ingestion is the overlap of signals. When only one peak in a spectrum is visible this means standard imaging approaches can be used to map the distribution of that specific signal. If the increased \ac{HDO} signal was able to be nulled only the lipid would be visible, therefore if the same sequence was used to acquire image data more rapid acquisitions could potentially be achieved, this would improve participant/patient comfort whilst scanning or averaging can then be used to increase \ac{SNR}. However, for this to be possible almost near perfect water suppression is needed which can be difficult to achieve. In the \ac{DQF} spectra the data suffers from low \ac{SNR} as well and only has one signal present, therefore this sequence could be made into an imaging sequence which could potentially result in smaller voxels which would hopefully reduce effects from partial voluming. Therefore in the future it would be beneficial to the field if more applications of $^2$H imaging as opposed to spectroscopy, could be developed when $^2$H spectra are sparse. This has been implemented already using steady-state free precession (SSFP) combined with an adapted version of Iterative Decomposition of water and fat with Echo Asymmetry and Least-squares estimation (IDEAL) \cite{Peters2021ImprovingInvestigation}. In doing this they have shown an increase in \ac{SNR} when compared to the conventional \ac{CSI} acquisition. It's important to note that this is more technically challenging in \ac{DMI} experiments due to the multiple metabolite peaks being present beyond the expected three-peaks in IDEAL analysis.
 
 \section{Closing Remarks}
 
