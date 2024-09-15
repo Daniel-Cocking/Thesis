@@ -2,7 +2,7 @@
 
 \label{Chap:Coils}
 
-\ac{RF} coils have two functions: first to apply a B$_1$ field to tip the magnetisation, and second to receive a signal from precessing magnetisation Faraday's law of induction. The profile of the applied B$_1$ field depends on the design/shape of the coil, the sensitivity of the coil also depends on the electronic components used for tuning and matching. The frequency of the applied $B_1$ depends on the applied waveform. The key point in designing/building the \ac{RF} coil is to maximise the $B_1$ per unit voltage by tuning the coil to resonate at the Larmor frequency and matching the coil's impedance to whatever it is connected to. This shows how important design and building of \ac{RF} coils is. Lots of different companies exist from whom it is possible to buy \ac{RF} coils. This can be expensive due to the experience and time that goes into coil building. Therefore it is useful when starting new research with a new nucleus of interest (such as $^2$H) to be able to build home-made coils. The coils described in this chapter are interfaced using a T/R switch that is already built into our Philips Achieva 3T \ac{MRI} scanner along with a Philips preamp interface.
+\ac{RF} coils have two functions: first to apply a B$_1$ field to tip the magnetisation, and second to receive a signal from precessing magnetisation  due to Faraday's law of induction. The profile of the applied B$_1$ field depends on the design/shape of the coil, the sensitivity of the coil also depends on the electronic components used for tuning and matching. The frequency of the applied $B_1$ depends on the applied waveform. The key point in designing/building the \ac{RF} coil is to maximise the $B_1$ per unit voltage by tuning the coil to resonate at the Larmor frequency and matching the coil's impedance to whatever it is connected to. This shows how important design and building of \ac{RF} coils is. Lots of different companies exist from whom it is possible to buy \ac{RF} coils. This can be expensive due to the experience and time that goes into coil building. Therefore it is useful when starting new research with a new nucleus of interest (such as $^2$H) to be able to build home-made coils. The coils described in this chapter are interfaced using a T/R switch that is already built into our Philips Achieva 3T \ac{MRI} scanner along with a Philips preamp interface.
 
 \section{Theory}
 
@@ -22,7 +22,7 @@ The simplest way to build an \ac{RF} coil is to shape a wire into a loop (induct
 \begin{equation}
     \begin{gathered}
         Z_\text{Series} = Z_1 + Z_2 + ... + Z_N \\
-        Z_\text{Parallel} = \frac{1}{Z_1} + \frac{1}{Z_2} + ... + \frac{1}{Z_N}
+        \frac{1}{Z_\text{Parallel}} = \frac{1}{Z_1} + \frac{1}{Z_2} + ... + \frac{1}{Z_N}
     \end{gathered}
 \end{equation}
 
@@ -57,7 +57,7 @@ Examples of series and parallel LCR cirucits are shown in Fig. \ref{fig:coils:RL
     \label{eqn:coils:res}
 \end{equation}
 
-The voltage variations with time for each electrical component are shown below in Eq. \ref{eqn:coils:Voltage}. As an \ac{RF} $B_1$ field is applied to the coil, current will be induced which charges the capacitor. As the $B_1$ is then reduced, the capacitor will then release stored energy which causes current to flow through the rest of the circuit. Energy is dissipated in the resistor and therefore the current decreases exponentially. Graphs of the change in voltage in this case are shown in Fig. \ref{fig:coils:VI}, along with the corresponding absorption and dispersion curves. This behaviour is often referred to as a driven resonance.
+The voltage variations with time for each electrical component are shown here 
 
 \begin{equation}
 \begin{gathered}
@@ -68,6 +68,8 @@ The voltage variations with time for each electrical component are shown below i
 \end{gathered}
 \end{equation}
 
+As an \ac{RF} $B_1$ field is applied to the coil, current will be induced which charges the capacitor. As the $B_1$ is then reduced, the capacitor will then release stored energy which causes current to flow through the rest of the circuit. Energy is dissipated in the resistor and therefore the current decreases exponentially. Graphs of the change in voltage in this case are shown in Fig. \ref{fig:coils:VI}, along with the corresponding absorption and dispersion curves. This behaviour is often referred to as a driven resonance.
+
 If the time in which the driven resonance is applied is short the overall behaviour is the impulse response. The most common cables that are used to connect to \ac{RF} coils are coaxial cables, which usually have a characteristic impedance of 50 $\Omega$. The coaxial cable when cut open has an inside core and outer shielding both made by copper surrounded by insulating covering. The coils have two ends when constructed, one is attached to the core (indicated by small black oval in figures) and the other is connected to the shielding (wire that ends in white space of BNC in figures). When a coil is constructed and tuned to the Larmor frequency the impedance is most likely different to the impedance of the cable. The difference in impedance will cause some of the power to be reflected at the coil instead of transmitted. Therefore, the impedance of of the coil needs to be changed, which can be done by changing its reactance. The most common ways of doing this are by adding an inductor or a capacitor in parallel with the coil. The method of adding a capacitor will be discussed here and an example circuit can be seen in Fig. \ref{fig:coils:RLC}.
 
 \begin{figure}
@@ -77,7 +79,7 @@ If the time in which the driven resonance is applied is short the overall behavi
     \label{fig:coils:RLC_match}
 \end{figure}
 
-The capacitor in series with the coil is referred to as the matching capacitor (C$_M$) with the other capacitor called the tuning capacitor (C$_T$). The total capacitance is C$_M$+C$_T$. A relationship between C$_M$ and C$_T$ can be found that is related to the quality factor ($Q$) \cite{Chen1989ChapterNoise} which is the resonance frequency divided by the bandwidth of the coil resonance in Fig. \ref{fig:coils:VI}, and is shown in Eq. \ref{eqn:coils:match}. 
+The capacitor in series with the coil is referred to as the matching capacitor (C$_M$) with the other capacitor called the tuning capacitor (C$_T$). The total capacitance is C$_M$+C$_T$. A relationship between C$_M$ and C$_T$ can be found that is related to the quality factor ($Q$) \cite{Chen1989ChapterNoise} which is the resonance frequency divided by the bandwidth of the coil resonance in Fig. \ref{fig:coils:VI}, and is shown here
 
 \begin{equation}
     C_M = \sqrt{\frac{C_T}{Q\omega_0Z}}
@@ -105,7 +107,7 @@ As was shown in section \ref{Chap:Theory:Magnetisation} the transverse applied $
     B_1(t) = B_1^+\exp(-i\omega t) +B_1^-+\exp(i\omega t)
 \end{equation}
 
-Where $t$ is time. If the transmit and receive fields are in a singular axis, the fields are linearly polarised. In this case the $B_1+$ and $B_1-$ equally share the power distribution of $B_1$, and since only the $B_1^+$ excites the nuclei spin states half the power is then wasted in the $B_1^-$. By introducing extra coils perpendicular to the original coils and driving the field 90$^\circ$ out of phase, it is possible to cancel out the counter-rotating $B_1^-$. Therefore, all of the $B_1$ power is deposited into the $B_1^+$ field. This is referred to as quadrature transmission, and the fields are circularly polarised. In this case a separate coil channel is used for the receive element of the coil. All the coils built in this chapter are linearly polarised for simplicity. Minimising the $B_1^-$ is not only important to ensure that as much of the available power is used to excite the spins, it is also an important aspect in the safety of \ac{RF} coils. The $B_1^-$ field is responsible for tissue heating which is explained in more detail in the following section. 
+Where $t$ is time. If the transmit and receive fields are in a singular axis, the fields are linearly polarised. In this case the $B_1^+$ and $B_1^-$ equally share the power distribution of $B_1$, and since only the $B_1^+$ excites the nuclei spin states half the power is then wasted in the $B_1^-$. By introducing extra coils perpendicular to the original coils and driving the field 90$^\circ$ out of phase, it is possible to cancel out the counter-rotating $B_1^-$. Therefore, all of the $B_1$ power is deposited into the $B_1^+$ field. This is referred to as quadrature transmission, and the fields are circularly polarised. In this case a separate coil channel is used for the receive element of the coil. All the coils built in this chapter are linearly polarised for simplicity. Minimising the $B_1^-$ is not only important to ensure that as much of the available power is used to excite the spins, it is also an important aspect in the safety of \ac{RF} coils. The $B_1^-$ field is responsible for tissue heating which is explained in more detail in the following section. 
 
 % Potentially add principle of reciprocity
 
@@ -117,9 +119,7 @@ The varying magnetic field gives rise to electric fields inside the tissue being
     P = \frac{1}{2}\int_v \sigma|E|^2dv
 \end{equation}
 
-Where $\sigma$ is the conductivity of the tissue. 
-
-Modelling is important to ensure each coil built is safe to use with humans. The magnetic field can be modelled using the Biot-Savart law given as 
+Where $\sigma$ is the conductivity of the tissue. Modelling is important to ensure each coil built is safe to use with humans. The magnetic field can be modelled using the Biot-Savart law given as 
 
 \begin{equation}
     \mathbf{B(r)} = \frac{\mu_0}{4\pi}\frac{\mathbf{J}dV \times \mathbf{r}}{|\mathbf{r}|^3}
