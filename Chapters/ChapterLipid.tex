@@ -10,40 +10,43 @@ Adipose tissue (more commonly known as body fat) is key for energy storage and c
 \section{Theory}
 \label{Chap:Lip:Theory}
 
-The $^2$H MR signal that arises from naturally occurring \ac{HDO} \textit{in vivo} is $\sim$0.015\% (NA). Water turnover in the body involves a balance between water loss through urinating, breathing and sweating and water replenishment through what we eat and drink. The amount of water turning over each day can be written as $L$. As has already been shown it is possible to increase the \textit{in vivo} $^2$H abundance by ingesting extra $^2$H in the form of heavy water (or an aqueous solution of heavy water). The new $^2$H abundance in a day ($A_{t+1}$ as a percentage) can then be estimated using an iterative calculation, and is relative to a participants total body water (BW) volume as shown in Eq. \ref{eqn:Lip:HDO}.
+The $^2$H MR signal that arises from naturally occurring \ac{HDO} \textit{in vivo} is $\sim$0.015\% (NA). Water turnover in the body involves a balance between water loss through urinating, breathing and sweating and water replenishment through what we eat and drink. The amount of water turning over each day can be written as $L$. As has already been shown it is possible to increase the \textit{in vivo} $^2$H abundance by ingesting extra $^2$H in the form of heavy water (or an aqueous solution of heavy water). The new $^2$H abundance in a day ($A_{t+1}$ as a percentage) can then be estimated using an iterative calculation, and is relative to a participants total body water (BW) volume as shown here
 
 \begin{equation}
     A_{t+1} = A_t + \frac{L[\textrm{NA} - A_t]}{\textrm{BW}} + \frac{D}{\textrm{BW}}
     \label{eqn:Lip:HDO}
 \end{equation}
 
-\noindent where the abundance in the previous day is given as $A_t$, and the amount of $^2$H consumed in the day is $D$. This equation is useful when the extra $^2$H is ingested on a daily basis, the change in $^2$H abundance with respect to time ($dA/dt$) can then be calculated as a differential equation according to Eq. \ref{eqn:Lip:HDO_diff}.
+\noindent where the abundance in the previous day is given as $A_t$, and the amount of $^2$H consumed in the day is $D$. This equation is useful when the extra $^2$H is ingested on a daily basis, the change in $^2$H abundance with respect to time ($dA/dt$) can then be calculated as a differential equation shown here
 
 \begin{equation}
     \frac{dA}{dt} = \frac{L[\textrm{NA} - A]}{\textrm{BW}} + \frac{D}{\textrm{BW}}
     \label{eqn:Lip:HDO_diff}
 \end{equation}
 
-\noindent It is noted that $L/$BW is the water turnover  relative to body weight which can be considered as a rate constant ($\lambda_w$). We can estimate $\lambda_w\sim 3/41$, assuming 3 L of fluid turnover and a typical BW of 41 L. It can be beneficial to look at the change in $^2$H abundance as a multiplicative change compared to NA ($E=A/$NA). The differential equation then becomes Eq. \ref{eqn:Lip:HDO_diffE}.
+\noindent It is noted that $L/$BW is the water turnover  relative to body weight which can be considered as a rate constant ($\lambda_w$). We can estimate $\lambda_w\sim 3/41$, assuming 3 L of fluid turnover and a typical BW of 41 L. It can be beneficial to look at the change in $^2$H abundance as a multiplicative change compared to NA ($E=A/$NA). The differential equation then becomes
 
 \begin{equation}
     \frac{dE}{dt} = \lambda_w(1-E) + \frac{D}{\textrm{BW} \cdot \textrm{NA}}
     \label{eqn:Lip:HDO_diffE}
 \end{equation}
 
-\noindent Once the loading period ends ($D=0$), Eq. \ref{eqn:Lip:HDO_diffE} can be simply solved to give Eq. \ref{eqn:Lip:E}. Here the enrichment $E$ exponentially decays from $E_0$, the enrichment at the end of loading, to natural abundance ($E=1$ at $t=\infty$ and $E=E_0$ at $t=0$), with a time constant $\lambda_w$.
+\noindent Once the loading period ends ($D=0$), Eq. \ref{eqn:Lip:HDO_diffE} can be simply solved. Here the enrichment $E$ exponentially decays from $E_0$, the enrichment at the end of loading, to natural abundance ($E=1$ at $t=\infty$ and $E=E_0$ at $t=0$), with a time constant $\lambda_w$. The solution is shown empirically here
 
 \begin{equation}
     E = (E_0 - 1)\exp(-\lambda_wt) + 1
     \label{eqn:Lip:E}
 \end{equation}
 
-\noindent To calculate the enhancement of $^2$H in water, accurate estimates for $L$ and BW are needed. It is difficult to accurately determine $L$ as it depends on an individual's lifestyle, however BW can be estimated from known formulae. Lines of best fits have been found that relate total body-water to anthropometric measurements (height ($H$), weight ($W$), age ($A$) and gender) \cite{Watson1980TotalMeasurements}, equations for the relationships are found in Eq. \ref{eqn:Lip:male} for males and Eq. \ref{eqn:Lip:female} for females.
+\noindent To calculate the enhancement of $^2$H in water, accurate estimates for $L$ and BW are needed. It is difficult to accurately determine $L$ as it depends on an individual's lifestyle, however BW can be estimated from known formulae. Lines of best fits have been found that relate total body-water to anthropometric measurements (height ($H$), weight ($W$), age ($A$) and gender) \cite{Watson1980TotalMeasurements}, equations for the relationships are found here for males 
 
 \begin{equation}
     \textrm{BW(litres)} = 2.447-0.09516A\textrm{(years)}+0.1074H\textrm{(cm)}+0.3362W\textrm({kg})
     \label{eqn:Lip:male}
 \end{equation}
+
+\noindent and for females here
+
 \begin{equation}
     \textrm{BW(litres)} = -2.097+0.1069H\textrm{(cm)}+0.2466W\textrm({kg})
     \label{eqn:Lip:female}
@@ -51,14 +54,14 @@ The $^2$H MR signal that arises from naturally occurring \ac{HDO} \textit{in viv
 
 Data from lipid turnover studies looking at the $^{14}$C content of fat show that the rate of lipid storage is $\sim$16 kg/year (44g/day) \cite{Arner2011DynamicsDisease, Spalding2017ImpactTissue}, which gives a time constant ($t_f$) for lipid turnover of $\sim$397 days. This estimate assumes a healthy 70 kg individual with a body fat content of 25\%, but the value varies depending on the individual's weight, age and height. By making some assumptions about the incorporation of $^2$H from water into fat we can use the value of $t_f$ to estimate the concentration of $^2$H in fat during and after a period of heavy water loading. The enhancement of the $^2$H concentration in fat relative to natural abundance depends on the rate constant ($\lambda_f = 1/t_f$) the number of days of heavy water loading ($t$), the level of water enhancement ($E$) and the fraction ($f$) of H atoms incorporated into CH$_2$/CH$_3$ groups from water in newly formed fat. It has been found that $\sim$20\% of stored lipids arise from \ac{DNL}, compared to triglycerides recycled from fatty acid breakdown. In the case of triglyeride recycling H atoms in CH$_2$/CH$_3$ groups do not exchange with water but in the case of \ac{DNL} 1/3 of the H atoms in CH$_2$/CH$_3$ groups come from water, and 2/3 are derived from the metabolite NADPH \cite{Zhang2017ChemicalNADPH}. Conservatively the fraction ($f$) of H atoms in CH$_2$/CH$_3$ derived from water can therefore be approximated to a conservative value of 5\%. It is important to note that the H in NADPH can undergo catalytic exchange with water which can boost enhancement. If the water enhancement $E$ is approximated at $\times$100 for 28 days, and assuming a range of $f$ of 5-20\% this gives an enhancement of 35-140\%. This enhancement should theoretically be detectable using $^2$H MRS \textit{in vivo} \cite{Brereton1986PreliminarySpectroscopy}. 
 
-Assuming the water $^2$H enhancement $E$ is constant and equal to $E_0$ the enhancement of $^2$H in lipids ($S$) after time $t$ can be estimated using the analytical Eq. \ref{eqn:Lip:Load}, using the assumed values for $\lambda_f$ and $f$. 
+Assuming the water $^2$H enhancement $E$ is constant and equal to $E_0$ the enhancement of $^2$H in lipids ($S$) after time $t$ can be estimated using the assumed values for $\lambda_f$ and $f$ and the following analytical expression
 
 \begin{equation}
     S = 1 + f(E_0 - 1)(1 - \exp(-\lambda_ft)
     \label{eqn:Lip:Load}
 \end{equation}
 
-However, this is not usually the case as often the loading regime will often involve a changing concentration of $^2$H in water. For example, during rapid loading participants can experience periods of dizziness and nausea \cite{Money1974HeavyAlcohol}, and to mitigate this issue, the volume of heavy water consumed per day can be varied during the loading period \cite{Strawford2004AdiposeO, Cocking2023DeuteriumDosing}. Therefore, a more generalised differential equation (Eq. \ref{eqn:Lip:Diff}) is used to estimate the enhancement in fat, which is calculated iteratively and numerically using the temporally varying water enhancement $E(t)$. Now changes in the loading regime can be accounted for before and after the cessation of the loading period. Example loading regimes, \ac{HDO} enhancements and corresponding signal enhancements in lipids according to Eq. \ref{eqn:Lip:Diff} are shown in Fig. \ref{fig:Lip:Load}.
+However, this is not usually the case as often the loading regime will often involve a changing concentration of $^2$H in water. For example, during rapid loading participants can experience periods of dizziness and nausea \cite{Money1974HeavyAlcohol}, and to mitigate this issue, the volume of heavy water consumed per day can be varied during the loading period \cite{Strawford2004AdiposeO, Cocking2023DeuteriumDosing}. Therefore, a more generalised differential equation (Eq. \ref{eqn:Lip:Diff}) is used to estimate the enhancement in fat, which is calculated iteratively and numerically using the temporally varying water enhancement $E(t)$. Now changes in the loading regime can be accounted for before and after the cessation of the loading period. Example loading regimes, \ac{HDO} enhancements and corresponding signal enhancements in lipids are shown in Fig. \ref{fig:Lip:Load} according to
 
 \begin{equation}
     \frac{dS}{dt} = \lambda_f(f(E(t)-1)+1-S)
@@ -222,7 +225,7 @@ The wider linewidths of the \ac{HDO} signals in the calf compared to the liver a
 
 Previous research has demonstrated the feasibility of using inversion recovery sequences to null the HDO signal which leads to more reliable measures of changes in the fat signal \cite{Brereton1989TheMice}, especially when a dominant \ac{HDO} signal is still present. If the \ac{HDO} peak was nulled well enough consistently, spectroscopy would not be needed and imaging sequences tuned to the $^2$H resonance of lipid could be implemented. This could potentially result in higher \ac{SNR} or higher resolution. This can also be achieved post-processing through a similar technique that has been used to de-noise \ac{MRSI} data, Hankel Lanczos singular value decomposition. This technique is similar to \ac{HOSVD} except now the single values that contribute the most are removed, which reduces SNR. However, this approach can remove overlapping water peaks and has been commonly used in $^1$H spectroscopy \cite{Jansen20061HMetabolites, Cabanes2001OptimizationBrain}.
 
-In future work, higher field could be used to provide better spectral separation of fat and water signals and 3D-printed, individualised coil holders would allow more reproducible coil positioning. This study utilized lower levels of $^2$H loading compared to previous research (2\% abundance of $^2$H compared to 10\%). Studies focused on body composition employ a similar level of heavy water loading to what was used in this study. The results of a similar study could also be combined with better $^1$H measurments to exclude any change in fat signal amplitude over the experimental time period. 
+In future work, higher field could be used to provide better spectral separation of fat and water signals and 3D-printed, individualised coil holders would allow more reproducible coil positioning. This study utilized lower levels of $^2$H loading compared to previous research (2\% abundance of $^2$H compared to 10\%). Studies focused on body composition employ a similar level of heavy water loading to what was used in this study. The results of a similar study could also be combined with better $^1$H measurements to exclude any change in fat signal amplitude over the experimental time period. 
 
 By making all the above improvements it could be possible to detect visceral lipids as well as obtain earlier time-points which would mean functional/kinetic modelling could be employed to distinguish different cohorts of participants. Cohorts could include insulin resistant individuals \cite{White2017AssociationHumans} and between races \cite{White2018RacialHumans} which have already been investigated using the invasive \ac{D$_2$O} loading methodology. These studies would allow comparisons to be made for using \textit{in vivo} \ac{MRI}/\ac{MRS} methodology vs invasive biopsy methodology and hopefully therefore provide this new methodology with efficacy.
 
