@@ -122,10 +122,16 @@ The varying magnetic field gives rise to electric fields inside the tissue being
 Where $\sigma$ is the conductivity of the tissue. Modelling is important to ensure each coil built is safe to use with humans. The magnetic field can be modelled using the Biot-Savart law given as 
 
 \begin{equation}
-    \mathbf{B(r)} = \frac{\mu_0}{4\pi}\frac{\mathbf{J}dV \times \mathbf{r}}{|\mathbf{r}|^3}
+    \mathbf{B(r)} = \frac{\mu_0}{4\pi}\int_v\frac{\mathbf{J(\mathbf{r})} \times \mathbf{r}}{|\mathbf{r}|^3}dv
 \end{equation}
 
-Where $\mathbf{J}$ is the current density, $dV$ is the volume element from the coil and $\mathbf{r}$ is the position vector from $dV$. The electric field $E$ can then be calculated from the $A$ vector potential which is defined by the magnetic field $B$ being the curl of the vector potential ($\mathbf{B} = \nabla \times \mathbf{A}$). $E$ can then be found from $A$ following
+Where $\mathbf{J}$ is the current density, $dV$ is the volume element from the coil and $\mathbf{r}$ is the position vector from $dv$. The electric field $E$ can then be calculated from the $A$ vector potential which is defined by the magnetic field $B$ being the curl of the vector potential ($\mathbf{B} = \nabla \times \mathbf{A}$). $\mathbf{A}$ can therefore be analytically expressed as 
+
+\begin{equation}
+    \mathbf{A(r)} = \frac{\mu_0}{4\pi}\int_v \frac{\mathbf{J(r)}}{\mathbf{r}}dv
+\end{equation}
+
+$E$ can then be found from $A$ following
 
 \begin{equation}
     \mathbf{E} = -\frac{d\mathbf{A}}{dT}
@@ -156,8 +162,7 @@ After the building of each coil, the coil is placed around a phantom and spectra
 
 A surface coil is the simplest and most basic coil to design, where the coil often forms a simple circular loop. The magnetic field is largest on axis and decreases, with distance from the coil. Therefore the field is spatially inhomogeneous which is why this coil design is often used for non-localised spectroscopy, where the localisation of the signal is down to the placement of the coil. The penetration depth of the magnetic field for a surface coil is approximately equal to the diameter of the coil \cite{Gruber2018RFNonphysicists}, and therefore a surface coil is sensitive to regions closest to the coil. 
 
-
-The surface coils used for data collection were built for use in the study described in Chapter \ref{Chap:Lipid}. The first coil is a small 5 cm coil with two loops of copper wire with a tuning capacitance of 173.4 pF and a matching capacitance of 11 pF which is split over both wires of the loop to keep it balanced. The coil is made small to maximise the sensitivity to signal from subcutaneous fat in the calf. Maps for the $B_y, B_\rho, |E|$ and \ac{SAR} maps for this coil are shown in Fig. \ref{fig:coils:Calf_Maps}, the maximum \ac{SAR} of this coil was <20 W/kg. This was calculated assuming the target $B_1$ of 40 $\mu$T occurs 4 cm from coil on coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m.
+The surface coils used for data collection were built for use in the study described in Chapter \ref{Chap:Lipid}. The first coil is a small 5 cm coil with two loops of copper wire with a tuning capacitance of 173.4 pF and a matching capacitance of 11 pF which is split over both wires of the loop to keep it balanced. The coil is made small to maximise the sensitivity to signal from subcutaneous fat in the calf. Maps for the $B_y, B_\rho, |E|$ and \ac{SAR} maps for this coil are shown in Fig. \ref{fig:coils:Calf_Maps}, the maximum \ac{SAR} of this coil was $<$20 W/kg. This was calculated assuming the target $B_1$ of 40 $\mu$T occurs 4 cm from coil on coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m.
 
 \begin{figure}[H]
     \centering
@@ -166,7 +171,7 @@ The surface coils used for data collection were built for use in the study descr
     \label{fig:coils:Calf_Maps}
 \end{figure}
 
-The second coil is 12 cm in diameter and again made out of copper wire, and is designed for imaging the liver. This coil is larger so that the penetration depth is large enough to reach the liver. The coil is slightly curved in plane in order for the coil to sit closer to the liver on one side of the abdomen and is mounted onto a holder so that the coil can be rotated whilst still being attached to the scanner bed. Maps for the $B_y, B_\rho, |E|$ and \ac{SAR} maps for this coil are shown in Fig. \ref{fig:coils:Liver_Maps}, the maximum \ac{SAR} of this coil was <20 W/kg. This was calculated assuming the target $B_1$ of 40 $\mu$T occurs 4 cm from coil on coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m. These simulations were performed by Prof. Richard Bowtell.
+The second coil is 12 cm in diameter and again made out of copper wire, and is designed for imaging the liver. This coil is larger so that the penetration depth is large enough to reach the liver. The coil is slightly curved in plane in order for the coil to sit closer to the liver on one side of the abdomen and is mounted onto a holder so that the coil can be rotated whilst still being attached to the scanner bed. Maps for the $B_y, B_\rho, |E|$ and \ac{SAR} maps for this coil are shown in Fig. \ref{fig:coils:Liver_Maps}, the maximum \ac{SAR} of this coil was $<$20 W/kg. This was calculated assuming the target $B_1$ of 40 $\mu$T occurs 4 cm from coil on coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m. These simulations were performed by Prof. Richard Bowtell.
 
 \begin{figure}[H]
     \centering
@@ -207,7 +212,7 @@ Volumetric coils such as saddle coils have more homogeneous B$_1$ fields than su
     \label{fig:coils:3D_Saddle}
 \end{figure}
 
-The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape and has an angular width of 120$^\circ$ a length of 16.8 cm and a diameter of 14.8 cm. Where the copper tape that links the two squares intersects/crosses over, an insulated wire is used to avoid a capacitor being created. Also, the wires here run close side by side so that the fields from the opposing currents will cancel. Diagrams of the circuit for the coil are shown in Figs. \ref{fig:coils:2D_Saddle} and \ref{fig:coils:3D_Saddle} with pictures in Fig. \ref{fig:coils:Saddle_pic}. The tuning capacitance is 47.3 pF, the total matching capacitance 8.8 pF. Simulations of the Biot-Savart equation were used to simulate the $B_x$ and $B_y$ components through the saddle coil. Plots of the $B_x$ and $B_y$ at four different planes along $z$ are shown in Fig. \ref{fig:coils:Saddle_BMap}, these were calculated by Prof. Richard Bowtell. The vector potential $A$ and therefore $E$ were also simulated to calculate \ac{SAR} values across the same axis, plots across four different planes along $z$ are then shown in Fig. \ref{fig:coils:Saddle_SAR}. The maximum \ac{SAR} value was found to be safe $<$ 9 W/kg. This is a different limit for the surface coils because this is a volume coil, assuming the weight of the calf takes up 5\% of the total body weight the limit here is 10 W/kg.
+The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape and has an angular width of 120$^\circ$ a length of 16.8 cm and a diameter of 14.8 cm. Where the copper tape that links the two squares intersects/crosses over, an insulated wire is used to avoid a capacitor being created. Also, the wires here run close side by side so that the fields from the opposing currents will cancel. Diagrams of the circuit for the coil are shown in Figs. \ref{fig:coils:2D_Saddle} and \ref{fig:coils:3D_Saddle} with pictures in Fig. \ref{fig:coils:Saddle_pic}. The tuning capacitance is 47.3 pF, the total matching capacitance 8.8 pF. Simulations of the Biot-Savart equation were used to simulate the $B_x$ and $B_y$ components through the saddle coil. Plots of the $B_x$ and $B_y$ at four different planes along $z$ are shown in Fig. \ref{fig:coils:Saddle_BMap}, these were calculated by Prof. Richard Bowtell. The vector potential $A$ and therefore $E$ were also simulated to calculate \ac{SAR} values across the same axis, plots across four different planes along $z$ are then shown in Fig. \ref{fig:coils:Saddle_SAR}, which were calculated by the author. The maximum \ac{SAR} value was found to be safe $<$ 9 W/kg. These simulations were calculated assuming the target $B_1$ of 40 $\mu$T occurs at the centre of the coil axis, and the conductivity ($\sigma$) of the muscle is 0.64 S/m. This is a different limit for the surface coils because this is a volume coil, assuming the weight of the calf takes up 5\% of the total body weight the limit here is 10 W/kg.
 
 \begin{figure}[H]
     \centering
@@ -219,14 +224,14 @@ The coil built for scanning in Chapter \ref{Chap:Quad} is made from copper tape 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\linewidth]{Figures/Coils/Saddle_BMap.png}
-    \caption{\textit{Maps of the $B_x$ (a) and $B_y$ (b) components inside the saddle coil plotted against $x$ and $y$ covering the diameter of the coil. The planes are of the z direction at the centre of the coil (top left), 2/3 of the length of the coil (top right), 4/5 of the length of the coil (bottom left) and 19/20 down the length of the coil.}}
+    \caption{\textit{Maps of the $B_x$ (a) and $B_y$ (b) components inside the saddle coil plotted against $x$ and $y$ in units of radius. The planes are of the z direction at the centre of the coil (top left), 2/3 of the length of the coil (top right), 4/5 of the length of the coil (bottom left) and 19/20 down the length of the coil.}}
     \label{fig:coils:Saddle_BMap}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{Figures/Coils/Saddle_SAR.png}
-    \caption{\textit{Maps of the SAR magnitude measured in W/kg covering the diameter of the coil in the $x$ and $y$ direction. Top left is at the centre of the coil, top right is 2/3 down the length of the coil, bottom left 4/5 down the length of the coil and bottom right 19/20 down the length of the coil all in the z direction.}}
+    \caption{\textit{Maps of the SAR magnitude measured in W/kg inside the saddle coil plotted against $x$ and $y$ in units of the coil radius. Top left is at the centre of the coil, top right is 2/3 down the length of the coil, bottom left 4/5 down the length of the coil and bottom right 19/20 down the length of the coil all in the z direction.}}
     \label{fig:coils:Saddle_SAR}
 \end{figure}
 
